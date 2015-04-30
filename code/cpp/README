@@ -1,0 +1,46 @@
+Implementation of geodesic and barycenter computation on triangle meshes based on the paper: 
+"Convolutional Wasserstein Distances: \\ Efficient Optimal Transportation on Geometric Domains"
+Solomon et al., Siggraph 2015
+
+Dependencies:
+    Eigen (eigen.tuxfamily.org)
+    OpenGL / GLUT
+
+
+To build:
+    cd cpp
+    <Set /path/to/Eigen in CMakeLists.txt:line_16>
+    mkdir build
+    cd build
+    cmake ..
+    make
+
+Usage:
+    ./ot -m mesh.obj 
+    [-t tolerance=1e-6]    // convergence tolerance
+    [-i maxIters=1000]     // max projection iterations
+    [-d diffusionIter=10]  // diffusion iterations
+    [-g gamma=0]           // gamma == 0: use SquaredMaxEdgeLen; 
+                           // otherwise : use gamma
+    [-s scale=1]           // multiply gamma by scale
+    [-u upperEntropy=1]    // entropy upper bound
+    [-e epsilon=1e-20]     // numerical zero
+    [-v verbose=0]         // verbose mode
+
+Example:
+    ./ot -m bunny.obj -v 1
+
+GUI hot keys:
+    'r': reset
+    'w': turn on/off wireframe
+    's': turn on/off selected verts
+    'g': run geodesics from selected verts to all others
+    'i': barycenter between two selected verts with weights (1-t,t)
+    '=': increment weight t by 0.1
+    '-': decrement weight t by 0.1
+    '/': snapshot
+
+Camera control:
+    LeftClick: Rotate
+    Up/Down arrow: zoom in/out
+    Shift+LeftClick: (un)select vert
