@@ -1,7 +1,6 @@
 This toolbox reproduces the numerical results of the paper:
 
-Justin Solomon, Fernando de Goes, Gabriel Peyré, Marco Cuturi, Adrian Butscher, Andy Nguyen, Tao Du, Leonidas Guibas,  
-_Convolutional Wasserstein Distances: Efficient Optimal Transportation on Geometric Domains_, Proc. [SIGGRAPH 2015](http://s2015.siggraph.org/).
+Justin Solomon, Fernando de Goes, Gabriel Peyré, Marco Cuturi, Adrian Butscher, Andy Nguyen, Tao Du, Leonidas Guibas, _Convolutional Wasserstein Distances: Efficient Optimal Transportation on Geometric Domains_, Proc. [SIGGRAPH 2015](http://s2015.siggraph.org/).
 
 
 Content
