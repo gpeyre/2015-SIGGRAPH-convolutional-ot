@@ -9,7 +9,6 @@ Dependencies:
 
 To build:
     cd cpp
-    <Set /path/to/Eigen in CMakeLists.txt:line_16>
     mkdir build
     cd build
     cmake ..
