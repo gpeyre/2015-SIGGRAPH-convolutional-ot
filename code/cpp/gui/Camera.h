@@ -13,7 +13,7 @@ public:
    mDrag ( 1.,0.,0.,0.),
    mLast ( 1.,0.,0.,0.),
    mRot  ( 0.,0.,1.,0.),
-   mZoom (0.2)
+   mZoom (0.5)
    { }
 
    double zoom() const { return mZoom; }

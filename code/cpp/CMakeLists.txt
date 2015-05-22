@@ -5,6 +5,7 @@ cmake_policy(VERSION 2.6)
 
 set(CMAKE_ALLOW_LOOSE_LOOP_CONSTRUCTS true)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_RUNTIME_OUTPUT_DIRECTORY}")
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
 #---------#
 # TO EDIT #
@@ -13,7 +14,6 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_RUNTIME_OUTPUT_DIRECTORY}")
 option(USE_OPENMP "OpenMP?"      ON)
 option(USE_DEBUG "Debug mode?"   ON)
 option(USE_64BIT_ARCH "64 arch?" ON)
-set(EIGEN_DIR /Users/fdegoes/eigen-3.1.2)
 
 #---------#
 # OPTIONS #
@@ -41,6 +41,7 @@ endif(USE_OPENMP)
 find_package(GLUT)
 find_package(OpenGL)
 
+find_package(Eigen3)
 #-------#
 # Files #
 #-------#
@@ -55,9 +56,9 @@ set(SRCS ${GUI_SRC} ${OT_SRC} main.cpp)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-long-long")
 
-include_directories(${EIGEN_DIR})
 include_directories(${GLUT_INCLUDE_DIR})
 include_directories(${OPENGL_INCLUDE_DIR})
+include_directories(${EIGEN3_INCLUDE_DIR})
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/ot)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/gui)
 include_directories(BEFORE ${CMAKE_CURRENT_SOURCE_DIR})
