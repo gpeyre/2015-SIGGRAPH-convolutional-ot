@@ -1,15 +1,18 @@
 This toolbox reproduces the numerical results of the paper:
 
-Justin Solomon, Fernando de Goes, Gabriel Peyré, Marco Cuturi, Adrian Butscher, Andy Nguyen, Tao Du, Leonidas Guibas 
+Justin Solomon, Fernando de Goes, Gabriel Peyré, Marco Cuturi, Adrian Butscher, Andy Nguyen, Tao Du, Leonidas Guibas
 Convolutional Wasserstein Distances: Efficient Optimal Transportation on Geometric Domains
 Proc. SIGGRAPH 2015
+
+
+![Wasserstein barycenters of volumetric histograms](imgs/triangleinterp.jpg)
 
 
 Content
 -------
 
 The main directories are:
-* data/: images and meshes datasets. 
+* data/: images and meshes datasets.
 * code/: code directory, with the following sub-directories:
     - cpp/: C++ implementation of the algorithm.
     - figures/: Matlab scripts to reproduce the figure of the article.
@@ -24,5 +27,3 @@ Copyright
 -------
 
 Copyright (c) 2015, Justin Solomon, Fernando de Goes, Gabriel Peyré, Marco Cuturi, Adrian Butscher, Andy Nguyen, Tao Du, Leonidas Guibas  
-
-
