@@ -299,7 +299,7 @@ void TriMesh::normalize()
         mPoints[vert] -= c;
     }
 
-    double scale = computeTotalArea();
+    double scale = std::sqrt(computeTotalArea());
     for (unsigned vert = 0; vert < numVerts(); ++vert) {
         mPoints[vert] /= scale;
     }

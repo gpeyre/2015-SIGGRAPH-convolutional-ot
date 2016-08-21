@@ -72,6 +72,7 @@ int main(int argc, char** argv)
     TriMesh mesh;
     mesh.read(meshFile);
     mesh.normalize(); // make Area = 1
+    std::cout << "MeshArea = " << mesh.computeTotalArea() << std::endl;
     
     // timestep proportinal to mesh size
     double h = mesh.computeMaxEdgeLength();
