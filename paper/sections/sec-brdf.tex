@@ -1,0 +1,28 @@
+% !TEX root = ../convolutional_w2.tex
+
+\paragraph*{BRDF design.}
+
+The BRDF $f(\mathbf{\omega_i}, \mathbf{\omega_o})$ of a material defines how much light it reflects from each incoming direction $\mathbf{\omega_i}$ to each outgoing direction $\mathbf{\omega_o}$. If $\mathbf{\omega_i}$ is fixed, all the outgoing directions fall on a hemisphere defined by the surface normal. After scaling, the BRDF values for $\mathbf{\omega_o}$ form a probability distribution over the hemisphere.  Hence, displacement interpolation can be applied to interpolate between materials, as in~\cite{bonneel-2011}.%While their method enforces a particular form for the BRDF,  convolutional barycenters can interpolate between arbitrary BRDFs defined on a grid.
+
+%Unlike fitting BRDFs with the sum of Gaussian functions, our approach only requires simple 4-D grid BRDF representation. Moreover, \tao{Sorry I didn't quite understand your second point...} 
+
+We use convolutional barycenters to combine more than two distributions at a time. For each incoming direction in the sampled BRDF, the values associated to the outgoing directions are organized in a 2D grid by spherical angle.  We use weighted Wasserstein barycenters to interpolate this data. The spherical heat kernel $\kernel$ is approximated by the fast approximate Gaussian convolution from~\cite{deriche-1993}.  Spherical geometry is accounted for by modulating the width of this separable filter.  We render images using the interpolated BRDFs using PBRT~\cite{pharr-2010}.
+
+Fig.~\ref{fig:brdf} shows interpolation between four BRDFs using our technique, yielding continuously-moving highlights. The corner BRDFs are sampled from closed-form materials~\cite{blinn-1977,ashikhmin-2000}; the remaining BRDFs are interpolated.  
+
+%  in the four corners except the bottom right one are regularly sampled from the Ashikhmin-Shirley BRDF model~\cite{ashikhmin-2000} with different anisotropic angles and exponents. The bottom right BRDF is discretized from the Blinn model of isotropic materials~\cite{blinn-1977}. 
+%Our approach does not require prior knowledge of these parametric BRDF models. %\justin{not sure what this means}
+
+%\begin{figure*}[t]\centering
+%\begin{tabular}{@{}c@{\hspace{.02in}}c@{\hspace{.02in}}c@{}}
+%\includegraphics[width=.33\linewidth]{figures/brdf/linear.pdf}&
+%\includegraphics[width=.33\linewidth]{figures/brdf/withoutentropy.pdf}&
+%\includegraphics[width=.33\linewidth]{figures/brdf/brdf.pdf}\\
+%Linear interpolation & Convolutional barycenter & 
+%\pbox{.33\linewidth}
+%{\centerline{Convolutional barycenter}\centerline{(bounded entropy)}}
+%\end{tabular}
+%\vspace{-.1in}
+%\caption{BRDF interpolation:  BRDFs for the materials in the four corners of each image are fixed, and the rest are computed using bilinear weights.  Linearly interpolating BRDFs (left) yields spurious highlights, the convolutional barycenter (center) moves highlights continuously along the domain but increases diffusion, and the entropy-bounded barycenter (right) moves highlights in a sharper fashion.}\label{fig:brdf}
+%\vspace{-.1in}
+%\end{figure*}

@@ -1,0 +1,76 @@
+\ProvidesPackage{MyMnSymbol}[2007/01/21 v1.4 Underbraces from MnSymbol]
+
+\DeclareFontFamily{OMX}{MnSymbolE}{}
+\DeclareSymbolFont{largesymbolsX}{OMX}{MnSymbolE}{m}{n}
+\DeclareFontShape{OMX}{MnSymbolE}{m}{n}{
+    <-6>  MnSymbolE5
+   <6-7>  MnSymbolE6
+   <7-8>  MnSymbolE7
+   <8-9>  MnSymbolE8
+   <9-10> MnSymbolE9
+  <10-12> MnSymbolE10
+  <12->   MnSymbolE12}{}
+
+\DeclareMathSymbol{\upbrace}      {\mathord}{largesymbolsX}{'256}
+\DeclareMathSymbol{\upbraceg}     {\mathord}{largesymbolsX}{'257}
+\DeclareMathSymbol{\upbracegg}    {\mathord}{largesymbolsX}{'260}
+\DeclareMathSymbol{\upbraceggg}   {\mathord}{largesymbolsX}{'261}
+\DeclareMathSymbol{\upbracegggg}  {\mathord}{largesymbolsX}{'262}
+\DeclareMathSymbol{\bracelu}      {\mathord}{largesymbolsX}{'264}
+\DeclareMathSymbol{\braceru}      {\mathord}{largesymbolsX}{'266}
+\DeclareMathSymbol{\bracemu}      {\mathord}{largesymbolsX}{'270}
+\DeclareMathSymbol{\bracemid}     {\mathord}{largesymbolsX}{'271}
+
+\def\horiz@expandable#1#2#3#4#5#6#7#8{%
+  \@mathmeasure\z@#7{#8}%
+  \@tempdima=\wd\z@
+  \@mathmeasure\z@#7{#1}%
+  \ifdim\noexpand\wd\z@>\@tempdima
+    $\m@th#7#1$%
+  \else
+    \@mathmeasure\z@#7{#2}%
+    \ifdim\noexpand\wd\z@>\@tempdima
+      $\m@th#7#2$%
+    \else
+      \@mathmeasure\z@#7{#3}%
+      \ifdim\noexpand\wd\z@>\@tempdima
+        $\m@th#7#3$%
+      \else
+        \@mathmeasure\z@#7{#4}%
+        \ifdim\noexpand\wd\z@>\@tempdima
+          $\m@th#7#4$%
+        \else
+          \@mathmeasure\z@#7{#5}%
+          \ifdim\noexpand\wd\z@>\@tempdima
+            $\m@th#7#5$%
+          \else
+           #6#7%
+          \fi
+        \fi
+      \fi
+    \fi
+  \fi}
+
+\def\underbrace@expandable#1#2#3{\vtop{\m@th\ialign{##\crcr
+  $\m@th\hfil#2#3\hfil$\crcr
+  \noalign{\kern2\p@\nointerlineskip}%
+  #1#2{#3}\crcr}}}
+
+\def\underbrace@#1#2#3{\vtop{\m@th\ialign{##\crcr
+  $\m@th\hfil#2#3\hfil$\crcr
+  \noalign{\kern2\p@\nointerlineskip}%
+  #1#2\crcr}}}
+
+\def\bracefill@#1#2#3#4#5{$\m@th#5#1\leaders\hbox{$#4$}\hfill#2\leaders\hbox{$#4$}\hfill#3$}
+\def\upbracefill@{\bracefill@\bracelu\bracemu\braceru\bracemid}
+
+\def\upbrace@expandable{%
+  \horiz@expandable
+    \upbrace
+    \upbraceg
+    \upbracegg
+    \upbraceggg
+    \upbracegggg
+    \upbracefill@}
+
+\DeclareRobustCommand{\underbrace}[1]{\mathop{\mathpalette{\underbrace@expandable\upbrace@expandable}{#1}}\limits}

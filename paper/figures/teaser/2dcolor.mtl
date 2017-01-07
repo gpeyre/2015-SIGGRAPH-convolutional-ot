@@ -1,0 +1,8 @@
+newmtl material_0
+Ka 0.2 0.2 0.2
+Kd 1 1 1
+Ks 1 1 1
+Tr 1
+illum 2
+Ns 0
+map_Kd color.jpg

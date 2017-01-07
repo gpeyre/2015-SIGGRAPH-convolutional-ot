@@ -1,0 +1,5 @@
+% !TEX root = ../convolutional_w2.tex
+
+\begin{abstract}
+This paper introduces a new class of algorithms for optimization problems involving optimal transportation over geometric domains.  Our main contribution is to show that optimal transportation can be made tractable over large domains used in graphics, such as images and triangle meshes, improving performance by orders of magnitude compared to previous work.  To this end, we approximate optimal transportation distances using entropic regularization.  The resulting objective contains a geodesic distance-based kernel that can be approximated with the heat kernel. This approach leads to simple iterative numerical schemes with linear convergence, in which each iteration only requires Gaussian convolution or the solution of a sparse, pre-factored linear system.  We demonstrate the versatility and efficiency of our method on tasks including reflectance interpolation, color transfer, and geometry processing.
+\end{abstract}

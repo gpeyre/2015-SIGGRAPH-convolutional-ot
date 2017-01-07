@@ -1,0 +1,137 @@
+% !TEX root = ../convolutional_w2.tex
+
+\section{Regularized Optimal Transportation}
+
+In this section, we present a modification of Wasserstein distances suitable for computation on geometric domains.   
+%\gabriel{I have removed this sentence ``Our approach extends the discrete results of~\cite{cuturi-2013} to the continuous setting, solving optimal transportation problems over smooth manifolds with entropic regularization.''} 
+In our exposition, we first assume that the pairwise distance function $d(\cdot,\cdot)$ is known and then leverage heat kernels to alleviate this requirement.%, and finally discuss relevant properties.
+
+\subsection{Entropy-Regularized Wasserstein Distance}
+
+%\leo{Entropy-based regularization was new to me and I imagine it may be so for many people on the PC. It may be useful to add a few more sentences of intuition here.}
+
+Following e.g.~\cite{cuturi-2013,Benamou-IterBregman-2014}, we modify the objective of the optimal transportation problem in~\eqref{eq:WassersteinDistance} by adding an entropy term $H(\pi)$ promoting spread-out transportation plans $\pi$. The \emph{entropy-regularized $2$-Wasserstein distance} is then defined as:
+\begin{equation}
+\label{eq:entropyWassersteinDistance}
+%\hspace{-.15in}
+	\W_{2,\gamma}^2(\mu_0,\mu_1)  \eqdef  
+	\inf_{\pi\in\Pi} \hspace{-.025in} \left[ \iint_{M\times M}\hspace{-.25in} d(x,y)^2\,\pi(x,y)\dx\dy  -  \gamma H(\pi)  \right]\hspace{-1mm},
+\hspace{-2mm}
+\end{equation}
+where we have used the shorter notation $\Pi$ for $\Pi(\mu_0,\mu_1)$. %\gabriel{I have added a sentence to credit Leonard} 
+This regularized version of optimal transport is often called the ``Schr\"odinger problem,'' and we refer to~\cite{leonard-2012} for discussion of its connection to non-regularized transport, recovered as $\ga \rightarrow 0$. 
+
+When $\ga>0$, the solution $\pi$ to~\eqref{eq:entropyWassersteinDistance} is an absolutely continuous measure, since otherwise the entropy term is indefinite.  The term $-H(\pi)$ also makes the objective strictly convex, and therefore a unique minimizer exists. % by coercivity. 
+% \marco{optional comment: (whereas it is well known that this is not the case in the original problem, that is when $\gamma=0$\cite{})} 
+Fig.~\ref{fig:plans} illustrates couplings $\pi$ obtained using increasing values of $\gamma$, resulting in increasingly smooth solutions.
+
+\begin{figure}[t]
+\centering
+\graphicspath{ {figures/transportation/} }
+\def\svgwidth{.45\textwidth}\input{figures/transportation/transportation.pdf_tex}
+\vspace{-2mm}
+\caption{Transportation plans with different values of $\gamma$, with 1D quadratic costs; $\mu_0,\mu_1\in\Prob([0,1])$ are shown on the axes.}
+\vspace{-2mm}
+\label{fig:plans}
+\end{figure}
+
+We can associate the distance $d(\cdot,\cdot)$ to a kernel $\K_{\gamma}$ of the form:
+% \vspace{-3mm}
+\begin{equation}
+\label{eq:Kernel}
+\K_{\gamma}(x,y)  =  e^{-d(x,y)^2/\gamma}, \quad  d(x,y)^2  =  -\gamma\ln \K_{\gamma}(x,y).
+\end{equation}
+By combining~\eqref{eq:KL},~\eqref{eq:entropyWassersteinDistance} and~\eqref{eq:Kernel} algebraically, the entropy-regularized Wasserstein distance can be computed from
+% \marco{*} (up to an additive constant that only depends on the integration of $\K_\gamma$ over $M\times M$) 
+the smallest KL divergence from a coupling $\pi\in\Pi$ to the kernel $\K_\gamma$:
+\begin{equation}
+\label{eq:minKL}
+\W^2_{2,\gamma}(\mu_0,\mu_1) = \gamma\left[1+\min_{\pi\in\Pi} \KL(\pi|\K_{\gamma})\right].
+\end{equation}
+%\marco{with a generalized KL, we now have the problem of dealing with the integral of $K_\gamma$ which we do not want to compute obviously. Maybe the only way out is to identify the minimizers, which also gives us the opportunity to outline the fact that it's unique?} 
+%\fernando{since I removed terms from KL, we don't have to translate the minimizer anymore.}
+%\justin{Afraid I missed some of this argument.  Are we all happy now?}
+This minimization is convex, due to the convexity of $\KL$ on the first argument $\pi$, with linear equality constraints induced by the marginals $\mu_0$ and $\mu_1$.  As observed in the discrete case~\cite{cuturi-2013,Benamou-IterBregman-2014}, it provides a new interpretation for the regularized transportation problem: the optimal plan $\pi$ is the projection of the distance-based kernel $\K_{\gamma}$ onto $\Pi$, enforcing marginals while minimizing the loss of information quantified by KL divergence.%\marco{the KL observation made above appears as such in [Cuturi, 2013] and even more so in [Benamou, 2014]. Maybe we need to qualify this novelty claim more precisely to avoid any complaint by reviewers? otherwise this can be stated as "As observed in the discrete case, solving an entropy regularized OT is equivalent to projecting ..."}%justin made more neutral
+
+\subsection{Wasserstein Distance via Heat Kernel}
+
+So far, our method requires a distance function $d(\cdot,\cdot)$ to construct $\K_\gamma$.  This assumption is adequate for domains with analytical and fast algorithms for convolution against $\K_\gamma$, like the image plane.  It becomes cumbersome, however, for arbitrary manifolds, since precomputing pairwise distances requires quadratic space and considerable computation time. %scales quadratically with the domain
+%\marco{isn't the actual computation cubic in the general case? e.g. Floyd Warshall \& APSP?}
+%\fernando{depends, if we use the geodesics in heat, then it's quadratic.}
+%\gabriel{I agree with Fernando, and Fast-Marching would also be nearly quadratic. }
+%\justin{Made it less controversial...}
+Instead, we propose an alternative to the distance-based kernel $\K_{\gamma}$ making our method suitable for arbitrary domains.
+
+Define $\H_t(x,y)$ to be the heat kernel determining diffusion between $x,y\in M$ after time $t$; in particular, $\H_t$ solves the heat equation $\partial_t f_t=\Delta f_t$ with initial condition $f_0$ through the map%convolution\gabriel{this is not a convolution but a generic linear map}
+\[
+f_t(x) = \int_M f_0(y)\H_t(x,y)\, \dy.
+\]  
+Similar to~\cite{crane-2013}, we associate the heat kernel $\H_t$ to the geodesic distance function $d(\cdot,\cdot)$ based on the Varadhan's formula~\shortcite{varadhan-1967}, which states that the distance $d(x,y)$ can be recovered by transferring heat from $x$ to $y$ over a short time interval:
+\begin{equation}
+\label{eq:Varadhan}
+d(x,y)^2 = \lim_{t \to 0} \left[ -2t\ln\H_t(x,y)\right].
+\end{equation}
+Setting $t\eqdef\nicefrac{\gamma}{2}$ in~\eqref{eq:Varadhan}, we approximate the kernel $\K_\gamma$ as:
+$$\K_{\gamma}(x,y) \approx \H_{\gamma/2}(x,y),$$
+and, as an implication, we can replace the convolution of an arbitrary function $f$ against $\K_{\gamma}$ by the solution of the diffusion equation for a time step $t=\nicefrac{\gamma}{2}$ and with $f$ as the initial condition.
+We thus denote $\W_{2,\H_t}$ as the diffusion-based approximation of $\W_{2,\gamma}^2$, i.e.:
+\begin{equation}
+\label{eq:convDist}
+\W_{2,\H_{\nicefrac\ga2}}^2(\mu_0,\mu_1) \eqdef \gamma\left[1+\min_{\pi\in\Pi} \KL(\pi|\H_{\nicefrac\ga2})\right].
+\end{equation}
+%\gabriel{Actually, after reading more recent papers, there does not seems to be any restriction beside having a connected compact manifold. Also, I agree that there are indeed regularity issues near the cut-locus, but how cares for our purpose since we do not use regularity ? So I would be in favor of actually removing all this. Sorry for having caused this trouble. }
+%Varadhan's formula~\eqref{eq:Varadhan} can have regularity issues at the cut locus of the geodesic distance function after applying the logarithm~\cite{malliavin-1996}; d
+Developing conditions for convergence of $\W_{2,\H_{\nicefrac\ga2}}^2$ as $\ga\!\rightarrow\!0$ is a challenging topic for future research.  Note that while derivatives of distances from~\eqref{eq:Varadhan} can diverge near the cut locus~\cite{malliavin-1996}, distance values are valid everywhere on $M$ provided $M$ is connected and compact; divergence of derivatives is not problematic for our method.
+
+%\gabriel{I think the following could be ommitted at least in the main body of the paper. }
+% Therefore, each iteration of the method in Eq.~\eqref{eq:fixedPoint} can be approximated using the iteration:%as a pair of elliptic differential equations of the form:
+%\begin{equation}
+%\label{eq:fixedPointWithDiffusion}
+%\left\{
+%\begin{array}{l}
+%\mu_0(x) / \lambda_0^{k+1}(x) = \H_t\ast \lambda_1^k(y)
+%\\[3mm]
+%\mu_1(x) / \lambda_1^{k+1}(x) = \H_t\ast \lambda_0^{k+1}(y),
+%\end{array}
+%\right.
+%\end{equation}
+% In practice, integration against $\H$ can be carried out using $k$ implicit time steps of size $\tau\eqdef\nicefrac{t}{k}$ as $\H_t\ast f(y)\approx (\id + \tau\Delta)^{-k} f,$ where $\Delta$ is the Laplace-Beltrami operator of $M$.
+
+% \emph{Remark:}
+% We briefly highlight an important theoretical property of our regularization comprising a primary trade-off of using entropic regularization.  
+Although $\W_{2,\H}$ and $\W_{2,\gamma}$
+% \marco{can we write down the definition of the heat kernel counterpart clearly somewhere, to contrast it with $\W^2_{2,\gamma}$? since this is, after all, the main new definition I think it deserves at least an equation number!} 
+are symmetric in $\mu_0$ and $\mu_1$, the self-distances $\W_{2,\H}(\mu,\mu)$ and $\W^2_{2,\gamma}(\mu,\mu)$ are never exactly zero for a given $\mu$.   We also observe that these values only satisfy the triangle inequalities approximately, notably for small $\ga$ (see~\cite[Theorem 1]{cuturi-2013}).   Hence, as in~\cite{crane-2013}, the regularized quantities we manipulate are not distances, strictly speaking. These approximations are, however, a very small price to pay to obtain algorithms scaling near-linearly with the size of the mesh.
+%\marco{that sentence should be improved, but I think it's important not to leave the reader with the impression that we're losing anything important here... if anything, all of our recent work tends to show the \textbf{opposite}, that regularizing is also better from a modelling perspective}
+%\justin{I like it!  Not mentioning that regularization improves things, however, because we don't actually demonstrate that anywhere.}
+
+
+% 
+% Moreover, $\W_{2,\gamma}$ may not satisfy triangle inequalities as $\gamma$ increases, due to the inherent properties of the $\KL$-divergence.
+% Therefore, our regularized distance shares similar approximation limitations to~\cite{crane-2013}, and can only be understood as a ``true distance'' as $\gamma\!\rightarrow\!0$.
+% although in practice this issue does not affect the applications we consider.  
+%It remains an open problem whether a formal distance function can be constructed after entropy regularization, see discussion 
+
+%\justin{Someone please write!  Ideas:  Our use of the word ``distance'' is heuristic, since regularization makes it always positive.  But, it's symmetric and approaches $\W_2$ as $\gamma\rightarrow0$.  Plus anything you guys want to mention.}
+
+%We begin with a connection to classical transportation distances:
+%
+%\begin{proposition}[Convergence]
+%Suppose $M$ is a compact manifold without boundary, and fix $\mu_0,\mu_1\in\Prob(M).$  Then, the 2-Wasserstein distance between $\mu_0$ and $\mu_1$ can be recovered as follows:
+%$$\lim_{\gamma\rightarrow0} \H_{\gamma}(\mu_0,\mu_1)=\W_2(\mu_0,\mu_1).$$
+%\justin{This has to be true, if we add enough assumptions.  Can someone write a formal proof?}
+%\end{proposition}
+%
+%We also remark that our use of the term ``distance'' is only true in an approximate sense.  We can provide metric-like structure and characterize deviation from this behavior using the following propositions:
+%
+%\begin{proposition}[Metric structure]
+%Take $\gamma>0$.  $\H_\gamma(\mu_0,\mu_1)=\H_\gamma(\mu_1,\mu_0)$ and $\H_\gamma(\mu_0,\mu_2)<\H_\gamma(\mu_0,\mu_1)+\H_\gamma(\mu_1,\mu_2)$ for all $\mu_0,\mu_1,\mu_2\in\Prob(M).$  $\H_\gamma$ fails to be a metric, however, because $\H_\gamma(\mu,\mu)>0$ for all $\mu\in\Prob(M).$ \justin{Also must be true, at least for small $\gamma$ and compact $M$...}
+%\end{proposition}
+%
+%\justin{Fernando:  Please add discussion here and rephrase proposition as needed.}
+%
+%\begin{proposition}[Dual structure]
+%For sufficiently regular $\mu_0,\mu_1\in\Prob(M)$, the optimal transportation plan $\pi\in\Pi(\mu_0,\mu_1)$ obtained by evaluating $\overline\W_{p_\gamma}$ satisfies
+%$$\pi(x,y)=f(x)K_p(x,y)g(y),$$
+%for some functions $f,g:M\rightarrow\R^+.$
+%\end{proposition}

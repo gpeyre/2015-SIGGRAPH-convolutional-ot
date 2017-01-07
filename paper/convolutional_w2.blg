@@ -1,0 +1,57 @@
+This is BibTeX, Version 0.99d (TeX Live 2012)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: convolutional_w2.aux
+The style file: acmsiggraph.bst
+Database file #1: convolutional_w2.bib
+Warning--empty organization in aubry-2011
+Warning--can't use both volume and number fields in blinn-1977
+Warning--empty organization in blinn-1977
+Warning--empty organization in CuturiBarycenter
+Warning--empty publisher in cuturi-2013
+Warning--can't use both volume and number fields in degoes-2011
+Warning--empty organization in degoes-2011
+Warning--empty institution in deriche-1993
+Warning--empty organization in Desbrun:1999
+Warning--empty organization in solomon-2014-2
+You've used 54 entries,
+            2748 wiz_defined-function locations,
+            906 strings with 11965 characters,
+and the built_in function-call counts, 21087 in all, are:
+= -- 2199
+> -- 855
+< -- 1
++ -- 286
+- -- 303
+* -- 1797
+:= -- 3496
+add.period$ -- 218
+call.type$ -- 54
+change.case$ -- 340
+chr.to.int$ -- 53
+cite$ -- 64
+duplicate$ -- 705
+empty$ -- 1620
+format.name$ -- 338
+if$ -- 4254
+int.to.chr$ -- 2
+int.to.str$ -- 0
+missing$ -- 56
+newline$ -- 326
+num.names$ -- 162
+pop$ -- 271
+preamble$ -- 1
+purify$ -- 292
+quote$ -- 0
+skip$ -- 478
+stack$ -- 0
+substring$ -- 1314
+swap$ -- 163
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 408
+warning$ -- 10
+while$ -- 212
+width$ -- 58
+write$ -- 750
+(There were 10 warnings)

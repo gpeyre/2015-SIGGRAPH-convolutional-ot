@@ -1,0 +1,429 @@
+% !TEX root = ../convolutional_w2.tex
+
+\section{Optimization Over Distances}\label{sec:optim_over_dist}
+
+An advantage of convolutional Wasserstein distances is the variety of optimizations into which they can be incorporated.  Then, the goal is not to evaluate Wasserstein distances but rather to optimize for distributions minimizing an objective constructed out of them.
+
+%\gabriel{There is a clash of notation between the index $(i,j)$ of discretized meausres, and the index $i$ of the input measures $\mu_i$. }\justin{I suppose, but is this really a point of confusion?}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Wasserstein Barycenters}\label{sec:barycenters}
+
+%\gabriel{I have added the continuous formulation of barycenters.}%ok!
+
+The \emph{Wasserstein barycenter} problem attempts to summarize a collection $(\mu_{i})_{i=1}^k$ of probability distributions by taking their weighted average with respect to the Wasserstein distance. Following~\cite{agueh-2011}, given a set of weights $\alpha=(\alpha_i)_{i=1}^k \in \R_+^k$, it is defined as the following convex problem over the space of measures
+\begin{equation}\label{eq:bary-continuous}
+	\textstyle\min_{\mu} \sum_{i=1}^k \alpha_i \W_2^2(\mu,\mu_i).
+\end{equation}
+After discretization, we can pose the barycenter problem as 
+\begin{equation}
+%\begin{array}{rl}
+\textstyle\min_{\p}  \sum_{i=1}^k \alpha_i\W^2_{2,\kernel}(\p,\p_i).
+%\textrm{s.t.} & \p_1,\ldots,\p_k\textrm{ are given.}
+%\end{array}
+\end{equation}
+Substituting transportation plans yields an equivalent problem:
+$$
+\begin{array}{rl}
+\min_{\{\bpi_i\}} & \sum_{i=1}^k \alpha_i\KL(\bpi_i|\kernel)\\
+\textrm{s.t.}
+&\bpi_i^\top \a = \p_i\ \forall i\in\{1,\ldots,k\}\\
+&\bpi_i \a=\bpi_1\a \ \forall i\in\{1,\ldots,k\}\\
+\end{array}
+$$
+%This problem computes the transportation matrices $\bpi_i$ corresponding to the distances $\D_k(\p_i,\p)$; t
+The first constraint enforces that $\bpi_i$ marginalizes to $\p_i$ in one direction, and the second constraint enforces that all the $\bpi_i$'s marginalize to the same $\p$ in the opposite direction.
+
+
+As suggested by Benamou et al.~\shortcite{Benamou-IterBregman-2014}, the expanded problem can be viewed as a \emph{projection} with respect to KL divergence from $\kernel$ (repeated $k$ times) onto the constraint set $\mathcal C_1\cap\mathcal C_2$, where
+\begin{align*}
+\mathcal C_1 & \eqdef \{(\bpi_i)_{i=1}^k : \bpi_i^\top \a = \p_i\ \forall i\in\{1,\ldots,k\}\}\\
+\mathcal C_2 & \eqdef \{(\bpi_i)_{i=1}^k :\bpi_i \a=\bpi_j\a \ \forall i,j\in\{1,\ldots,k\}\}.
+\end{align*}
+Problems of this form can be minimized using \emph{iterated Bregman projection}~\cite{Bregman-1967}, which initializes all the $\bpi_i$'s to $\kernel$ and then cyclically projects the current iterate onto one $\mathcal C_i$ at a time.  Unlike the full optimization, projections onto $\mathcal C_1$ and $\mathcal C_2$ individually can be written in closed form, as explained in the following propositions:
+
+\begin{proposition}\label{prop:interp_formulas}
+The KL projection of $(\bpi_i)_{i=1}^k$ 
+%of $(\bar\bpi_i)_{i=1}^k$ 
+onto $\mathcal C_1$ satisfies $\mathrm{proj}_{\mathcal C_1}\,\bpi_i=\bpi_i \diag{\p_i\oslash\bpi_i^\top\a}$ for each $i\in\{1,\ldots k\}.$
+\end{proposition}
+
+%\leo{I find the $\bar\bpi_i$ notation a little confusing. Perhaps we can just say that the $\mathcal C_1$ and $\mathcal C_2$ projections can be accomplished by pre- or post-multiplication by the appropriate diagonal matrices.}
+%\gabriel{I think it is important to write down the equation. But maybe some better notation could be used. }
+%justin tried to fix -- used "proj" instead
+
+\begin{proposition}\label{prop:interp_formulas2}
+The KL projection of $(\bpi_i)_{i=1}^k$ %of $(\bar\bpi_i)_{i=1}^k$ 
+onto $\mathcal C_2$ satisfies $\mathrm{proj}_{\mathcal C_2}\,\bpi_i=\diag{\p\oslash\d_i}\bpi_i$ for each $i\in\{1,\ldots k\},$ where $\d_i=\bpi_i\a$ and $\p=\prod_i \d_{i}^{\alpha_i/\sum_{\ell} \alpha_{\ell}}.$
+\end{proposition}
+
+The propositions, originally presented without area weights in~\cite{Benamou-IterBregman-2014} and proved similarly in our supplemental document, show that the necessary Bregman projections can be carried out via pre- or post-multiplication by diagonal matrices.  Hence, we can store and update vectors $\v_i,\w_i\in\R^n$ so that $\bpi_i=\diag{\v_i} \kernel \diag{\w_i}.$  If $M$ is represented using $n$ samples, this reduces storage and algorithmic runtime by a factor of $n$.
+
+Algorithm~\ref{alg:barycenter} documents the barycenter method.  It initializes all the $\bpi_i$'s to $\kernel$ by taking $\v_i=\w_i=\1$ for all $i$ and then alternatingly projects using the formulas above.  The only operations needed are applications of $\kernel$ and elementwise arithmetic.  We never need to store the matrix of $\kernel$ explicitly and instead \emph{apply} it iteratively; this structure is key when $\kernel$ represents a heat kernel obtained by solving a linear system or convolution over an image.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\paragraph{Entropic Sharpening.} Barycenters computed using Algorithm~\ref{alg:barycenter} have similar qualitative structure to barycenters with respect to the true Wasserstein distance $\W_2$ but may be smoothed thanks to entropic regularization.  This can create approximations of the barycenter that qualitatively appear too diffuse.
+
+We introduce a simple modification of the projection method counteracting this phenomenon.  Define the entropy of $\p$ to be
+$$H(\p) \eqdef -\sum_i \a_i \p_i\ln\p_i.$$
+We expect the non-regularized Wasserstein barycenter of a set of distributions to have entropy bounded by that of the input distributions $(\p_i)_{i=1}^k.$  Hence, take $H_0\eqdef \max_i H(\p_i)$ (or a user-specified bound).  Then, we can modify the barycenter problem slightly:
+\begin{equation}\label{eq:entropy_bounded}
+\begin{array}{rl}
+\min_{\p} & \sum_{i=1}^k \alpha_i\W^2_{2,\kernel}(\p,\p_i)\\
+\textrm{s.t.} %& \p_1,\ldots,\p_k\textrm{ are given.}\\
+& H(\p)\leq H_0.
+\end{array}
+\end{equation}
+That is, we wish to find a distribution with bounded entropy that minimizes the sum of transportation distances.
+
+The problem in~\eqref{eq:entropy_bounded} is not convex, but we apply Bregman projections nonetheless.  We augment $\mathcal C_2$ with an entropy constraint:
+$$\overline {\mathcal C}_2\eqdef \mathcal C_2\cap \{(\bpi_i)_{i=1}^k:H(\bpi_i\a)+\a^\top \bpi_i\a\leq H_0+1\ \forall i\in\{1,\ldots,k\}\}$$
+
+\begin{algorithm}[t]
+\fbox{\hspace{-.1in}\parbox{\columnwidth}{%
+\begin{algorithmic}
+\Function{Wasserstein-Barycenter}{$\{\p_i\},\{\alpha_i\};\kernel,\a$}
+    \State{\emph{// Initialization}}
+    \Let{$\v_1,\ldots,\v_k$}{$\1$}
+    \Let{$\w_1,\ldots,\w_k$}{$\1$}
+    % \Let{$\alpha$}{$\alpha/(\1^\top\alpha)$}\Comment{Normalize coefficients}
+    
+    \algspace
+    \State{\emph{// Iterate over $\mathcal C_i$'s}}
+    \For{$j= 1,2,3,\ldots$}
+        \Let{$\p$}{$\1$}
+        \For{$i=1,\ldots,k$}
+            \State{\emph{// Project onto $\mathcal C_1$}}
+            \Let{$\w_i$}{$\p_i \oslash \kernel(\a\otimes\v_i)$}
+            \Let{$\d_i$}{$\v_i \otimes \kernel(\a\otimes\w_i)$}%\Comment{Prepare for $\mathcal C_2$ projection}
+            \Let{$\p$}{$\p\otimes \d_i^{\alpha_i}$}%\Comment{Elementwise exponential}
+        \EndFor     
+        \algspace
+        \State{\emph{// Optional}}
+        \Let{$\p$}{\Call{Entropic-Sharpening}{$\p,H_0;\a$}}
+        \algspace
+        \State{\emph{// Project onto $\mathcal C_2$}}
+        \For{$i=1,\ldots,k$}
+            \Let{$\v_i$}{$\v_i\otimes\p\oslash\d_i$}
+        \EndFor
+    \EndFor
+
+    \State \Return{$\p$}
+\EndFunction
+  \end{algorithmic}
+}}
+\vspace{-3mm}
+\caption{Wasserstein barycenter using iterated Bregman projection.  Both of the inner \textbf{for} loops can be parallelized over $i$.}
+\label{alg:barycenter}
+\end{algorithm}
+
+The $\a^\top \bpi_i\a$ term is for algebraic convenience in proving the proposition below; at convergence, $\a^\top\bpi_i\a=1$ and this term cancels with the $1$ on the right-hand side of the inequality.  Remarkably, despite the nonconvexity, KL projection onto $\overline{\mathcal C}_2$ can be carried out efficiently, as proved in the supplemental document:
+\begin{proposition}
+There exists $\beta\in\R$ such that the KL projection of $(\bpi_i)_{i=1}^k$ %of $(\bar\bpi_i)_{i=1}^k$ 
+onto $\overline {\mathcal C}_2$ satisfies $\mathrm{proj}_{\overline{\mathcal C}_2}\,\bpi_i=\diag{\p\oslash\d_i}\bpi_i$ for all $i\in\{1,\ldots,k\},$ where $\d_i=\bpi_i\a$ and $\p=\left(\prod_i \d_{i}^{\alpha_i}\right)^\beta.$
+\end{proposition}
+That is, the entropy-constrained projection step takes the result of the unconstrained projection to the $\beta$ power to achieve the entropy bound.  The exponent $\beta$ can be computed using single-variable root-finding (e.g.\ bisection or Newton's method), as shown in Algorithm~\ref{alg:entropic_sharpening}.  Empirically, the Bregman algorithm converges to a near-barycenter with limited entropy when using this new projection step as long as $H_0$ is on the order of the entropy of the $\p_i$'s.  For difficult test cases, higher-quality barycenters can be recovered by first solving the problem without an entropy constraint and then iteratively introducing entropic sharpening with tightening bounds.
+%\vspace{-1mm}
+
+%\leo{I presume alternatively the entropy bound can be sharpened as the iterations proceed. I find it interesting that constrained projection corresponds to raising to a power the unconstrained one ...}\justin{Added mention of this in the text.  And yes, I find it surprising as well!  Check out the supplemental doc for a proof.}
+
+\begin{algorithm}[t]
+\fbox{\hspace{-.1in}\parbox{\columnwidth}{%
+\begin{algorithmic}
+\Function{Entropic-Sharpening}{$\p,H_0;\a$}
+	\If{$H(\p)+\a^\top\p>H_0+1$}
+		\Let{$\beta$}{\Call{Find-Root}{$\a^\top\p^\beta+H(\p^\beta)-(1+H_0)$; $\beta\geq0$}}
+%	\Else
+\EndIf
+		\algorithmicelse\ $\beta\gets1$%\Let{$\beta$}{$1$} % hack to save a line
+%	\EndIf
+	\State \Return{$\p^\beta$}%$(\p_1^\beta,\ldots,\p_n^\beta)$}
+\EndFunction
+  \end{algorithmic}
+}}
+\vspace{-3mm}
+\caption{Entropic sharpening method; we default to $\beta=1$ when no root exists but rarely encounter this problem in practice.\vspace{-6mm}}\label{alg:entropic_sharpening}%\vspace{-4mm}
+\end{algorithm}
+
+%\vspace{-3mm}
+Fig.~\ref{fig:sharpening_example} illustrates the effect of the bound $H_0$ on the barycenter of two distributions.  As $H_0$ decreases, the barycenter becomes sharply peaked about its modes, counteracting the aggressive regularization.
+
+\begin{figure}[t]
+\centering
+%\begingroup
+%\setlength{\medmuskip}{0mu}
+$$
+\begin{array}{c@{}c|c@{}c@{}c@{}c}
+\includegraphics[width=.13\linewidth]{figures/entropyTest/p0_cropped.png.pdf}&
+\includegraphics[width=.13\linewidth]{figures/entropyTest/p1_cropped.png.pdf}&
+\includegraphics[width=.13\linewidth]{figures/entropyTest/entropy_barycenter_Inf_cropped.png.pdf}&
+\includegraphics[width=.13\linewidth]{figures/entropyTest/entropy_barycenter_-0.568522_cropped.png.pdf}&
+\includegraphics[width=.13\linewidth]{figures/entropyTest/entropy_barycenter_-1.56852_cropped.png.pdf}&
+\includegraphics[width=.13\linewidth]{figures/entropyTest/entropy_barycenter_-2.56852_cropped.png.pdf}
+\\
+ p_0 &
+ p_1 &
+ \infty &
+ H+2 &
+ H+1 &
+ H\\
+ \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{4}{@{}l@{}}{%
+      \raisebox{.5\normalbaselineskip}{%
+      \rlap{$\underbrace{\hphantom{\mbox{$p\lor{}q$\hspace*{1.3in}$p\land{}q$}}}_{H_0}$}}}
+\end{array}
+$$
+\vspace{-.25in}
+%\endgroup
+\caption{Barycenters with different levels of entropic sharpening, controlled by $H_0$.  Here, $H\eqdef\max\{H(\p_1),H(\p_2)\}\approx-2.569$.}
+\vspace{-4mm}
+\label{fig:sharpening_example}
+\end{figure}
+
+
+%\leo{It is hard to see the distribution peaks on the cat.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Displacement Interpolation}\label{sec:displacement_interpolation}
+\vspace{-2mm}
+
+%\gabriel{This is just a special case of barycenter in the case $k=2$. To gain space (I believe we should) this could be fused as a sub-paragraph without new equation and just putting $\alpha=(1-t,t)$ as convention. }% justin disagrees -- while Gabriel's argument makes sense, many people in graphics seem excited specifically about displacement interpolation, so I think we should highlight it if we have space
+
+The $2$-Wasserstein distance $\W_2$ has a distinguishing \emph{displacement interpolation} property~\cite{mccann-1997}. $\W_2(\mu_0,\mu_1)$ is the length of a geodesic $\mu_t:[0,1]\rightarrow\Prob(M)$ in $\Prob(M)$ with respect to a metric induced by squared geodesic distances on $M$.  The time-varying sequence of distributions $\mu_t$ transitions from $\mu_0$ to $\mu_1$, moving mass continuously along geodesic paths on $M$.  As a point of comparison, Solomon et al.~\shortcite{solomon-2014} use flows along $M$ to evaluate the $1$-Wasserstein distance $\W_1$; the resulting interpolation, however, is given by the trivial formula $\mu_t=(1-t)\mu_0+t\mu_1$.% that does not involve the geometry of $M$.
+
+Agueh and Carlier~\shortcite{agueh-2011} prove under suitable regularity that the interpolating path $\mu_t$ from $\mu_0$ to $\mu_1$ satisfies
+\begin{equation}\label{eq:interp}
+\mu_t = \inf_{\mu\in\Prob(M)} \left[(1-t)\W_2^2(\mu_0,\mu)+t\W_2^2(\mu,\mu_1)\right],
+\end{equation}
+for all $t\in[0,1].$  This formula provides a means to compute $\mu_t$ directly rather than optimizing an entire path in probability space.  %Hence, we can use our barycenter algorithm for displacement interpolation. 
+
+In the discrete case, given $\p_0,\p_1\in\Prob(M)$ we wish to find a time-varying $\p_t$  interpolating between the two.  To do so, we define
+\begin{equation}
+\p_t\eqdef\min_{\p\in\Prob(M)} \left[(1-t) \W^2_{2,\kernel}(\p_0,\p) + t \W^2_{2,\kernel}(\p,\p_1)\right].
+\end{equation}
+This can be minimized using Algorithm~\ref{alg:barycenter} with $\alpha=(1-t,t)$.
+
+%\leo{Can one do better if one has to do this computation for many $t$'s?}\justin{We had the same question!  The result appears to be subtle -- reusing information here is difficult, because the alternating projection algorithm strongly depends on its starting point as the point you're projecting -- if you reuse from a different $t$ this falls apart.}
+
+%\leo{Again, the distribution peaks are hard to see.}
+
+\algnewcommand{\IIf}[1]{\State\algorithmicif\ #1\ \algorithmicthen}
+\algnewcommand{\EndIIf}{\unskip\ \algorithmicend\ \algorithmicif}
+\begin{algorithm}[b!]
+\fbox{\hspace{-.1in}\parbox{\columnwidth}{%
+\begin{algorithmic}
+\Function{Wasserstein-Propagation}{$V,E,V_0,\p(V_0);\kernel,\a$}
+    \State{\emph{// Initialization}}
+    \Let{$\v_1,\ldots,\v_{|E|}$}{$\1$}
+    \Let{$\w_1,\ldots,\w_{|E|}$}{$\1$}
+    
+    \State{\emph{// Iterate over $\mathcal C_i$'s}}
+    \For{$j= 1,2,3,\ldots$}
+        \For{$v\in V$}
+            \If{$v\in V_0$}
+                \Let{$\p$}{$\p_0(v)$}
+                \State{\emph{// Project adjacent $\bpi_e$'s}}
+                \For{$e\in N(v)$}
+                    \State{\algorithmicif\ $e=(w,v)$\ \algorithmicthen\ $\w_e\gets\p\oslash \kernel(\a\otimes\v_e)$}
+                    \State{\algorithmicif\ $e=(v,w)$\ \algorithmicthen\ $\v_e\gets\p\oslash \kernel(\a\otimes\w_e)$}
+                \EndFor
+            \ElsIf{$v\not\in V_0$}
+                \State{\emph{// Estimate distribution}}
+                \Let{$\omega$}{$\sum_{v\in e} \alpha_e$}
+                \Let{$\p_v$}{$\1$}
+                \For{$e\in N(v)$}
+                    \State{\algorithmicif\ $e=(w,v)$\ \algorithmicthen\ $\d_e\gets \w_e \otimes \kernel(\a\otimes\v_e)$}
+                    \State{\algorithmicif\ $e=(v,w)$\ \algorithmicthen\ $\d_e\gets \v_e \otimes \kernel(\a\otimes\w_e)$}
+                    \Let{$\p_v$}{$\p_v\otimes\d_e^{\alpha_e/\omega}$}
+                \EndFor
+                \For{$e\in N(v)$}
+                    \State{\algorithmicif\ $e=(w,v)$\ \algorithmicthen\ $\w_e\gets\w_e \otimes\p_v\oslash\d_e$}
+                    \State{\algorithmicif\ $e=(v,w)$\ \algorithmicthen\ $\v_e\gets\v_e\otimes\p_v\oslash\d_e$}
+                \EndFor
+            \EndIf
+        \EndFor
+    \EndFor
+
+    \State \Return{$\p_1,\ldots,\p_{|V|}$}
+\EndFunction
+  \end{algorithmic}
+}}
+\vspace{-3mm}
+\caption{Wasserstein propagation via Bregman projection.}\label{alg:propagation}
+\end{algorithm}
+
+Fig.~\ref{fig:displacement_interp_example} shows displacement interpolation between two multi-peaked distributions on a triangle mesh, with and without entropic sharpening.  Again, sharpening avoids entropy introduced by the regularizer.% regularizing the transportation problem.  %Empirically, time-stepping the heat equation using the backward Euler time step
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}[t]
+\centering
+\graphicspath{ {figures/propagation_special_cases/} }
+\begin{tabular}{@{}cc@{}}
+\def\svgwidth{.15\textwidth}\input{figures/propagation_special_cases/star.pdf_tex}&
+\def\svgwidth{.15\textwidth}\input{figures/propagation_special_cases/line.pdf_tex}\\
+Barycenter &
+Displacement interpolation
+\end{tabular}
+\vspace{-2mm}
+\caption{Wasserstein propagation can be used to model barycenter problems and displacement interpolation.  Here, we show the corresponding graph $G=(V,E)$; vertices in $V_0$ have solid shading.}
+ \vspace{-3mm}
+\label{fig:propagation_special_cases}
+\end{figure}
+
+\subsection{Wasserstein Propagation}\label{sec:propagation}
+% \vspace{-2mm}
+%\gabriel{Why using $\rho$ and not $\mu$ to indicate measures ? }
+
+Generalizing the barycenter problem, we consider the ``Wasserstein propagation'' problem posed by Solomon et al.~\shortcite{solomon-2014-2}.  Suppose $G=(V,E)$ is a graph with edge weights $\alpha:E\rightarrow \R_+$; take $|V|=m$.  With each vertex $v\in V$, we associate a label $\mu_v\in\Prob(M)$, whose value is a distribution over another domain $M$.  Given fixed labels $\mu_v$ on a subset of vertices $V_0\subseteq V$, we interpolate to the remaining vertices in $V\backslash V_0$ by solving\vspace{-2mm}
+%\gabriel{I do not think $E[\ldots]$ is needed/used. To be consistence with previous section, I would write $\min_{(\mu_v)_v} \ldots$  instead of $E[(\mu_i)_{i=1}^m]\eqdef$ (furthermore $E$ stands for edges)}
+$$\min_{(\mu_i)_{i=1}^m}\sum_{(v,w)\in E} \alpha_{(v,w)}\W_2^2(\mu_v,\mu_w),\vspace{-2mm}$$
+subject to the constraint that $\mu_v$ is fixed for all $v\in V_0.$
+
+As an example, as proposed in~\cite{solomon-2012}, suppose we are given two meshes and wish to find a map from vertices of one to vertices of the other.  We can relax this problem by instead constructing maps to probability distributions \emph{over} vertices of the second mesh.  Given ground-truth correspondences for a few vertices, the optimization above fills in missing data.
+
+Propagation can be modeled using convolutional distances as
+\begin{equation}\label{eq:propagation}
+\begin{array}{rl}
+	\min_{\p_v} &\sum_{(v,w)\in E} \alpha_{(v,w)} \W^2_{2,\kernel}(\p_v,\p_w)
+    \\[2mm]
+\textrm{s.t.} & \p_v\textrm{ fixed }\forall v\in V_0.
+\end{array}
+\end{equation}
+
+Following the optimizations in previous sections, we instead optimize over transportation matrices $\bpi_e$ for each $e\in E$:
+$$
+\begin{array}{rl}
+\min_{\bpi_e} & \sum_{e\in E} \alpha_{(v,w)}\KL(\bpi_e|\kernel)\\
+\textrm{s.t.} & \bpi_e \a = \p_v\ \forall e=(v,w)\\
+& \bpi_e^\top\a = \p_w\ \forall e=(v,w)\\
+& \p_v\textrm{ fixed }\forall v\in V_0.
+\end{array}
+$$
+The interpolated $\p$'s will be distributions because they must have the same integrals as the $\p$'s in $V_0$.  Algorithm~\ref{alg:propagation} uses iterated Bregman projection to solve this problem by iterating over one vertex in $V$ at a time, projecting onto constraints fixing all marginals for that vertex.  Applying Propositions~\ref{prop:interp_formulas} and~\ref{prop:interp_formulas2}, we can write $\bpi_e=\diag{\v_e} \kernel\diag{\w_e}$ and update the $\v_e$'s and $\w_e$'s using simple rules.
+
+Propagation encapsulates many other optimizations in Wasserstein space.  Fig.~\ref{fig:propagation_special_cases} illustrates two examples.  The convolutional barycenter problem (\S\ref{sec:barycenters}) is exactly propagation where $G$ is a star graph, with vertices in $V_0$ on the spokes and the unknown distribution $\p$ associated with the center.  An alternative model for displacement interpolation (\S\ref{sec:displacement_interpolation}) discretizes $t\in[0,1]$ as a line graph, with two vertices in $V_0$ at the ends of the interval.  This model is different from~\eqref{eq:interp}, which \emph{directly} predicts the interpolation result at time $t$ rather than computing the entire interpolation simultaneously.
+
+\begin{figure*}[t]
+\centering
+\begin{tabular}{c@{}c@{}c@{}c@{}c@{\hspace{.01in}}|@{\hspace{.01in}}c@{}c@{}c@{}c@{}c}
+\includegraphics[width=.09\linewidth]{figures/displacement/p0_cropped.png.pdf}&
+\includegraphics[width=.09\linewidth]{figures/displacement/p0.25_cropped.png.pdf}&
+\includegraphics[width=.09\linewidth]{figures/displacement/p0.5_cropped.png.pdf}&
+\includegraphics[width=.09\linewidth]{figures/displacement/p0.75_cropped.png.pdf}&
+\includegraphics[width=.09\linewidth]{figures/displacement/p1_cropped.png.pdf}&
+\includegraphics[width=.09\linewidth]{figures/displacement/p0_entropy_bounded_cropped.png.pdf}&
+\includegraphics[width=.09\linewidth]{figures/displacement/p0.25_entropy_bounded_cropped.png.pdf}&
+\includegraphics[width=.09\linewidth]{figures/displacement/p0.5_entropy_bounded_cropped.png.pdf}&
+\includegraphics[width=.09\linewidth]{figures/displacement/p0.75_entropy_bounded_cropped.png.pdf}&
+\includegraphics[width=.09\linewidth]{figures/displacement/p1_entropy_bounded_cropped.png.pdf}\\
+$t=0$ & $t=\nicefrac{1}{4}$ & $t=\nicefrac{1}{2}$ & $t=\nicefrac{3}{4}$ & $t=1$&
+$t=0$ & $t=\nicefrac{1}{4}$ & $t=\nicefrac{1}{2}$ & $t=\nicefrac{3}{4}$ & $t=1$\\
+\multicolumn{5}{@{\hspace{.1in}}l@{}}{%
+      \raisebox{.5\normalbaselineskip}{%
+      \rlap{$\underbrace{\hphantom{\mbox{$p\lor{}q$\hspace*{2.6in}$p\land{}q$}}}_{H_0=\infty}$}}} &
+      \multicolumn{5}{@{}l@{}}{%
+      \raisebox{.5\normalbaselineskip}{%
+      \rlap{$\underbrace{\hphantom{\mbox{$p\lor{}q$\hspace*{2.6in}$p\land{}q$}}}_{H_0=\max\{H(\p_0),H(\p_1)\}}$}}}
+\end{tabular}
+\caption{Displacement interpolation without (left) and with (right) entropy limits.  The optimization implicitly matches the two peaks at $t=0$ and $t=1$ and moves mass smoothly from one distribution to the other.}
+\label{fig:displacement_interp_example}
+\end{figure*}
+
+%Suppose we discretize $[0,1]$ into $k+1$ time steps.  Then, on a discrete $M$ we can carry out \emph{discrete displacement interpolation} from $\p_0\in\Prob(M)$ to $\p_k\in\Prob(M)$ with respect to kernel $K$ by solving
+%\begin{equation}
+%\begin{array}{rl}
+%\min_{\p_0,\ldots,\p_k} & \sum_{i=1}^k \D_K(\p_i,\p_{i-1})\\
+%\textrm{s.t.} & \p_0, \p_k\textrm{ are given.}
+%\end{array}
+%\end{equation}
+%Writing this optimization in terms of transportation plans yields an equivalent problem:
+%$$
+%\begin{array}{rl}
+%\min_{\{\bpi_i\}} & \sum_{i=1}^k \KL(\bpi_i|K)\\
+%\textrm{s.t.}
+%&\bpi_1^\top \a = \p_0\\
+%&\bpi_i \a=\bpi_{i+1}^\top \a\ \forall i\in\{1,\ldots,k-1\}\\
+%&\bpi_k \a = \p_k
+%%& \bpi_i\geq0\ \forall i\in\{1,\ldots,k\}
+%\end{array}
+%$$
+%As suggested by \citeme, this optimization can be viewed as a \emph{projection} with respect to KL divergence of $K$---or rather the union of $k$ kernels $K$---onto the constraint set $\cup_{i=0}^k \mathcal C_i$ where the individual constraints are given by
+%\begin{align*}
+%\mathcal C_0 &\equiv \{(\bpi_1,\ldots,\bpi_k) : \bpi_1^\top \a=\p_0\}\\
+%\mathcal C_i &\equiv \{(\bpi_1,\ldots,\bpi_k) : \bpi_i\a=\bpi_{i+1}^\top \a\} \ \forall i\in\{1,\ldots,k-1\} \\
+%\mathcal C_k &\equiv \{(\bpi_1,\ldots,\bpi_k) : \bpi_k\a=\p_k\}.
+%\end{align*}
+%Hence, the \emph{iterated Bregman projection} algorithm applies, which initializes all the $\bpi_i$'s to $K$ and then cyclically projects the current iterate onto one $\mathcal C_i$ at a time.  We highlight the projection operation in the following proposition:
+%
+%\begin{proposition}\label{prop:interp_formulas}
+%Projections for discrete interpolation can be carried out as follows:
+%\begin{align*}
+%\mathrm{proj}_{\mathcal C_0} \bpi_1 &= \bpi_1 D_{\p_0\oslash \bpi_1^\top \a}\\
+%\mathrm{proj}_{\mathcal C_i} (\bpi_i, \bpi_{i+1}) &= (D_\mathbf c^{-1} \bpi_i,\bpi_{i+1} D_\mathbf c) \ \forall i\in\{1,\ldots,k-1\}\\
+%&\hspace{.25in}\textrm{ where }\mathbf c=\sqrt{\bpi_i\a \oslash \bpi_{i+1}^\top\a}\\
+%\mathrm{proj}_{\mathcal C_k} \bpi_k &= D_{\p_k \oslash \bpi_k\a}\bpi_k
+%\end{align*}
+%\end{proposition}
+%\begin{proof}\justin{For supplemental doc}
+%We begin with the first and last constraints.  Expanding the energy term gives the following form for the optimization:
+%$$
+%\begin{array}{rl}
+%\min_{\bpi\in\R^{n\times n}} & \sum_{ij} \pi_{ij}\left(\ln \frac{\pi_{ij}}{\pi^0_{ij}} -1\right)a_ia_j\\
+%\textrm{s.t.} & \bpi\a=\p
+%\end{array}
+%$$
+%For Lagrange multiplier $\lambda\in\R^{n}$, the first-order optimality condition of this optimization is
+%$$0=a_ia_j \ln\frac{\pi_{ij}}{\pi^0_{ij}}-\lambda_ia_j\implies \lambda_i=a_i\ln\frac{\pi_{ij}}{\pi^0_{ij}}.$$
+%After taking $c_i\equiv e^{\lambda_i/a_i}$, we can write $\bpi=D_\mathbf c\bpi^0$.  Since $\bpi\a=\p$, we know $D_\mathbf c \bpi^0 \a=\p$, showing $\mathbf c=\p\oslash \bpi^0\a$.
+%
+%For the intermediate steps, we solve a slightly different optimization
+%$$
+%\begin{array}{rl}
+%\min_{\bpi,\bar\bpi} & \sum_{ij} \left[
+%\pi_{ij}\left(\ln \frac{\pi_{ij}}{\pi^0_{ij}} -1\right)
+%+
+%\bar\pi_{ij}\left(\ln \frac{\bar\pi_{ij}}{\bar\pi^0_{ij}} -1\right)
+%\right]a_ia_j\\
+%\textrm{s.t.}&\bpi\a=\bar\bpi^\top\a
+%\end{array}
+%$$
+%This system has two first-order optimality conditions:
+%\begin{align*}
+%0&=a_ia_j\ln\frac{\pi_{ij}}{\pi^0_{ij}}+\lambda_ia_j\implies \pi_{ij}=\pi^0_{ij}e^{-\lambda_i/a_i}\\
+%0&=a_ia_j\ln\frac{\bar\pi_{ij}}{\bar\pi^0_{ij}}-a_i\lambda_j\implies \bar\pi_{ij}=\bar\pi^0_{ij}e^{\lambda_j/a_j}
+%\end{align*}
+%Again defining $c_i\equiv e^{\lambda_i/a_i}$, we have $\bpi=D^{-1}_\mathbf c \bpi^0$ and $\bar\bpi=\bar \bpi^0 D_\mathbf c$.  Returning to the original constraint, $D^{-1}_\mathbf c \bpi^0\a=D_\mathbf c (\bar\bpi^0)^\top \a\implies D_\mathbf c^2 (\bar \bpi^0)^\top\a=\bpi^0\a\implies \c=\sqrt{\bpi^0\a\oslash (\bar \bpi^0)^\top\a}.$
+%\end{proof}
+%
+%The resulting Bregman projection algorithm is detailed in Figure~\ref{fig:displacement_interp}.  The idea is to represent each $\bpi_i$ as a product $D_{\v_i} K D_{\w_i}$. and only maintain the vectors $\v_i,\w_i$ for all $i$.
+%
+%\begin{figure}
+%\fbox{\hspace{-.1in}\parbox{\columnwidth}{%
+%\begin{algorithmic}
+%\Function{Displacement-Interpolation}{$\p_0,\p_k;K,\a$}
+%	\Let{$\v_1,\ldots,\v_k$}{$\1$}\Comment{Initialize all $\bpi_i$'s to $K$}
+%	\Let{$\w_1,\ldots,\w_k$}{$\1$}
+%	
+%	\For{$j= 1,2,3,\ldots$}\Comment{Each iteration over the $\mathcal C_i$'s}
+%		\Let{$\w_1$}{$(\w_1\otimes \p_0)\oslash(D_{\w_1}K^\top D_{\v_1}\a)$}\Comment{Project onto $\mathcal C_0$}
+%\algspace
+%		\For{$i= 1,\ldots,k-1$}
+%			\Let{$\mathbf c$}{$\sqrt{(D_{\v_i}KD_{\w_i}\a)\oslash(D_{\w_{i+1}}K^\top D_{\v_{i+1}}\a)}$}
+%			\Let{$\v_i$}{$\v_i\oslash\mathbf c$}\Comment{Project onto the middle $\mathcal C_i$'s}
+%			\Let{$\w_{i+1}$}{$\w_{i+1}\otimes\mathbf c$}
+%		\EndFor
+%\algspace
+%		\Let{$\v_k$}{$(\v_k\otimes\p_k)\oslash(D_{\v_k}K D_{\w_k}\a)$}\Comment{Project onto $\mathcal C_k$}
+%	\EndFor
+%
+%	\For{$i=1,\ldots,k-1$}\Comment{Conclude by computing the $\p_i$'s}
+%		\Let{$\p_i$}{$D_{\v_i}KD_{\w_i}\a$}\Comment{Marginalize $\bpi_i$}
+%	\EndFor
+%	\State \Return{$\{\p_0,\ldots,\p_k\}$}
+%\EndFunction
+%  \end{algorithmic}
+%}}
+%\caption{Displacement interpolation using iterated Bregman projection.}\label{fig:displacement_interp}
+%\end{figure}
+

@@ -1,0 +1,90 @@
+% !TEX root = ../convolutional_w2.tex
+\section{Preliminaries}
+
+%\fernando{personal taste: reminders is to informal, although we are not being super formal either.}%\justin{not sure i understand, but i did throw in "informal"}
+
+We begin with background on optimal transportation. We consider a compact, connected Riemannian manifold $M$ rescaled to have unit volume and possibly with boundary, representing a domain like a surface or image plane.  We use $d:M\times M\rightarrow\R_+$ to denote the geodesic distance function, so $d(x,y)$ is the shortest distance from $x$ to $y$ along $M$.  We use $\Prob(M)$ to indicate the space of probability measures on $M$ and $\Prob(M\times M)$ to refer to probability measures on the \emph{product space} of $M$ with itself. To avoid confusion, we will refer to elements $\mu_0,\mu_1,...\in \Prob(M)$ as \emph{marginals} and to joint probabilities $\pi_0,\pi_1,...\in \Prob(M\times M)$ as \emph{couplings}.
+
+%, with elements $\mu$ encoding distributions of unit mass ($\mu(M)=1$). 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Optimal Transportation}
+
+%\gabriel{ I think it would be good to recall that OT actually deals with measures that do not necessarily have density (for instance, an OT coupling never has a density), and that the notation $\mu(x,y)$ should really be understood in the sense of distribution (e.g. it can contains Dirac masses).  }
+A source marginal $\mu_0$ can be transformed into a target marginal $\mu_1$ by means of a \emph{transportation plan} $\pi$, a coupling in $\Prob(M\!\times\!M)$ describing the amount of mass $\pi(x,y)$ to be displaced from $\mu_0$ at $x$ towards $y$ to create $\mu_1$ in aggregate. Mass conservation laws impose that such couplings are necessarily in the set
+$$
+%\begin{equation}
+%\label{eq:PlanSpace}
+\Pi(\mu_0,\mu_1) \!\eqdef\!  \{ \pi \in \Prob(M \times M) \!:\! \pi(\cdot,M)  =  \mu_0, \pi(M,\cdot)  =  \mu_1 \}.
+%\end{equation}
+$$
+%
+The optimal transportation problem from $\mu_0$ to $\mu_1$ seeks a coupling $\pi\in\Pi(\mu_0,\mu_1)$ with minimal cost, computed as the integral of squared distances $d^2$ against $\pi$. Formally, the 2-Wasserstein distance between $\mu_0$ and $\mu_1$ is thus defined as
+\begin{equation}
+\label{eq:WassersteinDistance}
+\W_2(\mu_0,\mu_1) \eqdef \left[\inf_{\pi\in\Pi(\mu_0,\mu_1)} \iint_{M\times M}\hspace{-.15in} d(x,y)^2\, \drm\pi(x,y)\right]^{\nicefrac{1}{2}}\hspace{-4mm}.
+\end{equation}
+The 2-Wasserstein distance satisfies all metric axioms and has several attractive properties---see~\cite[\S7]{villani-2003} for details.
+
+% Hereafter, we also denote the optimal plan associated to the solution of $\W_p(\mu_0,\mu_1)$ as $\overline\pi$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Kullback-Leibler Divergence}
+
+The modified transportation problems we consider involve quantities from information theory, whose definitions we recall below.  We refer the reader to~\cite{cover-2006} for detailed discussions.
+
+A coupling $\pi$ is \emph{absolutely continuous} with respect to the volume measure when it admits a density function $p$, so that
+$\pi(U) \!=\! \smash{\int_U} p(x,y)\,\dx\,\dy\,, \forall U\!\subseteq\!M\times\!M$. To simplify notation, we will use $\pi$ to indicate both the measure and its density.
+% Measures that are not absolutely continous are defined instead in the distributional sense, e.g., a Dirac measure $\delta_x$ satisfies $\delta_x(U)\!=\!1$ if and only if $x\!\in\!U$.
+
+The (differential) entropy of a coupling $\pi$ on $M\!\times\!M$ is defined as the concave energy
+\begin{equation}
+\label{eq:Entropy}
+H(\pi) \eqdef - \iint_{M\times M} \hspace{-.15in} \pi(x,y)\ln \pi(x,y)\,\dx\,\dy.
+\end{equation}
+By definition, $H(\pi)\!=\!-\infty$ when $\pi$ is not absolutely continuous, and $H(\pi)\!=\!0$ when $\pi$ is a measure of uniform density $\pi(x,y)\!\equiv\!1$.%
+
+%\gabriel{I propose to rename $(\rho_0,\rho_1)$ bellow as $(\pi,\rho)$ and add that one assume that $\iint \pi = 1$, because I believe it is needed for Bregman projection (at least when we move to the discrete setting).  }
+%\justin{but, use for bregman projection isn't relevant here?  we don't talk about that until later}
+
+Given an absolutely continuous measure $\pi \in \Prob(M\!\times\!M)$ and a positive function $\mathcal{K}$ on $M\!\times\!M$, we define the \emph{Kullback-Leibler} (KL) divergence between $\pi$ and $\mathcal{K}$ as
+%\gabriel{There is an $A^2$ missing in the definition of KL if you want to obtain~\eqref{eq:minKL}}
+\begin{equation}
+\label{eq:KL}
+\KL(\pi|\mathcal{K}) \eqdef \iint_{M\times M}\!\!\! \pi(x,y)\left[\ln \frac{\pi(x,y)}{\mathcal{K}(x,y)}-1\right] \dx\,\dy.
+% \KL(\rho_0|\rho_1) \eqdef \iint_{M\times M}\!\!\!\left(\rho_0\ln \left[A^2\frac{\rho_0}{\rho_1}\right] + \rho_0 - \rho_1\right)\dx\dy,
+\end{equation} 
+%\gabriel{I have added this sentence, should be probably enhanced}
+%Note that our definition $\KL(\pi|\mathcal{K})$ differs from the usual (generalized) KL-divergence definition by an additive constant independent on $\pi$.%\justin{Why?}
+%\gabriel{I have commented the sentence about KL not being a distance. }
+
+% The KL divergence is similar to a distance function, in that it is convex with respect to $\rho_0$ and equals zero exactly when $\rho_0\!=\!\rho_1$.   It is \emph{not} a metric, however, since it lacks symmetry ($\KL(\mu_0|\mu_1) \neq \KL(\mu_1|\mu_0)$) and does not satisfy the triangle inequality.
+
+
+
+% \KL(\rho_0|\rho_1) \eqdef \iint_{M\times M} \!\!\!\!\!\!\!\!\!\!\!\!\!\!\dx\,\dy \left[\rho_0(x,y)\left(\ln \left[A^2\frac{\rho_0(x,y)}{\rho_1(x,y)}\right]+1\right) - \rho_1(x,y)\right]. TOO LONG!
+%\marco{I think what follows can be deleted, because it's never used}
+%\fernando{we use in sec 4 to discuss that the entropy-reg. distance is not really a distance. Do we need the extra term $\rho_0-\rho_1$ in the definition of KL? I think its purpose is to cancel the $A^2$ scaling.}
+%\gabriel{I tend to agree that it is not really used in the discussion, so could be removed I think. }
+%\justin{I kind of like it, because it gives some intuition about KL.  Remember graphics folks, unlike readers from ML or optimization, may never have seen KL divergence before.  If we're low onspace we can remove, but for now it can stay}
+
+
+
+
+% \fernando{I am a bit confused about our notation for measure versus density. The functionals above are defined on measures and the integrals are on density. It looks like we abuse notation in the definition of the regularized Wasserstein distance, because the integrals involve the measure $\pi$ instead of a density.}\justin{Agreed in principle, but I can't find a point where it gets in the way of understanding.  Suggested fix?}\marco{Hopefully this does the trick...}
+
+% Suppose $M$ is a compact manifold domain, possibly with boundary.  In most of our applications, $M$ will be two-dimensional, e.g.\ representing the image plane or a meshed surface, but this assumption is not critical for our current discussion.  We will use $d(\cdot,\cdot):M\times M\rightarrow\R^+$ to denote the geodesic distance function, so $d(x,y)$ is the shortest-path distance from $x$ to $y$ along $M$.
+
+% Our main objects of consideration will be \emph{probability measures} $\mu\in\Prob(M)$.  Informally, $\mu$ can be thought of as a distribution of unit mass along the surface; for a subset $U\subseteq M$, $\mu(U)$ represents the amount of mass from $\mu$ contained in $U.$  Many geometric quantities and features can be encoded in distributional language; for instance, a point $x\in M$ can be represented as a ``delta function'' $\delta_x\in\Prob(M)$ putting mass at $x$.
+
+% Of fundamental importance to applications in geometry processing and graphics is the computation of a distance between distributions that is related to the pointwise geodesic distance $d(\cdot,\cdot).$  Several previous works make use of the \emph{Wasserstein} or \emph{earth mover's distance} (EMD).  This distance measures the minimum work needed to transform one distribution into another, with cost proportional to a power of the geodesic distance the mass travels along the surface.  It is defined as follows, for $p\geq1$:
+% \begin{equation}\label{eq:wasserstein_dist}
+% \W_p(\mu_0,\mu_1)\equiv \left[\inf_{\pi\in\Pi(\mu_0,\mu_1)} \iint_{M\times M} d(x,y)^p\,d\pi(x,y)\right]^{\nicefrac{1}{p}}.
+% \end{equation}
+% Here, $\Pi(\mu_0,\mu_1)\subseteq\Prob(M\times M)$ is the set of \emph{transportation plans}, where $\pi(U\times V)$ gives the amount of mass moved from $U\subseteq M$ in $\mu_0$ to $V\subseteq M$ in $\mu_1$.  Transportation plans also satisfy the following ``conservation of mass'' criteria:
+% $$\pi(U\times M)=\mu_0(U)\textrm{ and }\pi(M\times V)=\mu_1(V)\ \forall\,U,V\subseteq M.$$
+% Applications of $\W_p^p$ to problems in graphics include \citeme; computer vision and learning methods also apply these distances to comparing features like pixel-wise image descriptors and bag-of-words descriptors that can be understood as histograms over a geometric domain~\cite{rubner-2000}.  Wasserstein distances are key objects of study in the field of \emph{optimal transportation}~\cite{villani-2003}, which provides a comprehensive theoretical understanding of their construction and  properties, particularly in the $p=2$ case.
+
+% Despite their favorable theoretical structure and applications in computer graphics, Wasserstein distances largely have not been incorporated into computer graphics pipelines due to the expense of their computation.  Simple discretizations of~\eqref{eq:wasserstein_dist} become linear programs scaling \emph{quadratically} in the size of $M$, due to the construction of $\pi(x,y)$ for $x,y\in M$; they also require a pairwise matrix of values $d(x,y)^p$ to be computed \emph{a priori}.  Typical images and triangle meshes contain thousands or millions of elements, making this quadratic scaling unfavorable.
+
+% Some special cases admit more efficient computational techniques.  For instance,~\cite{solomon-2014} makes use of a connection to fluid flow to compute Wasserstein distances on meshes in the $p=1$ case.  This case is sufficient for the applications they propose, e.g.\ in finding regularized distances between points, but it can suffer from regularity issues where the objective is not to compute the Wasserstein distance but rather to minimize an objective containing the distance as a (convex) term. \justin{Add Fernando papers, sliced transport, others here.}  Other papers introduce wavelet or other multiscale approximations \citeme, losing connections to optimal transportation theory in the process.

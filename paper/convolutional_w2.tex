@@ -1,0 +1,77 @@
+\documentclass[tog]{acmsiggraph}
+
+\usepackage{mystyle}
+
+\usepackage{MyMnSymbol} % fixes underbrace command
+\usepackage{xcolor}
+\usepackage{microtype}
+\usepackage{pbox}
+
+\TOGonlineid{0372}
+\TOGvolume{0}
+\TOGnumber{0}
+\TOGarticleDOI{1111111.2222222}
+% \TOGprojectURL{}
+% \TOGvideoURL{}
+% \TOGdataURL{}
+% \TOGcodeURL{}
+
+%
+
+\title{Convolutional Wasserstein Distances: \\ Efficient Optimal Transportation on Geometric Domains}
+
+\author{Justin Solomon \\ Stanford University\\\ \\ \and Fernando de Goes \\ Pixar Animation Studios \and Gabriel Peyr\'e \\ CNRS \& Univ. Paris-Dauphine \and Marco Cuturi \\ Kyoto University \and Adrian Butscher \\ Autodesk, Inc. \and Andy Nguyen \\ Stanford University \and Tao Du \\ Stanford University \and Leonidas Guibas \\ Stanford University}
+\pdfauthor{Justin Solomon, Fernando de Goes, Gabriel Peyr\'e, Marco Cuturi, Adrian Butscher, Andy Nguyen, Tao Du, Leonidas Guibas}
+
+\keywords{Optimal transportation, Wasserstein distances, entropy, displacement interpolation.}
+
+\begin{document}
+
+%% \teaser{
+%%   \includegraphics[height=1.5in]{images/sampleteaser}
+%%   \caption{Spring Training 2009, Peoria, AZ.}
+%% }
+
+\teaser{
+% }\begin{figure*}[t]\centering
+\centering
+\vspace{-.25in}
+\includegraphics[width=\linewidth]{figures/teaser/cowducktorus.pdf}
+\caption{Shape interpolation from a cow to a duck to a torus via convolutional Wasserstein barycenters on a $100\!\times\!100\!\times\!100$ grid, using the method at the beginning of \S\ref{sec:applications}.}\label{fig:teaser}\vspace{-.05in}
+%\end{figure*}
+}
+
+\maketitle
+
+\input{sections/sec-abstract}
+
+\begin{CRcatlist}
+%  \CRcat{G.1.1}{Numerical Analysis}{Interpolation}{Interpolation formulas}
+  \CRcat{I.3.5}{Computer Graphics}{Computational Geometry \& Object Modeling}{Geometric algorithms, languages, \& systems}
+\end{CRcatlist}
+
+\keywordlist
+
+%% Use this only if you're preparing a technical paper to be published in the 
+%% ACM 'Transactions on Graphics' journal.
+
+% \TOGlinkslist
+
+%% Required for all content. 
+
+\copyrightspace
+
+\input{sections/sec-introduction}
+\input{sections/sec-related-works}
+\input{sections/sec-optimal-transport}
+\input{sections/sec-convolutional-ot}
+\input{sections/sec-computation}
+\input{sections/sec-optim-distances}
+\input{sections/sec-applications}
+\input{sections/sec-conclusion}
+\input{sections/sec-acknowledgments}
+
+\bibliographystyle{acmsiggraph}
+\bibliography{convolutional_w2}
+
+\end{document}

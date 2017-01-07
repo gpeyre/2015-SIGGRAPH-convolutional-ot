@@ -1,0 +1,347 @@
+\begin{thebibliography}{\protect\citename{Schwartzburg et~al\mbox{.} }2014}
+
+\bibitem[\protect\citename{Agueh and Carlier }2011]{agueh-2011}
+{\sc Agueh, M., and Carlier, G.}
+\newblock 2011.
+\newblock Barycenters in the {W}asserstein space.
+\newblock {\em SIAM J. Math. Anal. 43}, 2, 904--924.
+
+\bibitem[\protect\citename{Ashikhmin and Shirley }2000]{ashikhmin-2000}
+{\sc Ashikhmin, M., and Shirley, P.}
+\newblock 2000.
+\newblock An anisotropic {P}hong {BRDF} model.
+\newblock {\em J. of Graph. Tools 5}, 2, 25--32.
+
+\bibitem[\protect\citename{Aubry et~al\mbox{.} }2011]{aubry-2011}
+{\sc Aubry, M., Schlickewei, U., and Cremers, D.}
+\newblock 2011.
+\newblock The wave kernel signature: A quantum mechanical approach to shape
+  analysis.
+\newblock In {\em Proc. ICCV Workshops}, 1626--1633.
+
+\bibitem[\protect\citename{Benamou and Brenier }2000]{Benamou2000}
+{\sc Benamou, J.-D., and Brenier, Y.}
+\newblock 2000.
+\newblock A computational fluid mechanics solution of the {M}onge-{K}antorovich
+  mass transfer problem.
+\newblock {\em Numerische Mathematik 84}, 3, 375--393.
+
+\bibitem[\protect\citename{Benamou et~al\mbox{.}
+  }2015]{Benamou-IterBregman-2014}
+{\sc Benamou, J.-D., Carlier, G., Cuturi, M., Nenna, L., and Peyr{\'e}, G.}
+\newblock 2015.
+\newblock Iterative {B}regman projections for regularized transportation
+  problems.
+\newblock {\em SIAM J. Sci. Comp., to appear\/}.
+
+\bibitem[\protect\citename{Blinn }1977]{blinn-1977}
+{\sc Blinn, J.~F.}
+\newblock 1977.
+\newblock Models of light reflection for computer synthesized pictures.
+\newblock In {\em Proc. SIGGRAPH}, vol.~11, 192--198.
+
+\bibitem[\protect\citename{Bonneel et~al\mbox{.} }2011]{bonneel-2011}
+{\sc Bonneel, N., van~de Panne, M., Paris, S., and Heidrich, W.}
+\newblock 2011.
+\newblock Displacement interpolation using {L}agrangian mass transport.
+\newblock {\em ACM Trans. Graph. 30}, 6 (Dec.), 158:1--158:12.
+
+\bibitem[\protect\citename{Bonneel et~al\mbox{.}
+  }2014]{2013-Bonneel-barycenter}
+{\sc Bonneel, N., Rabin, J., Peyr{\'e}, G., and Pfister, H.}
+\newblock 2014.
+\newblock Sliced and {R}adon {W}asserstein barycenters of measures.
+\newblock {\em J. Math. Imaging and Vision, to appear\/}.
+
+\bibitem[\protect\citename{Bregman }1967]{Bregman-1967}
+{\sc Bregman, L.}
+\newblock 1967.
+\newblock The relaxation method of finding the common point of convex sets and
+  its application to the solution of problems in convex programming.
+\newblock {\em USSR Comp. Math. and Math. Physics 7}, 3, 200--217.
+
+\bibitem[\protect\citename{Burkard and \c{C}ela }1999]{burkard1999linear}
+{\sc Burkard, R., and \c{C}ela, E.}
+\newblock 1999.
+\newblock Linear assignment problems and extensions.
+\newblock {\em Handbook of Combinatorial Optimization: Supplement 1\/}, 75.
+
+\bibitem[\protect\citename{Burkard et~al\mbox{.} }2009]{Burkard09}
+{\sc Burkard, R., Dell'Amico, M., and Martello, S.}
+\newblock 2009.
+\newblock {\em Assignment Problems}.
+\newblock SIAM.
+
+\bibitem[\protect\citename{Carlier et~al\mbox{.}
+  }2014]{Carlier-NumericsBarycenters}
+{\sc Carlier, G., Oberman, A., and Oudet, E.}
+\newblock 2014.
+\newblock Numerical methods for matching for teams and {W}asserstein
+  barycenters.
+\newblock Preprint, Ceremade.
+
+\bibitem[\protect\citename{Cover and Thomas }2006]{cover-2006}
+{\sc Cover, T., and Thomas, J.}
+\newblock 2006.
+\newblock {\em Elements of Information Theory}.
+\newblock Wiley.
+
+\bibitem[\protect\citename{Crane et~al\mbox{.} }2013]{crane-2013}
+{\sc Crane, K., Weischedel, C., and Wardetzky, M.}
+\newblock 2013.
+\newblock Geodesics in heat: A new approach to computing distance based on heat
+  flow.
+\newblock {\em ACM Trans. Graph. 32}, 5 (Oct.), 152:1--152:11.
+
+\bibitem[\protect\citename{Cuturi and Doucet }2014]{CuturiBarycenter}
+{\sc Cuturi, M., and Doucet, A.}
+\newblock 2014.
+\newblock Fast computation of {W}asserstein barycenters.
+\newblock In {\em Proc. ICML}, vol.~32.
+
+\bibitem[\protect\citename{Cuturi }2013]{cuturi-2013}
+{\sc Cuturi, M.}
+\newblock 2013.
+\newblock Sinkhorn distances: Lightspeed computation of optimal transportation.
+\newblock In {\em Proc. NIPS}, vol.~26. 2292--2300.
+
+\bibitem[\protect\citename{Davis }2006]{Davis:2006}
+{\sc Davis, T.~A.}
+\newblock 2006.
+\newblock {\em Direct Methods for Sparse Linear Systems}.
+\newblock SIAM.
+
+\bibitem[\protect\citename{de~Goes et~al\mbox{.} }2011]{degoes-2011}
+{\sc de~Goes, F., Cohen-Steiner, D., Alliez, P., and Desbrun, M.}
+\newblock 2011.
+\newblock An optimal transport approach to robust reconstruction and
+  simplification of 2d shapes.
+\newblock In {\em Computer Graph. Forum}, vol.~30, 1593--1602.
+
+\bibitem[\protect\citename{de~Goes et~al\mbox{.} }2012]{degoes-2012}
+{\sc de~Goes, F., Breeden, K., Ostromoukhov, V., and Desbrun, M.}
+\newblock 2012.
+\newblock Blue noise through optimal transport.
+\newblock {\em ACM Trans. Graph. 31}, 6 (Nov.), 171:1--171:11.
+
+\bibitem[\protect\citename{de~Goes et~al\mbox{.} }2014]{degoes-2014}
+{\sc de~Goes, F., Memari, P., Mullen, P., and Desbrun, M.}
+\newblock 2014.
+\newblock Weighted triangulations for geometry processing.
+\newblock {\em ACM Trans. Graph. 33}, 3.
+
+\bibitem[\protect\citename{Delon }2006]{Delon:2006}
+{\sc Delon, J.}
+\newblock 2006.
+\newblock Movie and video scale-time equalization application to flicker
+  reduction.
+\newblock {\em IEEE Trans. on Image Proc. 15}, 1, 241--248.
+
+\bibitem[\protect\citename{Deming and Stephan }1940]{DemingStephanIPFP}
+{\sc Deming, W.~E., and Stephan, F.~F.}
+\newblock 1940.
+\newblock On a least squares adjustment of a sampled frequency table when the
+  expected marginal totals are known.
+\newblock {\em Annals Math. Stat. 11}, 4, 427--444.
+
+\bibitem[\protect\citename{Deriche }1993]{deriche-1993}
+{\sc Deriche, R.}
+\newblock 1993.
+\newblock Recursively implementing the {G}aussian and its derivatives.
+\newblock Tech. Rep. RR-1893.
+
+\bibitem[\protect\citename{Desbrun et~al\mbox{.} }1999]{Desbrun:1999}
+{\sc Desbrun, M., Meyer, M., Schr\"{o}der, P., and Barr, A.~H.}
+\newblock 1999.
+\newblock Implicit fairing of irregular meshes using diffusion and curvature
+  flow.
+\newblock In {\em Proc. SIGGRAPH}, 317--324.
+
+\bibitem[\protect\citename{Escalante and Raydan }2011]{escalante-2011}
+{\sc Escalante, R., and Raydan, M.}
+\newblock 2011.
+\newblock {\em Alternating Projection Methods}.
+\newblock Fundamentals of Algorithms. SIAM.
+
+\bibitem[\protect\citename{Ferradans et~al\mbox{.} }2014]{2014-ferradans-siims}
+{\sc Ferradans, S., Papadakis, N., Peyr{\'e}, G., and Aujol, J.-F.}
+\newblock 2014.
+\newblock Regularized discrete optimal transport.
+\newblock {\em SIAM J. Imaging Sci. 7}, 3, 1853--1882.
+
+\bibitem[\protect\citename{Johnson }1977]{johnson-1977}
+{\sc Johnson, D.~B.}
+\newblock 1977.
+\newblock Efficient algorithms for shortest paths in sparse networks.
+\newblock {\em J. ACM 24}, 1 (Jan.), 1--13.
+
+\bibitem[\protect\citename{Ju et~al\mbox{.} }2005]{ju-2005}
+{\sc Ju, T., Schaefer, S., and Warren, J.}
+\newblock 2005.
+\newblock Mean value coordinates for closed triangular meshes.
+\newblock {\em ACM Trans. Graph. 24}, 3 (July), 561--566.
+
+\bibitem[\protect\citename{Kantorovich }1942]{Kantorovich42}
+{\sc Kantorovich, L.}
+\newblock 1942.
+\newblock On the transfer of masses (in {R}ussian).
+\newblock {\em Doklady Akademii Nauk 37}, 2, 227--229.
+
+\bibitem[\protect\citename{Kim and Pass }2013]{kim-2013}
+{\sc Kim, Y.-H., and Pass, B.}
+\newblock 2013.
+\newblock Multi-marginal optimal transport on {R}iemannian manifolds.
+\newblock {\em arXiv:1303.6251\/}.
+
+\bibitem[\protect\citename{Knight }2008]{knight-2008}
+{\sc Knight, P.}
+\newblock 2008.
+\newblock The {S}inkhorn--{K}nopp algorithm: Convergence and applications.
+\newblock {\em SIAM J. on Matrix Anal. and Applications 30}, 1, 261--275.
+
+\bibitem[\protect\citename{L\'eonard }2012]{leonard-2012}
+{\sc L\'eonard, C.}
+\newblock 2012.
+\newblock From the {Schr\"{o}dinger} problem to the {Monge-Kantorovich}
+  problem.
+\newblock {\em J. Funct. Anal. 262}, 4, 1879?--1920.
+
+\bibitem[\protect\citename{Lipman and Daubechies }2011]{lipman-2011}
+{\sc Lipman, Y., and Daubechies, I.}
+\newblock 2011.
+\newblock Conformal {W}asserstein distances: Comparing surfaces in polynomial
+  time.
+\newblock {\em Adv. Math. 227}, 3, 1047--1077.
+
+\bibitem[\protect\citename{MacNeal }1949]{MacNeal:1949}
+{\sc MacNeal, R.}
+\newblock 1949.
+\newblock {\em The Solution of Partial Differential Equations by means of
+  Electrical Networks}.
+\newblock PhD thesis, Caltech.
+
+\bibitem[\protect\citename{Malliavin and Stroock }1996]{malliavin-1996}
+{\sc Malliavin, P., and Stroock, D.~W.}
+\newblock 1996.
+\newblock Short time behavior of the heat kernel and its logarithmic
+  derivatives.
+\newblock {\em J. Differential Geom. 44}, 3, 550--570.
+
+\bibitem[\protect\citename{McCann }1997]{mccann-1997}
+{\sc McCann, R.~J.}
+\newblock 1997.
+\newblock A convexity principle for interacting gases.
+\newblock {\em Adv. Math. 128}, 1, 153--179.
+
+\bibitem[\protect\citename{M\'erigot }2011]{Merigot2011}
+{\sc M\'erigot, Q.}
+\newblock 2011.
+\newblock A multiscale approach to optimal transport.
+\newblock {\em Comp. Graph. Forum 30}, 5, 1583--1592.
+
+\bibitem[\protect\citename{{MOSEK ApS} }2014]{mosek}
+{\sc {MOSEK ApS}}, 2014.
+\newblock Mosek version 7.
+\newblock \url{https://mosek.com}.
+
+\bibitem[\protect\citename{Papadakis et~al\mbox{.} }2011]{Papadakis_ip11}
+{\sc Papadakis, N., Provenzi, E., and Caselles, V.}
+\newblock 2011.
+\newblock A variational model for histogram transfer of color images.
+\newblock {\em IEEE Trans. Image Proc. 20}, 6, 1682--1695.
+
+\bibitem[\protect\citename{Pharr and Humphreys }2010]{pharr-2010}
+{\sc Pharr, M., and Humphreys, G.}
+\newblock 2010.
+\newblock {\em Physically Based Rendering, Second Edition: From Theory To
+  Implementation}.
+\newblock Morgan Kaufmann, July.
+
+\bibitem[\protect\citename{Piti\'{e} et~al\mbox{.} }2007]{Pitie07}
+{\sc Piti\'{e}, F., Kokaram, A.~C., and Dahyot, R.}
+\newblock 2007.
+\newblock Automated colour grading using colour distribution transfer.
+\newblock {\em Comp. Vision and Image Understanding 107\/} (July), 123--137.
+
+\bibitem[\protect\citename{Rubner et~al\mbox{.} }2000]{rubner-2000}
+{\sc Rubner, Y., Tomasi, C., and Guibas, L.~J.}
+\newblock 2000.
+\newblock The earth mover's distance as a metric for image retrieval.
+\newblock {\em Int. J. Comput. Vision 40}, 2 (Nov.), 99--121.
+
+\bibitem[\protect\citename{Schwartzburg et~al\mbox{.} }2014]{schwartzburg-2014}
+{\sc Schwartzburg, Y., Testuz, R., Tagliasacchi, A., and Pauly, M.}
+\newblock 2014.
+\newblock High-contrast computational caustic design.
+\newblock {\em ACM Trans. Graph. 33}, 4 (July), 74:1--74:11.
+
+\bibitem[\protect\citename{Sinkhorn }1964]{sinkhorn-1964}
+{\sc Sinkhorn, R.}
+\newblock 1964.
+\newblock A relationship between arbitrary positive matrices and doubly
+  stochastic matrices.
+\newblock {\em Annals of Math. Stat. 35}, 2, 876--879.
+
+\bibitem[\protect\citename{Sinkhorn }1967]{sinkhorn1967diagonal}
+{\sc Sinkhorn, R.}
+\newblock 1967.
+\newblock Diagonal equivalence to matrices with prescribed row and column sums.
+\newblock {\em American Math. Monthly 74}, 4, 402--405.
+
+\bibitem[\protect\citename{Solomon et~al\mbox{.} }2012]{solomon-2012}
+{\sc Solomon, J., Nguyen, A., Butscher, A., Ben-Chen, M., and Guibas, L.}
+\newblock 2012.
+\newblock Soft maps between surfaces.
+\newblock {\em Comp. Graph. Forum 31}, 5 (Aug.), 1617--1626.
+
+\bibitem[\protect\citename{Solomon et~al\mbox{.} }2013]{solomon-2013}
+{\sc Solomon, J., Guibas, L., and Butscher, A.}
+\newblock 2013.
+\newblock Dirichlet energy for analysis and synthesis of soft maps.
+\newblock {\em Comp. Graph. Forum 32}, 5, 197--206.
+
+\bibitem[\protect\citename{Solomon et~al\mbox{.} }2014a]{solomon-2014}
+{\sc Solomon, J., Rustamov, R., Guibas, L., and Butscher, A.}
+\newblock 2014.
+\newblock Earth mover's distances on discrete surfaces.
+\newblock {\em ACM Trans. Graph. 33}, 4 (July), 67:1--67:12.
+
+\bibitem[\protect\citename{Solomon et~al\mbox{.} }2014b]{solomon-2014-2}
+{\sc Solomon, J., Rustamov, R., Leonidas, G., and Butscher, A.}
+\newblock 2014.
+\newblock Wasserstein propagation for semi-supervised learning.
+\newblock In {\em Proc. ICML}, 306--314.
+
+\bibitem[\protect\citename{Soules }1991]{soules-1991}
+{\sc Soules, G.~W.}
+\newblock 1991.
+\newblock The rate of convergence of {S}inkhorn balancing.
+\newblock {\em Linear Algebra and its Applications 150\/}, 3--40.
+
+\bibitem[\protect\citename{Varadhan }1967]{varadhan-1967}
+{\sc Varadhan, S. R.~S.}
+\newblock 1967.
+\newblock On the behavior of the fundamental solution of the heat equation with
+  variable coefficients.
+\newblock {\em Comm. on Pure and Applied Math. 20}, 2, 431--455.
+
+\bibitem[\protect\citename{Villani }2003]{villani-2003}
+{\sc Villani, C.}
+\newblock 2003.
+\newblock {\em Topics in Optimal Transportation}.
+\newblock Graduate Studies in Mathematics. AMS.
+
+\bibitem[\protect\citename{Zhao et~al\mbox{.} }2013]{Zhao-2013}
+{\sc Zhao, X., Su, Z., Gu, X.~D., Kaufman, A., Sun, J., Gao, J., and Luo, F.}
+\newblock 2013.
+\newblock Area-preservation mapping using optimal mass transport.
+\newblock {\em IEEE Trans. Vis. and Comp. Graphics 19}, 12.
+
+\bibitem[\protect\citename{Zhu et~al\mbox{.} }2014]{zhu-2014}
+{\sc Zhu, J.-Y., Lee, Y.~J., and Efros, A.~A.}
+\newblock 2014.
+\newblock {A}verage{E}xplorer: Interactive exploration and alignment of visual
+  data collections.
+\newblock {\em ACM Trans. Graph. 33}, 4 (July), 160:1--160:11.
+
+\end{thebibliography}

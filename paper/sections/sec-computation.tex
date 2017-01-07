@@ -1,0 +1,228 @@
+% !TEX root = ../convolutional_w2.tex
+\section{Convolutional Wasserstein Distance}
+
+%\gabriel{I find it a bit puzzling to use the same letter $\pi$ for both continuous coupling $\pi(x,y)$ and discrete one $\pi_{i,j}$.}\justin{I actually kind of like it...but I wrote the thing!}
+
+%\gabriel{I assume upshape/bold font are for vector, but this is not everywhere consistent. }\justin{Yes, bold is for a vector.  Please fix anywhere I missed!}
+
+We now detail our numerical framework to carry out regularized optimal transportation on discretized domains.  Our method computes %entropy-
+regularized Wasserstein distances by constructing optimal transportation plans through iterative kernel convolutions---we thus name the results \emph{convolutional Wasserstein distances}.  In what follows, we use $\oslash$ and $\otimes$ to indicate elementwise division and multiplication.
+
+%\subsection{Discretization}
+
+Requirements for computing convolutional distances are minimal:
+\begin{itemize}% someone tried to make these full sentences, but that parses funny.  I'm removing "is's"
+\item The domain $M$, discretized into $n$ elements, with functions
+%\marco{can we use the word densities here? generic functions haven't appeared a lot so far} 
+%\fernando{we used functions in the KL definition, but density is not used anymore, I think}
+%\gabriel{Function seems ok for me.}
+and densities represented as vectors $\b{f}\in\R^n$.
+\item A vector $\a\in\R_+^n$ of ``area weights,'' with $\a^\top\1=1,$ defined so that
+$$\int_M f(x)\,\dx \approx \a^\top\!\b{f}.$$
+\item %\gabriel{Should we write rather $\kernel_t$, since after it is specialized to $t=\ga/2$, or otherwise state here that $t=\ga/2$ is used to define $\kernel$ ? }\justin{I agree.  Changed}
+A symmetric matrix $\kernel$ discretizing the kernel $\H_t$ such that %justin switched from "linear operator" to "symmetric matrix"
+\[
+	\int_M \hspace{-1mm}f(y) \H_t(\cdot,y) \dy \,\approx\, \kernel(\a\otimes\b{f}).
+\]
+%It is worth noticing that it
+It is sufficient to know how to \emph{apply} $\kernel$ to vectors, rather than storing it explicitly as a matrix in $\R^{n\!\times\!n}_{+,*}.$
+\end{itemize}
+
+For images, the natural discretization is an $n_1\!\times\!n_2$ grid of pixels (so $n=n_1n_2$). In this case, $\a\!\eqdef\!\1/n_1n_2$ and $\kernel$ is the operator convolving images with a Gaussian of standard deviation $\sigma^2\!=\!\gamma$. Notice that Varadhan's theorem is not needed in this domain, since the heat kernel of the plane is \emph{exactly} a Gaussian in distance.
+
+For triangle meshes, we take $n$ to be the number of vertices and the area vector $\a$ as lumped areas proportional to the sum of triangle areas adjacent to a given vertex. Given the cotangent Laplacian $\b{L}\in\R^{n\!\times\!n}$~\cite{MacNeal:1949} and a diagonal area matrix $\diag\a$ ($\diag\v$ denotes the diagonal matrix with elements in vector $\v$), we discretize the heat kernel by solving the diffusion equation via an implicit Euler integration~\cite{Desbrun:1999} with time step $t=\nicefrac{\gamma}{2}$, i.e.,
+\[
+	\w = \kernel(\a\otimes\v) \iff \left(\diag{\a} + \nicefrac{\gamma}{2} \b{L}\right)\w = \a\otimes\v.
+\]
+$\diag\a + \nicefrac{\gamma}{2} \b{L}$ can be pre-factored before distance computation, rendering heat kernel convolution equivalent to a near-linear time back-substitution. This feature is particularly valuable since we apply the heat kernel repeatedly.  Our implementation uses a sparse Cholesky factorization~\cite{Davis:2006} with $\gamma$ proportional to the maximum edge length~\cite{crane-2013}; higher accuracy can be obtained via substeps.  Our discretization generalizes to geometric domains like point clouds, tetrahedral meshes, graphs, and polygonal surfaces with well-established discrete Laplacians (and therefore heat kernels). 
+
+%\leo{I would have liked a few more words of explanation regarding the discretization of $\kernel$. How is $s$ chosen?}
+
+%\gabriel{I propose to rename $(\brho_0,\brho_1)$ bellow as $(\bpi,\brho)$ and add that one assume that $\sum_{ij} \a_i \a_j \bpi = 1$, because I believe it is needed for Bregman projection (at least when we move to the discrete setting).  }%\justin{Again, I disagree.  The KL exists regardless of these conditions, so we should mention them instead when we develop the algorithm.}
+
+%\gabriel{So I think the kernel should be $>0$ so I put $\kernelH \in \R_{+,*}^{n\!\times\!n}$, but please check this.}\justin{agreed}
+%Based on this representation, w
+We encode a distribution $\mu\!\in\!\Prob(M)$ as a vector $\p\!\in\!\R_+^n$ with $\a^\top\!\p=1$ and a distribution $\pi\!\in\!\Prob(M\!\times\!M)$ as $\bpi\!\in\!\R_+^{n\!\times\!n}$ with $\a^\top\!\bpi\a=1$.  
+The discrete KL divergence between a discrete distribution $\bpi$ and an arbitrary $\kernelH \in \R_{+,*}^{n\!\times\!n}$ is then defined as
+\begin{equation}
+	\KL(\bpi|\kernelH) \eqdef \sum_{ij} 
+		\bpi_{ij}\a_i \a_j\left[\ln\frac{\bpi_{ij}}{\kernelH_{ij}}-1\right] .
+\end{equation}
+
+Given discrete distributions $\p_0$ and $\p_1$,
+% \marco{we should use a different notation for the (discrete) probability simplex}
+we model plans $\bpi\!\in\!\Pi(\p_0,\p_1)$ as matrices $\bpi\!\in\!\R_+^{n\!\times\!n}$ with $\bpi\!\a\!=\!\p_0$ and $\bpi^\top\a\!=\!\p_1.$  
+%
+% where the total domain area is given as $A\eqdef\a^\top\!\1$.
+Finally, the convolutional Wasserstein distance is computed via
+\begin{equation}\label{eq:discrete_dist}
+	\boxed{\W^2_{2,\kernel}(\p_0,\p_1) \eqdef \gamma\left[1+\min_{\bpi\in\Pi}\KL(\bpi|\kernel)\right].}
+\end{equation}
+% We omit constant coefficients for ease of notation.% since they do not affect the structure of the distance.
+
+%\subsection{Optimization}\label{sec:optim}
+
+Similarly to the continuous case, the minimization in~\eqref{eq:discrete_dist} is convex with linear constraints on $\bpi$.  Its complexity is tied to the variable $\bpi$, which scales quadratically in $n$.  As shown in the supplemental document, we overcome this issue using the following result:
+\begin{proposition}
+\label{prop:sinkhorn}
+The transportation plan $\bpi\!\in\!\Pi(\p_0,\p_1)$ minimizing~\eqref{eq:discrete_dist} is of the form $\bpi\!=\!\diag\v\kernel\diag\w$, with unique vectors $\v,\w\!\in\!\R^n$ satisfying
+\begin{equation}
+\left\{
+\begin{array}{l}
+\diag\v \kernel \diag\w\a = \p_0,
+\\[2mm]
+\diag\w \kernel \diag\v\a = \p_1.
+\end{array}
+\right.
+\label{eq:constraints}
+\end{equation}
+\end{proposition}
+Therefore, rather than computing a matrix $\bpi$, we can instead compute a pair of vectors $(\v,\w)$, reducing the number of unknowns to $2n$. This proposition generalizes a result in~\cite{cuturi-2013} with the introduction of area weights $\a$. We can find $(\v,\w)$ by alternating projections onto the linear marginal constraints via %which is efficiently achieved via 
+an area-weighted version of \emph{Sinkhorn's algorithm}~\shortcite{sinkhorn-1964}, detailed in Algorithm~\ref{alg:sinkhorn}.
+
+\begin{algorithm}[t]
+\fbox{\hspace{-.1in}\parbox{\columnwidth}{%
+\begin{algorithmic}
+\Function{Convolutional-Wasserstein}{$\p_0,\p_1;\kernel,\a$}
+	\algspace
+	\State{\emph{// Sinkhorn iterations}}
+	\Let{$\v,\w$}{$\1$}
+	% \Let{$A$}{$\a^\top\!\1$}
+	\For{$i= 1,2,3,\ldots$}
+		\Let{$\v$}{$\p_0 \oslash  \kernel(\a\otimes\w)$}
+		\Let{$\w$}{$\p_1 \oslash  \kernel(\a\otimes\v)$}
+	\EndFor
+	\algspace
+	\State{\emph{// $\KL$ divergence}}
+%	\Let{$\mathbf \ell_v$}{$\a\otimes\v\otimes\ln\v$}
+%	\Let{$\mathbf \ell_w$}{$\a\otimes\w\otimes\ln\w$}
+%	\State \Return{$\gamma\left[1+(\a\otimes\v\!+\!\mathbf{\ell_v})^\top\!\kernel(\a\otimes\w)+\ell_w^\top \kernel(\a\otimes\v)\right]$}
+	\State \Return{$\gamma\,\a^\top\left[(\p_0\otimes\ln\v)+(\p_1\otimes\ln\w)\right]$}
+\EndFunction
+  \end{algorithmic}
+}}
+\vspace{-3mm}
+\caption{Sinkhorn iteration for convolutional Wasserstein distances.  $\otimes,\oslash$ denote elementwise multiplication and division, resp.}\label{alg:sinkhorn}
+
+\end{algorithm}
+As in~\cite{solomon-2014}, $\W^2_{2,\kernel}$ between distributions centered at individual vertices can be used as point-to-point distances. Fig.~\ref{fig:distance_example} shows one example computed using our algorithm.  The resulting pointwise distance squared is exactly the logarithm of $\kernel$.  Since Crane et al.~\shortcite{crane-2013} previously proposed a specialized algorithm using the heat kernel for pointwise distances via this approximation, we instead will focus on more general problems involving optimal transportation not considered in their work. %Crane et al.~\shortcite{crane-2013} propose an algorithm specifically designed for this pointwise distance approximation, so we consider the more general Sinkhorn iteration algorithm less suited for this application.
+
+\begin{figure}[t]
+\begin{center}
+\begin{tabular}{r@{}l}\centering
+(a)
+$\begin{array}{l} % hack to center the (a) on the left
+\includegraphics[width=.3\columnwidth]{figures/convergence/delta_cropped.pdf}
+\end{array}$ &
+$\begin{array}{l}
+\includegraphics[width=.3\columnwidth]{figures/convergence/distance_cropped.pdf}
+\end{array}$
+(b)
+\end{tabular}
+\end{center}
+\vspace{-3mm}
+\caption{$\W^2_{2,\kernel}$ between $\delta$ distributions (a) as a vertex-to-vertex distance (b; computed with $\gamma=10^{-5}$ --- slight smoothing).}\label{fig:distance_example}\vspace{-.15in}
+\end{figure}
+
+% Doesn't seem useful
+%\subsection{Validation}
+%
+%\fernando{to review after new figures}
+%We provide validation tests on triangle mesh domains, which use Sinkhorn iterations \emph{and} the Varadhan approximation.  Sinkhorn iteration is well-known to converge linearly~\cite{knight-2008}, so we focus on evaluating our discretization and regularization.
+%
+%\cite{solomon-2014} uses transportation distances between $\delta$-functions as a point-to-point distance.  In theory, $\W^2_{2,\kernel}$ is proportional to the negative log of the heat kernel in this case.  Fig.~\ref{fig:distance_example} shows one example computed using our algorithm.  As expected from Varadhan's formula, for small $\gamma$ the distance resembles a geodesic distance function, although small kernels can lead to numerical instability; the same conclusion was reached in~\cite{crane-2013}.
+%
+%\begin{figure}\centering
+%\setlength{\fboxsep}{0pt}
+%\begin{tikzpicture}
+%\begin{axis}[
+%xlabel={\footnotesize Number of vertices},
+%ylabel={\footnotesize $p$},
+%legend entries={$\gamma=10^{-5}$,$\gamma=10^{-4}$,$\gamma=10^{-3}$,$\gamma=10^{-2}$,$\gamma=10^{-1}$,$\gamma=10^0$},
+%legend style={cells={anchor=west},legend pos=north east,font=\tiny,at={(0.99,.75)}},
+%width=.99\columnwidth,
+%height=.6\columnwidth,
+%every axis/.append style={font=\footnotesize},
+%xlabel near ticks,
+%ylabel near ticks,
+%line cap = round,
+%line join = round,
+%xlabel shift = -.04in,
+%ylabel shift = -.06in,
+%%xmin=1,
+%%xmax=10,
+%%xtick={1,...,10},
+%scaled y ticks = false,
+%y tick label style={/pgf/number format/fixed},
+%xmode=log,
+%legend columns = 2
+%]
+% \addplot[mark=none,color=blue,very thick] table {figures/validation/gamma1e-05.dat};
+%\addplot[mark=none,color=green,very thick] table {figures/validation/gamma0.0001.dat};
+%\addplot[mark=none,color=red,very thick] table {figures/validation/gamma0.001.dat};
+%\addplot[mark=none,color=purple,very thick] table {figures/validation/gamma0.01.dat};
+%\addplot[mark=none,color=orange,very thick] table {figures/validation/gamma0.1.dat};
+%%\addplot[mark=none,color=yellow,very thick] table {figures/validation/gamma1.dat};
+%\end{axis}
+%\end{tikzpicture}\\
+%\fbox{
+%\begin{tabular}{@{}c@{}c@{}c@{}c@{}c@{}}
+%\includegraphics[width=.2\linewidth]{figures/validation/gamma1e-05_cropped.png.pdf}&
+%\includegraphics[width=.2\linewidth]{figures/validation/gamma0.0001_cropped.png.pdf}&
+%\includegraphics[width=.2\linewidth]{figures/validation/gamma0.001_cropped.png.pdf}&
+%\includegraphics[width=.2\linewidth]{figures/validation/gamma0.01_cropped.png.pdf}&
+%\includegraphics[width=.2\linewidth]{figures/validation/gamma0.1_cropped.png.pdf}\\
+%\small $\gamma=10^{-5}$ &
+%\small $\gamma=10^{-4}$ &
+%\small $\gamma=10^{-3}$ &
+%\small $\gamma=10^{-2}$ &
+%\small $\gamma=10^{-1}$
+%\end{tabular}
+%}
+%\caption{Correlation between $\W^2_{2,\kernel}$ and exact geodesic distance between vertices, for meshes of different sizes (top; $p=1$ indicates perfect correlation) and illustration of $\gamma$ by diffusion of a point mass (bottom).}\label{fig:validation_test}
+%\end{figure}
+%
+%Convergence of our transportation estimate is determined by $\gamma$ and the density of the mesh.  Fig.~\ref{fig:validation_test} tests dependence of the delta-to-delta distance on these parameters, a challenging test for our technique.  We measure the correlation coefficient $p$ between $\W^2_{2,\kernel}$ and vertex-to-vertex geodesic distances using~\cite{xin-2009} from a single source vertex.  We find that dependence on mesh resolution is weak; coarse meshes can have accurate convolutional distances.  The diffusion time $\gamma$ has more bearing on $\W^2_{2,\kernel}$:  huge $\gamma$'s are too diffuse and do not capture distances well, while tiny $\gamma$'s may not exhibit numerically-significant diffusion.  As in~\cite{crane-2013}, scales commensurate with fine features of the mesh (in the experiment, $\gamma\in[10^{-4},10^{-3}]$) appear to be effective.
+%
+%\justin{Maybe put speed tests here relative to last year's paper.  And something measuring dependence of convergence rate on $\gamma$.}
+
+\paragraph*{Timing \& numerics.}  To evaluate efficiency, we compare three approaches to approximating $\W_2$:  a linear program discretizing~\eqref{eq:WassersteinDistance}, regularized distances with a full distance-based kernel~\cite{cuturi-2013}, and convolutional Wasserstein distances $\W^2_{2,\kernel}$.  The linear program is solved using state-of-the-art parallel optimization~\cite{mosek}, with all-pairs distances along mesh edges from an $O(n^2\log n)$ algorithm~\cite{johnson-1977}.  \cite{cuturi-2013} and our convolutional distances are implemented in Matlab, the former using the all-pairs distance matrix converted to a kernel and the latter using pre-factored Cholesky decomposition.  All tests were run with tolerance $10^{-5}$ on a 2.40GHz Intel Xeon processor with 23.5GB RAM; for this test, $\gamma$ is chosen as $1\%$ of the median transport cost.
+
+Table~\ref{table:timing} shows results of this experiment on meshes of the same shape with varying density.  Both regularized approximations of $\W_2$ outperform the linear program by a significant margin that grows with the size of the problem.  Our method also outperforms~\cite{cuturi-2013} with a dense kernel matrix, both by avoiding explicit pairwise distance computation and via the pre-factored diffusion operator; the difference is particularly notable on large meshes for which the kernel takes a large amount of memory.  The one exception is the smallest mesh, for which our method took longer to converge due to numerical issues from the discretized heat equation.
+
+\begin{table}[t]
+\centering
+\newcommand{\ts}[0]{\hspace{0.025in}}
+{\small
+\begin{tabular}{|@{\ts}r@{\ts}|@{\ts}r@{\ts}||@{\ts}r@{\ts}|@{\ts}r@{\ts}|@{\ts}r@{\ts}||@{\ts}r@{\ts}|@{\ts}r@{\ts}|}
+\hline
+\textbf{$|\boldsymbol{V}|$} & \textbf{$|\boldsymbol{T}|$} & \textbf{PD} & \textbf{LP} & \textbf{\cite{cuturi-2013}} & \textbf{PF} & \textbf{$\boldsymbol\W^2_{2,\kernel}$} \\ \hline
+%252 & 500 & 0.04 & 0.862 & 0.234 & 0.01 & 1.511
+%\\
+%417 & 830 & 0.04 & 2.688 & 0.43 & 0.00 & 1.571
+%\\
+693 & 1382 & 0.10 & 9.703 & 0.625 & 0.00 & 1.564
+\\
+1150 & 2296 & 0.28 & 36.524 & 1.284 & 0.00 & 0.571
+\\
+1911 & 3818 & 0.79 & * &  2.725 & 0.02 & 1.010
+\\
+3176 & 6348 & 2.15 & * & 5.435 & 0.03 & 1.553
+\\
+5278 & 10552 & 6.47 & * & 10.490 & 0.06 & 2.477
+\\
+8774  & 17544 & 18.55 & * & 23.326 & 0.10 & 4.516
+\\
+14584 & 29164 & 53.41 & * & * & 0.17 & 8.152
+\\ \hline
+\end{tabular}
+}
+\vspace{-2mm}
+\caption{Timing (in sec.) for approximating $\W_2$ between random distributions on triangle meshes, averaged over 10 trials.  An asterisk * denotes time-out after one minute.  Pairwise distance (PD) computation is needed for the linear program (LP) and~\protect\cite{cuturi-2013}; timing for this step is written separately.  Cholesky pre-factorization (PF) is needed for convolutional distance and is similarly separated.}\label{table:timing}\vspace{-.15in}
+\end{table}
+
+The Sinkhorn algorithm is known to converge at a linear rate~\cite{franklin-1989,knight-2008}, and similar guarantees exist for alternating projection methods~\cite{escalante-2011}. These bounds give a rough indicator of the number of iterations needed to compute convolutional distances and derived quantities used in \S\ref{sec:optim_over_dist}. 
+In practice, the convergence rate depends on the sharpness of the kernel and of the distributions $\p_0$ and $\p_1$.  The experiments reported in Table~\ref{table:timing} show that the time to convergence is reasonable for challenging cases; most distance computations converge within 10-20 iterations when $\ga$ was chosen on the order of the average edge length, with faster convergence as $\ga$ is increased.  
+%\fernando{what is reasonable? perhaps, we could say the order of the number of iterations: multiples of 10 or 100? Also, one of the reviewers asked about the influence of $\ga$ in the convergence rate.}
+Finally, we point out that numerical issues may appear when $\gamma$ is smaller than the resolution of the domain, since the kernel operator may become ill-conditioned.
+% values $e^{-d(x,y)^2/\gamma}$ in~\eqref{eq:Kernel} become extremely close to zero whenever $x\neq y.$

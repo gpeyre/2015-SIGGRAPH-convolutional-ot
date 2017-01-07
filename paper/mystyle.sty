@@ -1,0 +1,122 @@
+
+\usepackage[usenames,dvipsnames]{color}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{units}
+\usepackage{blkarray}
+\usepackage{pgfplots}
+\usepackage{cprotect}
+\usepackage{pbox}
+\usepackage{array}
+\usepackage{tikz}
+\usepackage{grffile}
+\usepackage{newfile}
+\usepackage[plain]{algorithm}
+\usepackage{algorithmicx}
+\usepackage[noend]{algpseudocode}
+
+\usetikzlibrary{arrows,matrix,positioning}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+\newcommand\mathcircled[1]{\textrm{\circled{$#1$}}} % it's a hack, but it seems to work nicely
+
+\newcommand{\adrian}[1]{{\bfseries \scriptsize \color{blue} AB: #1}}
+\newcommand{\justin}[1]{{\bfseries \scriptsize \color{red} JS: #1}}
+\newcommand{\marco}[1]{{\bfseries \scriptsize \color{orange} MC: #1}}
+\newcommand{\leo}[1]{{\bfseries \scriptsize \color{magenta} LG: #1}}
+\newcommand{\fernando}[1]{{\bfseries \scriptsize \color{green} FD: #1}}
+\newcommand{\gabriel}[1]{{\bfseries \scriptsize \color{cyan} GP: #1}}
+\newcommand{\tao}[1]{{\bfseries \scriptsize \color{green} TD: #1}}
+\newcommand{\citeme}[0]{{\bfseries \scriptsize  \color{JungleGreen}\framebox{CITE}}}
+\newcommand{\addreference}[0]{{\bfseries \scriptsize  \color{JungleGreen}\framebox{REF}}}
+
+%% Equal by definition %%
+\newcommand{\eqdef}{\ensuremath{\stackrel{\mbox{\upshape\tiny def.}}{=}}}
+
+%\newcommand*\Let[2]{\State #1 $\gets$ #2}
+%\algrenewcommand\alglinenumber[1]{
+%    {\sf\footnotesize\addfontfeatures{Colour=888888,Numbers=Monospaced}#1}}
+%\algrenewcommand\algorithmicrequire{\textbf{Precondition:}}
+%\algrenewcommand\algorithmicensure{\textbf{Postcondition:}}
+
+\renewcommand\algorithmicindent{.2in}
+\algnewcommand{\LineComment}[1]{\State \(\triangleright\) #1}
+\renewcommand\algorithmicdo{} % kill "do" because it's annoying
+\newcommand{\LineFor}[2]{ \State \algorithmicfor\ {#1}, {#2}}
+\newcommand{\algspace}[0]{\vspace{.075in}}
+\newcommand*\Let[2]{\State #1 $\gets$ #2}
+\algrenewcommand\alglinenumber[1]{
+    {\sf\footnotesize\addfontfeatures{Colour=888888,Numbers=Monospaced}#1}}
+\algrenewcommand\algorithmicrequire{\textbf{Precondition:}}
+\algrenewcommand\algorithmicensure{\textbf{Postcondition:}}
+
+
+\newcommand{\R}[0]{\mathbb{R}}
+\newcommand{\Z}[0]{\mathbb{Z}}
+\newcommand{\N}[0]{\mathbb{N}}
+\newcommand{\Q}[0]{\mathbb{Q}}
+\newcommand{\C}[0]{\mathbb{C}}
+\newcommand{\Rot}[0]{\mathcal R}
+
+\renewcommand{\b}[1]{\mathbf{#1}}
+\renewcommand{\v}[0]{\mathbf v}
+\newcommand{\w}[0]{\mathbf w}
+\renewcommand{\u}[0]{\mathbf u}
+
+\newcommand{\p}[0]{\boldsymbol{\mu}}
+\newcommand{\q}[0]{\mathbf q}
+\renewcommand{\a}[0]{\mathbf a}
+\newcommand{\1}[0]{\mathbf 1}
+\newcommand{\0}[0]{\mathbf 0}
+\renewcommand{\r}[0]{\mathbf r}
+\newcommand{\cc}[0]{\mathbf c}
+\renewcommand{\d}[0]{\mathbf d}
+\newcommand{\D}[0]{\mathcal D}
+
+\makeatletter
+\newcommand{\vast}{\bBigg@{4}}
+\newcommand{\Vast}{\bBigg@{5}}
+\makeatother
+
+\makeatletter
+\def\thm@space@setup{\thm@preskip=4pt
+\thm@postskip=4pt}
+\makeatother
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{problem}{Problem}
+\newtheorem{definition}{Definition}
+\newtheorem{proposition}{Proposition}
+\newtheorem{example}{Example}
+\newtheorem*{observation}{Observation}
+
+\newcommand{\Prob}[0]{\mathrm{Prob}}
+\newcommand{\W}[0]{\mathcal W}
+\newcommand{\K}[0]{\mathcal K}
+\renewcommand{\H}[0]{\mathcal H}
+\renewcommand{\P}[0]{\mathcal P}
+\newcommand{\KL}[0]{\mathrm{KL}}
+\newcommand{\id}[0]{\mathrm{id}}
+\newcommand{\kernelH}{\mathbf{H}}
+\newcommand{\kernel}{\kernelH_t}
+\newcommand{\diag}[1]{\mathbf{D}_{#1}}
+\newcommand{\bmu}{\boldsymbol{\mu}}
+\newcommand{\bpi}[0]{\boldsymbol{\pi}}
+\newcommand{\brho}[0]{\boldsymbol{\rho}}
+\newcommand{\bl}[0]{\boldsymbol{\lambda}}
+
+%%% GAB DEFS %%%
+\newcommand{\dotp}[2]{\langle #1,#2 \rangle}
+\newcommand{\ga}{\gamma}
+\newcommand{\eq}[1]{\begin{equation*} #1 \end{equation*}}
+\newcommand{\eql}[1]{\begin{equation} #1 \end{equation}}
+\newcommand{\enscond}[2]{\left\{ #1 \;;\; #2 \right\}}
+% integration
+\newcommand{\drm}{\mathrm{d}}
+\newcommand{\dx}{\drm x}
+\newcommand{\dy}{\drm y}
+

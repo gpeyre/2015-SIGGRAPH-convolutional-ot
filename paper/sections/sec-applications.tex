@@ -1,0 +1,190 @@
+% !TEX root = ../convolutional_w2.tex
+
+\section{Applications}\label{sec:applications}
+\vspace{-2mm}
+
+Equipped with the machinery of convolutional transportation, we now describe several graphics applications directly benefiting from these distances and related optimization problems.
+
+\vspace{-2mm}
+\paragraph*{Shape interpolation.} 
+
+A straightforward application of Wasserstein barycenters is shape interpolation.  We represent $k$ shapes $(S_i)_{i=1}^k\subset [-1,1]^2$ using normalized indicator functions $(\chi(S_i)/\mathrm{vol}(S_i))_{i=1}^k\in\Prob([-1,1]^2).$  Given weights $(\alpha_i)_{i=1}^k$, we compute the (near-)indicator function of an averaged shape as the minimizer $\mu\in\Prob([-1,1]^2)$ of $\sum_i \alpha_i \W^2_{2,\kernel}(\mu,\chi_i)$; this indicator easily can be sharpened if a true binary function is desired.
+
+Fig.~\ref{fig:shape_interpolation} shows barycenters between four shapes with bilinear weights.  Unlike the mean $\sum_i \alpha_i \chi_i(S_i)/\mathrm{vol}(S_i),$ shapes obtained using Wasserstein machinery smoothly transition between the inputs, creating plausible intermediate shapes.  Fig.~\ref{fig:mahjong} provides a 1D interpolation example, with simple post-processing (thresholding and coloring) to recover boundaries.  Figs.~\ref{fig:teaser},~\ref{fig:shape_interpolation_3d2}, and~\ref{fig:shape_interpolation_3d} show analogous examples in three dimensions.  We represent a surface volumetrically using the normalized indicator function of its interior.  We interpolate the resulting distributions using convolutional barycenters and extract the level set corresponding to the half the maximum probability value.  This volumetric approach can handle topological changes, e.g.\ interpolating between a shape with two components (lower left) and three singly-connected shapes (remainder).
+
+\begin{figure}[t]\centering
+\includegraphics[width=\linewidth]{figures/teaser/triangleinterp.pdf}
+\vspace{-4mm}
+\caption{Shape interpolation in 3D, expanded from Fig.~\ref{fig:teaser}.}
+\label{fig:shape_interpolation_3d2}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{sections/sec-brdf} % for Tao to work independently
+
+\begin{figure}[t]
+\centering
+\begin{tabular}{@{}c@{\hspace{.02in}}c@{\hspace{.02in}}}
+\includegraphics[width=.48\linewidth]{figures/brdf/linear.pdf}&
+\includegraphics[width=.48\linewidth]{figures/brdf/withoutentropy.pdf}\\
+Linear interpolation & Convolutional barycenter 
+\end{tabular}
+\includegraphics[width=\linewidth]{figures/brdf/brdf.pdf}\\
+Convolutional barycenter (bounded entropy)
+\vspace{-.1in}
+\caption{BRDF interpolation:  BRDFs for the materials in the four corners of each image are fixed, and the rest are computed using bilinear weights.  Linearly interpolating BRDFs (left) yields spurious highlights, the convolutional barycenter (center) moves highlights continuously but increases diffusion, and the entropy-bounded barycenter (right) moves highlights in a sharper fashion.}\label{fig:brdf}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace{-3mm}
+\paragraph*{Color histogram manipulation.}
+
+In image processing, optimal transportation has proven useful for color palette manipulations like contrast adjustment~\cite{Delon:2006} and color transfer~\cite{Pitie07} via 1D transportation.  Previous methods for this task avoid carrying out multi-dimensional transport, e.g.\ using 1D sliced approximations or cumulative axis-aligned transport~\cite{Pitie07,2013-Bonneel-barycenter,Papadakis_ip11} 
+or can support only coarse histograms~\cite{2014-ferradans-siims}. Convolutional transport, however, handles large-scale 2D chrominance histograms directly.
+
+We transfer color over the CIE-Lab domain by modifying the one-dimensional L (luminance) and two-dimensional ab (chrominance) channels independently, where luminance takes values in $[1,100]$ and chrominance takes values in $M=[-128,128]^2$. Remapping L requires 1D transport, which is computable in closed form~\cite{villani-2003}; we describe the processing of the ab channel below.
+
+Suppose we express the ab components of $k$ images as a set of functions $(f_i)_{i=1}^k$, where $f_i:[0,1]^2\rightarrow M$ takes a point on the image plane and returns an ab chrominance value.  The chrominance histogram $\mu_i$ associated to $f_i$ is the push-forward of the uniform measure $\mathcal{U}$ on $[0,1]^2$ by the map $f_i$, satisfying $\mu_i(A) = \mathcal{U}(f_i^{-1}(A))$ for $A \subset M$. It is approximated numerically by a discrete histogram $\p_i$ on an uniform rectangular grid over $M$.
+
+For a given set of weights $\alpha \in \R_+^k$, we solve the barycenter problem~\eqref{eq:bary-continuous} using Algorithm~\ref{alg:barycenter}. This provides the weighted barycenter $\mu \in \Prob(M)$, discretized as a vector $\p$. The algorithm furthermore provides the scaling factors $(\v_i,\w_i)$ for each $i=1,\ldots,k$, which define the transport maps $\bpi_i=D_{\v_i} K D_{\w_i}$ between each input histogram $\p_i$ and the barycenter $\p$. This discrete coupling $\bpi_i$ should be understood as a discretization of a continuous coupling $\pi_i(x,y)$ between each $\mu_i$ and $\mu$. 
+
+For each $i$, we introduce a map $T_i : M \rightarrow M$, defined on the support of $\mu_i$ (i.e.\ the set of $x \in M$ such that $\mu_i(x)>0$), by
+\eq{\textstyle
+	\forall x \in M, \quad T_i(x) = \frac{1}{\mu_i(x)}\int_M \pi_i(x,y) y\, \dy.
+}
+This integral is computed numerically as a sum over the grid, where $\bpi_i$ is used in place of $\pi_i$. 
+
+The rationale behind this definition is that as $\ga \rightarrow 0$, the regularized coupling $\pi_i$ converges to a measure supported on the graph of the optimal matching between $\mu_i$ and the barycenter; this phenomenon is highlighted in Fig.~\ref{fig:plans}. Thus, as $\ga \rightarrow 0$, $T_i$ converges to the optimal transport map.  It can thus be used to define a corrected image $f_i^\alpha \eqdef T_i \circ f_i$ whose chrominance histogram matches $\mu$. Fig.~\ref{fig:ColorTransfer} shows an application of the method to $k=2$ input images.
+
+%\leo{I am confused about how this works when you are given $k>2$ images.}
+%\gabriel{Not sure I understand what is confusing, since there is nothing specific to the case $k=2$ in the above description. I tried to detail a bit more above how each $\pi_i$ is computed. }
+
+	
+\newcommand{\myfigColBary}[2]{\fbox{\includegraphics[width=.13\linewidth]{figures/colors/#1/barycenter-unif-#2}}}
+\newcommand{\myfigColImg}[3]{\includegraphics[width=.19\linewidth]{figures/colors/#1/#2-barycenter-unif-#3}}
+%
+\newcommand{\frameR}[1]{\setlength{\fboxrule}{3pt}%
+	\fcolorbox{red}{white}{#1} }
+\newcommand{\frameB}[1]{\setlength{\fboxrule}{3pt}%
+	\fcolorbox{blue}{white}{#1} }
+	
+\newcommand{\myFigCol}[2]{ %
+{%
+\setlength{\fboxsep}{0pt}%
+\begin{tabular}{@{}c@{\hspace{1mm}}c@{\hspace{1mm}}c@{\hspace{1mm}}c@{\hspace{1mm}}c@{\hspace{1mm}}c@{}}
+	\myfigColImg{#1-#2}{#1}{1} &
+	\myfigColImg{#1-#2}{#1}{3} &
+	\myfigColImg{#1-#2}{#1}{5} &
+	\myfigColImg{#1-#2}{#1}{7} &
+	\frameR{\myfigColImg{#1-#2}{#1}{9}} \\
+	\frameB{\myfigColImg{#1-#2}{#2}{1}} &
+	\myfigColImg{#1-#2}{#2}{3} &
+	\myfigColImg{#1-#2}{#2}{5} &
+	\myfigColImg{#1-#2}{#2}{7} &
+	\myfigColImg{#1-#2}{#2}{9} \\
+	\myfigColBary{#1-#2}{1} &
+	\myfigColBary{#1-#2}{3} &
+	\myfigColBary{#1-#2}{5} &
+	\myfigColBary{#1-#2}{7} &
+	\myfigColBary{#1-#2}{9} \\
+	$t=0$ & $t=1/4$ & $t=1/2$ & $t=3/4$ & $t=1$
+\end{tabular}%
+}%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[t]\centering
+\begin{tabular}{c@{}c@{}c@{}c}
+\includegraphics[height=.3\linewidth]{figures/skeletons/human_skeleton_cropped.pdf}&
+\includegraphics[height=.3\linewidth]{figures/skeletons/human_skeleton2_cropped.pdf}&
+\includegraphics[height=.25\linewidth]{figures/skeletons/wolf_skeleton_cropped.pdf}&
+\includegraphics[height=.25\linewidth]{figures/skeletons/double_torus_skeleton_cropped.pdf}
+\end{tabular}
+\vspace{-2mm}
+\caption{Embeddings of skeletons computed using Wasserstein propagation; the positions of the blue vertices are computed automatically using the fixed green vertices and topology of the graph.\vspace{-.2in}}\label{fig:skeleton}
+\end{figure}
+
+\vspace{-2mm}
+\paragraph*{Skeleton layout.} 
+
+Suppose we are given a triangle mesh $M\subset\R^3$ and a skeleton graph $G=(V,E)$ representing the topology of its interior.  For instance, if $M$ is a human body shape, then $G$ might have ``stick figure'' topology.  To relate $G$ directly to the geometry of $M$, we might wish to find a map $V\mapsto\R^3$ embedding the vertices of the graph into the interior of the surface.   
+
+We can approach this problem using Wasserstein propagation (\S\ref{sec:propagation}).  We take as input the positions of vertices in a small subset $V_0\subseteq V$.  As suggested by Solomon et al.~\shortcite{solomon-2014}, we express the position of each $v\in V_0$ as a distribution $\p_v\in\Prob(M)$ using barycentric coordinates computed using the algorithm by Ju et al.~\shortcite{ju-2005}.  Distributions $\p_v\in\Prob(M)$ can be interpolated along $G$ to the remaining $v\not\in\ V_0$ via Wasserstein propagation with uniform edge weights.  The computed $\p_v$'s serve as barycentric coordinates to embed the unlabeled vertices.  Thanks to displacement interpolation, the constructed embedding conforms to the geometry of the surface; Fig.~\ref{fig:skeleton} shows sample embeddings generated using this strategy.
+
+%\leo{I found the above confusing.}
+
+%\gabriel{Maybe be (in the supplementary ?) shows some $\p_v$, both those input and those interpolated through propagations. }% good idea -- don't let me forget!
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph*{Soft maps.}  
+
+A relaxation of the point-to-point correspondence problem replaces the unknown from a map $\phi:M_0\rightarrow M$ to a measure-valued map $\mu_x:M_0\rightarrow\Prob(M)$.  Solomon et al.~\shortcite{solomon-2013} generalize the Dirichlet energy of a map to the measure-valued case, but their discussion is limited to \emph{analysis} rather than \emph{computation} of maps because their discretization scales poorly.
+
+Suppose $M_0$ and $M$ are triangle meshes and $\kernel$ is the heat kernel matrix of $M$.  A regularized discretization of the measure-valued map Dirichlet energy is provided by the Wasserstein propagation objective~\eqref{eq:propagation} from $M_0$ viewed as a graph $M_0=(V,E)$ to distributions on $M$, with weights proportional to inverse squared edge lengths.  Coupled with pointwise constraints, Algorithm~\ref{alg:propagation} provides a way to recover a map minimizing the resulting energy; convergence can be slow, however, when the constraints are far apart.
+
+To relax dependence on pointwise constraints and accelerate convergence, we introduce a \emph{compatibility function} $c(x,y):M_0\times M\rightarrow \R_+$ expressing the geometric compatibility of $x\in M_0$ and $y\in M$; small $c(x,y)$ indicates that the geometry of $M_0$ near $x$ is similar to that of $M$ near $y$.  Discretely, take $\cc_v$ to sample the compatibility function $c(v,\cdot)$ on $M$ associated with $v\in M_0$.  We modify the objective~\eqref{eq:propagation} as follows:
+\begin{equation}\label{eq:descriptor_energy}
+\left[\sum_{(v,w)\in E} \frac{1}{\ell_{(v,w)}^2} \W^2_{2,\kernel}(\p_v,\p_w)\right]+\tau\left[\sum_{v\in V}\omega_v\a^\top(\p_v\otimes \cc_v)\right].
+\end{equation}
+This objective favors distributions $\p_v$ with low compatibility cost; the weight $\omega_v$ is the area weight of $v\in M_0$.
+
+%Recall that for any edge $e=(v,w)$, we have $\p_v=\bpi_e^\top\a$ and $\p_w=\bpi_e\a.$  Thus, we can rewrite the costs as:
+%\begin{align*}
+%\a^\top (\p_v\otimes\c_v)
+%&=\a^\top\bpi_eD_{\c_v}\a\\
+%\a^\top (\p_w\otimes\c_w)
+%&=\a^\top D_{\c_w}\bpi_e\a
+%\end{align*}
+%This expansion shows that we are augmenting the transportation cost with another that is constant per row or column of $\bpi$.
+
+Take $N(v)$ to be the valence of $v\in V$.  In terms of transportation plans,~\eqref{eq:descriptor_energy} equals $\sum_{(v,w)\in E} \W^2_{2,{\overline\kernelH}_t}(\p_v,\p_w)/\ell^2_{(v,w)},$ where
+$$
+{\overline\kernelH}_t \eqdef
+\textrm{diag}\left[\exp\left(
+-\frac{\ell_e^2\tau\omega_v\cc_v}{\gamma N(v)}
+\right)\right]
+ \kernel
+\textrm{diag}\left[\exp\left(
+-\frac{\ell_e^2\tau\omega_w\cc_w}{\gamma N(w)}
+\right)\right].
+$$
+This matrix is a diagonal rescaling of $\kernel$, so we can still efficiently optimize~\eqref{eq:descriptor_energy} using Algorithm~\ref{alg:propagation}, slightly adjusted to use a different kernel on each edge.
+%, with the small modification of initializing %this is incorrect!!
+%$$f
+%\v_e \eqdef
+%\exp\left[
+%-\frac{\ell_e^2\tau\omega_w\c_w}{\gamma N(w)}
+%\right]
+%\textrm{ and }
+%\w_e \eqdef
+%\exp\left[
+%-\frac{\ell_e^2\tau\omega_v\c_v}{\gamma N(v)}
+%\right].
+%$$
+%
+\begin{figure}[t]\centering
+\begin{tabular}{@{}c@{}c@{}c@{}c@{}}
+\includegraphics[height=.3\linewidth]{figures/softmaps2/sourcemap_cropped.png.pdf}&
+\includegraphics[height=.3\linewidth]{figures/softmaps2/SHREC_281_285_expdiff_cropped.png.pdf}&
+\includegraphics[height=.3\linewidth]{figures/softmaps2/SHREC_281_285_straight_cropped.png.pdf}&
+\includegraphics[height=.3\linewidth]{figures/softmaps2/SHREC_281_285_reverse_cropped.png.pdf}\\
+Source & 
+$e^{-\alpha c(x,y)}$ &
+Result &
+\pbox{.2\linewidth}
+{\centerline{Result}\centerline{(left/right flip)}}
+\end{tabular}\vspace{-.1in}
+\caption{Soft maps: Colored points on the source are mapped to the colored distributions on the target, where black points are fixed input correspondences.  Our method is able to extract \emph{two} maps from the left-right symmetric descriptor $c(x,y)$, depending on whether the fixed correspondences preserve orientation or are flipped.}\label{fig:softmaps}
+\end{figure}
+%\begin{figure}[t]\centering
+%\begin{tabular}{cc}
+%\includegraphics[height=.3\linewidth]{figures/softmaps2/sourcemap.pdf}&
+%\includegraphics[height=.3\linewidth]{figures/softmaps2/targetmap.pdf}\\
+%Source & 
+%Target \end{tabular}\vspace{-.1in}
+%\caption{A soft map between armadillo models.}\label{fig:softmaps2}
+%\end{figure}
+%
+Fig.~\ref{fig:softmaps} shows maps between a pair of surfaces computed using this technique.  Because the models are nearly isometric, we use the wave kernel signature (WKS)~\cite{aubry-2011} to determine the compatibility function $c(x,y)$.  This signature is unable to distinguish between the orientation-preserving and left/right flipped maps between the two surfaces.  Wasserstein propagation guided by this choice of $c(x,y)$ paired with a sparse set of fixed correspondences breaking the symmetry is enough to recover both maps.  The resulting soft map matrices are of size $1024\times 1024,$ an order of magnitude larger than the maps generated in~\cite{solomon-2012}, computed in less than a minute using similar hardware.

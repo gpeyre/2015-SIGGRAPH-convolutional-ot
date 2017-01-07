@@ -1,0 +1,4123 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  6 JUN 2015 02:29
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**sec-computation.tex
+(./sec-computation.tex
+LaTeX2e <2014/05/01>
+Babel <3.9k> and hyphenation patterns for 78 languages loaded.
+./sec-computation.tex:2: Undefined control sequence.
+l.2 \section
+            {Convolutional Wasserstein Distance}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+./sec-computation.tex:2: LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2 \section{C
+              onvolutional Wasserstein Distance}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no C in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no v in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no W in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no D in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no e in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 2--3
+[]
+ []
+
+
+./sec-computation.tex:8: LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 W
+     e now detail our numerical framework to carry out regularized optimal t...
+
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no W in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no w in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no w in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no k in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no O in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no W in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no v in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no k in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no v in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no w in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no I in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no w in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no w in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no w in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no e in font nullfont!
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 9.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 9.
+Missing character: There is no a in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no w in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no v in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no . in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 8--10
+[]
+ []
+
+
+Overfull \hbox (18.39986pt too wide) in paragraph at lines 8--10
+\OT1/cmr/m/it/10 con-
+ []
+
+
+Overfull \hbox (13.28879pt too wide) in paragraph at lines 8--10
+\OT1/cmr/m/it/10 vo-
+ []
+
+
+Overfull \hbox (11.49992pt too wide) in paragraph at lines 8--10
+\OT1/cmr/m/it/10 lu-
+ []
+
+
+Overfull \hbox (24.78874pt too wide) in paragraph at lines 8--10
+\OT1/cmr/m/it/10 tional
+ []
+
+
+Overfull \hbox (35.67198pt too wide) in paragraph at lines 8--10
+\OT1/cmr/m/it/10 Wasser-
+ []
+
+
+Overfull \hbox (20.69986pt too wide) in paragraph at lines 8--10
+\OT1/cmr/m/it/10 stein
+ []
+
+
+Overfull \hbox (15.84435pt too wide) in paragraph at lines 8--10
+\OT1/cmr/m/it/10 dis-
+ []
+
+
+Overfull \hbox (26.83313pt too wide) in paragraph at lines 8--10
+\OT1/cmr/m/it/10 tances
+ []
+
+
+Overfull \hbox (7.7778pt too wide) in paragraph at lines 8--10
+\OMS/cmsy/m/n/10 $
+ []
+
+
+Overfull \hbox (7.7778pt too wide) in paragraph at lines 8--10
+\OMS/cmsy/m/n/10 
+$
+ []
+
+
+./sec-computation.tex:13: LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.13 R
+      equirements for computing convolutional distances are minimal:
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no R in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no q in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no v in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no : in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 13--14
+[]
+ []
+
+Missing character: There is no T in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no w in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no v in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no s in font nullfont!
+
+LaTeX Warning: Command \b invalid in math mode on input line 19.
+
+
+LaTeX Warning: Command \b invalid in math mode on input line 19.
+
+LaTeX Font Info:    Try loading font information for +cmr on input line 19.
+LaTeX Font Info:    No file cmr.fd. on input line 19.
+
+LaTeX Font Warning: Font shape `/cmr/m/n' undefined
+(Font)              using `/cmr/m/n' instead on input line 19.
+
+./sec-computation.tex:19: Corrupted NFSS tables.
+wrong@fontshape ...message {Corrupted NFSS tables}
+                                                  error@fontshape else let f...
+l.19 and densities represented as vectors $\b{f}
+                                                \in\R^n$.
+This error message was generated by an \errmessage
+command, so I can't give any explicit help.
+Pretend that you're Hercule Poirot: Examine all clues,
+and deduce the truth by order and method.
+
+
+LaTeX Font Warning: Font shape `/cmr/m/n' undefined
+(Font)              using `OT1/cmr/m/n' instead on input line 19.
+
+./sec-computation.tex:19: Undefined control sequence.
+l.19 ...nsities represented as vectors $\b{f}\in\R
+                                                  ^n$.
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no . in font nullfont!
+
+Overfull \hbox (10.79166pt too wide) in paragraph at lines 15--20
+\OML/cmm/m/it/10 M$
+ []
+
+
+Overfull \hbox (6.00235pt too wide) in paragraph at lines 15--20
+\OML/cmm/m/it/10 n$
+ []
+
+
+Overfull \hbox (17.9433pt too wide) in paragraph at lines 15--20
+[] \OMS/cmsy/m/n/10 2[]$ 
+ []
+
+Missing character: There is no A in font nullfont!
+Missing character: There is no v in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+
+LaTeX Warning: Command \\in invalid in math mode on input line 20.
+
+
+./sec-computation.tex:20: LaTeX Error: Command \\in unavailable in encoding .
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.20 \item A vector $\a\in
+                          \R_+^n$ of ``area weights,'' with $\a^\top\1=1,$ d...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./sec-computation.tex:20: Undefined control sequence.
+l.20 \item A vector $\a\in\R
+                            _+^n$ of ``area weights,'' with $\a^\top\1=1,$ d...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no o in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no ` in font nullfont!
+Missing character: There is no ` in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no w in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no ' in font nullfont!
+Missing character: There is no ' in font nullfont!
+Missing character: There is no w in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+
+LaTeX Warning: Command \^ invalid in math mode on input line 20.
+
+
+LaTeX Warning: Command \^ invalid in math mode on input line 20.
+
+./sec-computation.tex:20: Missing $ inserted.
+<inserted text> 
+                $
+l.20 ...\R_+^n$ of ``area weights,'' with $\a^\top
+                                                  \1=1,$ defined so that
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./sec-computation.tex:20: Improper \spacefactor.
+<recently read> \spacefactor 
+                             
+l.20 ...\R_+^n$ of ``area weights,'' with $\a^\top
+                                                  \1=1,$ defined so that
+You can refer to \spacefactor only in horizontal mode;
+you can refer to \prevdepth only in vertical mode; and
+neither of these is meaningful inside \write. So
+I'm forgetting what you said and using zero instead.
+
+./sec-computation.tex:20: Extra }, or forgotten $.
+\add@accent ... \accent@spacefactor \spacefactor }
+                                                  \accent #1 #2\egroup \spac...
+l.20 ...\R_+^n$ of ``area weights,'' with $\a^\top
+                                                  \1=1,$ defined so that
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./sec-computation.tex:20: Please use \mathaccent for accents in math mode.
+\add@accent ...@spacefactor \spacefactor }\accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.20 ...\R_+^n$ of ``area weights,'' with $\a^\top
+                                                  \1=1,$ defined so that
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+./sec-computation.tex:20: Missing { inserted.
+<to be read again> 
+                   \edef 
+l.20 ...\R_+^n$ of ``area weights,'' with $\a^\top
+                                                  \1=1,$ defined so that
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+./sec-computation.tex:20: You can't use `\spacefactor' in math mode.
+\add@accent ...}\accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.20 ...\R_+^n$ of ``area weights,'' with $\a^\top
+                                                  \1=1,$ defined so that
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+./sec-computation.tex:20: Extra }, or forgotten $.
+\UseTextAccent ...se@text@encoding \@curr@enc #3}}
+                                                  
+l.20 ...\R_+^n$ of ``area weights,'' with $\a^\top
+                                                  \1=1,$ defined so that
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./sec-computation.tex:20: Undefined control sequence.
+l.20 ..._+^n$ of ``area weights,'' with $\a^\top\1
+                                                  =1,$ defined so that
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./sec-computation.tex:21: Missing $ inserted.
+<inserted text> 
+                $
+l.21 $$\int
+           _M f(x)\,\dx \approx \a^\top\!\b{f}.$$
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./sec-computation.tex:21: Undefined control sequence.
+l.21 $$\int_M f(x)\,\dx
+                        \approx \a^\top\!\b{f}.$$
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Command \^ invalid in math mode on input line 21.
+
+
+LaTeX Warning: Command \^ invalid in math mode on input line 21.
+
+./sec-computation.tex:21: Missing $ inserted.
+<inserted text> 
+                $
+l.21 $$\int_M f(x)\,\dx \approx \a^\top
+                                       \!\b{f}.$$
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./sec-computation.tex:21: Improper \spacefactor.
+<recently read> \spacefactor 
+                             
+l.21 $$\int_M f(x)\,\dx \approx \a^\top
+                                       \!\b{f}.$$
+You can refer to \spacefactor only in horizontal mode;
+you can refer to \prevdepth only in vertical mode; and
+neither of these is meaningful inside \write. So
+I'm forgetting what you said and using zero instead.
+
+./sec-computation.tex:21: Extra }, or forgotten $.
+\add@accent ... \accent@spacefactor \spacefactor }
+                                                  \accent #1 #2\egroup \spac...
+l.21 $$\int_M f(x)\,\dx \approx \a^\top
+                                       \!\b{f}.$$
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./sec-computation.tex:21: Please use \mathaccent for accents in math mode.
+\add@accent ...@spacefactor \spacefactor }\accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.21 $$\int_M f(x)\,\dx \approx \a^\top
+                                       \!\b{f}.$$
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+./sec-computation.tex:21: Missing { inserted.
+<to be read again> 
+                   \edef 
+l.21 $$\int_M f(x)\,\dx \approx \a^\top
+                                       \!\b{f}.$$
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+./sec-computation.tex:21: You can't use `\spacefactor' in math mode.
+\add@accent ...}\accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.21 $$\int_M f(x)\,\dx \approx \a^\top
+                                       \!\b{f}.$$
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+
+LaTeX Warning: Command \b invalid in math mode on input line 21.
+
+
+LaTeX Warning: Command \b invalid in math mode on input line 21.
+
+
+./sec-computation.tex:22: LaTeX Error: Command \item invalid in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.22 \item
+           %\gabriel{Should we write rather $\kernel_t$, since after it is s...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./sec-computation.tex:23: LaTeX Error: Something's wrong--perhaps a missing \it
+em.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.23 A
+       symmetric matrix $\kernel$ discretizing the kernel $\H_t$ such that %...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./sec-computation.tex:23: LaTeX Error: Something's wrong--perhaps a missing \it
+em.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.23 A
+       symmetric matrix $\kernel$ discretizing the kernel $\H_t$ such that %...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./sec-computation.tex:23: Undefined control sequence.
+l.23 A symmetric matrix $\kernel
+                                $ discretizing the kernel $\H_t$ such that %...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./sec-computation.tex:23: Missing $ inserted.
+<inserted text> 
+                $
+l.23 ...rix $\kernel$ discretizing the kernel $\H_
+                                                  t$ such that %justin switc...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./sec-computation.tex:23: Missing { inserted.
+<to be read again> 
+                   \global 
+l.23 ...rix $\kernel$ discretizing the kernel $\H_
+                                                  t$ such that %justin switc...
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+./sec-computation.tex:23: Improper \spacefactor.
+<recently read> \spacefactor 
+                             
+l.23 ...rix $\kernel$ discretizing the kernel $\H_
+                                                  t$ such that %justin switc...
+You can refer to \spacefactor only in horizontal mode;
+you can refer to \prevdepth only in vertical mode; and
+neither of these is meaningful inside \write. So
+I'm forgetting what you said and using zero instead.
+
+./sec-computation.tex:23: Please use \mathaccent for accents in math mode.
+\add@accent ...@spacefactor \spacefactor }\accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.23 ...rix $\kernel$ discretizing the kernel $\H_
+                                                  t$ such that %justin switc...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+./sec-computation.tex:23: Missing { inserted.
+<to be read again> 
+                   \edef 
+l.23 ...rix $\kernel$ discretizing the kernel $\H_
+                                                  t$ such that %justin switc...
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+./sec-computation.tex:23: Missing { inserted.
+<to be read again> 
+                   \egroup 
+l.23 ...rix $\kernel$ discretizing the kernel $\H_
+                                                  t$ such that %justin switc...
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+./sec-computation.tex:23: You can't use `\spacefactor' in math mode.
+\add@accent ...}\accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.23 ...rix $\kernel$ discretizing the kernel $\H_
+                                                  t$ such that %justin switc...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+./sec-computation.tex:23: Missing } inserted.
+<inserted text> 
+                }
+l.23 ...x $\kernel$ discretizing the kernel $\H_t$
+                                                   such that %justin switche...
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./sec-computation.tex:25: Missing $ inserted.
+<inserted text> 
+                $
+l.25 	\int
+          _M \hspace{-1mm}f(y) \H_t(\cdot,y) \dy \,\approx\, \kernel(\a\otim...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+LaTeX Warning: Command \H invalid in math mode on input line 25.
+
+
+LaTeX Warning: Command \H invalid in math mode on input line 25.
+
+./sec-computation.tex:25: Missing $ inserted.
+<inserted text> 
+                $
+l.25 	\int_M \hspace{-1mm}f(y) \H_
+                                  t(\cdot,y) \dy \,\approx\, \kernel(\a\otim...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./sec-computation.tex:25: Missing { inserted.
+<to be read again> 
+                   \global 
+l.25 	\int_M \hspace{-1mm}f(y) \H_
+                                  t(\cdot,y) \dy \,\approx\, \kernel(\a\otim...
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+./sec-computation.tex:25: Improper \spacefactor.
+<recently read> \spacefactor 
+                             
+l.25 	\int_M \hspace{-1mm}f(y) \H_
+                                  t(\cdot,y) \dy \,\approx\, \kernel(\a\otim...
+You can refer to \spacefactor only in horizontal mode;
+you can refer to \prevdepth only in vertical mode; and
+neither of these is meaningful inside \write. So
+I'm forgetting what you said and using zero instead.
+
+./sec-computation.tex:25: Please use \mathaccent for accents in math mode.
+\add@accent ...@spacefactor \spacefactor }\accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.25 	\int_M \hspace{-1mm}f(y) \H_
+                                  t(\cdot,y) \dy \,\approx\, \kernel(\a\otim...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+./sec-computation.tex:25: Missing { inserted.
+<to be read again> 
+                   \edef 
+l.25 	\int_M \hspace{-1mm}f(y) \H_
+                                  t(\cdot,y) \dy \,\approx\, \kernel(\a\otim...
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+./sec-computation.tex:25: Missing { inserted.
+<to be read again> 
+                   \egroup 
+l.25 	\int_M \hspace{-1mm}f(y) \H_
+                                  t(\cdot,y) \dy \,\approx\, \kernel(\a\otim...
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+./sec-computation.tex:25: You can't use `\spacefactor' in math mode.
+\add@accent ...}\accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.25 	\int_M \hspace{-1mm}f(y) \H_
+                                  t(\cdot,y) \dy \,\approx\, \kernel(\a\otim...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+./sec-computation.tex:25: Undefined control sequence.
+l.25 	\int_M \hspace{-1mm}f(y) \H_t(\cdot,y) \dy
+                                                 \,\approx\, \kernel(\a\otim...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./sec-computation.tex:25: Undefined control sequence.
+l.25 ...f(y) \H_t(\cdot,y) \dy \,\approx\, \kernel
+                                                  (\a\otimes\b{f}).
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Command \\otimes invalid in math mode on input line 25.
+
+
+./sec-computation.tex:25: LaTeX Error: Command \\otimes unavailable in encoding
+ .
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.25 ...\cdot,y) \dy \,\approx\, \kernel(\a\otimes
+                                                  \b{f}).
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+LaTeX Warning: Command \b invalid in math mode on input line 25.
+
+
+LaTeX Warning: Command \b invalid in math mode on input line 25.
+
+
+./sec-computation.tex:26: LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.26 \]
+       
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./sec-computation.tex:28: Missing } inserted.
+<inserted text> 
+                }
+l.28 ...s sufficient to know how to \emph{apply} $
+                                                  \kernel$ to vectors, rathe...
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./sec-computation.tex:28: Undefined control sequence.
+l.28 ...cient to know how to \emph{apply} $\kernel
+                                                  $ to vectors, rather than ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./sec-computation.tex:28: Undefined control sequence.
+l.28 ...n storing it explicitly as a matrix in $\R
+                                                  ^{n\!\times\!n}_{+,*}.$
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./sec-computation.tex:28: Missing $ inserted.
+<inserted text> 
+                $
+l.28 ... storing it explicitly as a matrix in $\R^
+                                                  {n\!\times\!n}_{+,*}.$
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+./sec-computation.tex:29: LaTeX Error: Something's wrong--perhaps a missing \it
+em.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.29 \end{itemize}
+                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./sec-computation.tex:29: LaTeX Error: Something's wrong--perhaps a missing \it
+em.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.29 \end{itemize}
+                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./sec-computation.tex:29: Missing } inserted.
+<inserted text> 
+                }
+l.29 \end{itemize}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./sec-computation.tex:29: Missing } inserted.
+<inserted text> 
+                }
+l.29 \end{itemize}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./sec-computation.tex:29: Missing $ inserted.
+<inserted text> 
+                $
+l.29 \end{itemize}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./sec-computation.tex:29: Missing } inserted.
+<inserted text> 
+                }
+l.29 \end{itemize}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./sec-computation.tex:29: Missing } inserted.
+<inserted text> 
+                }
+l.29 \end{itemize}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./sec-computation.tex:29: Missing } inserted.
+<inserted text> 
+                }
+l.29 \end{itemize}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./sec-computation.tex:29: Missing } inserted.
+<inserted text> 
+                }
+l.29 \end{itemize}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./sec-computation.tex:29: Missing $ inserted.
+<inserted text> 
+                $
+l.29 \end{itemize}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./sec-computation.tex:29: Missing } inserted.
+<inserted text> 
+                }
+l.29 \end{itemize}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./sec-computation.tex:29: Missing } inserted.
+<inserted text> 
+                }
+l.29 \end{itemize}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./sec-computation.tex:29: Missing } inserted.
+<inserted text> 
+                }
+l.29 \end{itemize}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./sec-computation.tex:29: Missing $ inserted.
+<inserted text> 
+                $
+l.29 \end{itemize}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Overfull \hbox (6.63892pt too wide) in paragraph at lines 20--30
+[]$
+ []
+
+Missing character: There is no F in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no I in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no , in font nullfont!
+
+LaTeX Warning: Command \\! invalid in math mode on input line 31.
+
+
+./sec-computation.tex:31: LaTeX Error: Command \\! unavailable in encoding .
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.31 ...ixels (so $n=n_1n_2$). In this case, $\a\!
+                                                  \eqdef\!\1/n_1n_2$ and $\k...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./sec-computation.tex:31: Undefined control sequence.
+l.31 ...(so $n=n_1n_2$). In this case, $\a\!\eqdef
+                                                  \!\1/n_1n_2$ and $\kernel$...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./sec-computation.tex:31: Undefined control sequence.
+l.31 ...$n=n_1n_2$). In this case, $\a\!\eqdef\!\1
+                                                  /n_1n_2$ and $\kernel$ is ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no a in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no d in font nullfont!
+./sec-computation.tex:31: Undefined control sequence.
+<recently read> \kernel 
+                        
+l.31 ...case, $\a\!\eqdef\!\1/n_1n_2$ and $\kernel
+                                                  $ is the operator convolvi...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no v in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no v in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no w in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no G in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no v in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no N in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no V in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no ' in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no k in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no G in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no . in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 31--32
+[]
+ []
+
+
+Overfull \hbox (16.59966pt too wide) in paragraph at lines 31--32
+\OML/cmm/m/it/10 n[]  \OMS/cmsy/m/n/10 ^^B
+ []
+
+
+Overfull \hbox (10.48848pt too wide) in paragraph at lines 31--32
+\OML/cmm/m/it/10 n[]$
+ []
+
+
+Overfull \hbox (16.55786pt too wide) in paragraph at lines 31--32
+\OML/cmm/m/it/10 n \/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (20.97696pt too wide) in paragraph at lines 31--32
+\OML/cmm/m/it/10 n[]n[]$
+ []
+
+
+Overfull \hbox (25.97697pt too wide) in paragraph at lines 31--32
+\OML/cmm/m/it/10 =n[]n[]$
+ []
+
+
+Overfull \hbox (19.44792pt too wide) in paragraph at lines 31--32
+\OML/cmm/m/it/10 ^^[[]  \/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (5.73285pt too wide) in paragraph at lines 31--32
+\OML/cmm/m/it/10 ^^M$
+ []
+
+
+Overfull \hbox (12.81657pt too wide) in paragraph at lines 31--32
+\OT1/cmr/m/it/10 ex-
+ []
+
+
+Overfull \hbox (20.44429pt too wide) in paragraph at lines 31--32
+\OT1/cmr/m/it/10 actly
+ []
+
+Missing character: There is no F in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no w in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no k in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no v in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no v in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+
+LaTeX Warning: Command \$ invalid in math mode on input line 33.
+
+
+./sec-computation.tex:33: LaTeX Error: Command \$ unavailable in encoding .
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.33 ...umber of vertices and the area vector $\a$
+                                                   as lumped areas proportio...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./sec-computation.tex:33: Missing $ inserted.
+<inserted text> 
+                $
+l.33 ...x. Given the cotangent Laplacian $\b{L}\in
+                                                  \R^{n\!\times\!n}$~\cite{M...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./sec-computation.tex:33: Undefined control sequence.
+l.33 ... Given the cotangent Laplacian $\b{L}\in\R
+                                                  ^{n\!\times\!n}$~\cite{Mac...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no [ in font nullfont!
+\citation{MacNeal:1949}
+./sec-computation.tex:33: Undefined control sequence.
+<write> ...: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.33 ...}\in\R^{n\!\times\!n}$~\cite{MacNeal:1949}
+                                                   and a diagonal area matri...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `MacNeal:1949' on page  undefined on input line 33.
+
+Missing character: There is no ] in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no x in font nullfont!
+./sec-computation.tex:33: Undefined control sequence.
+<recently read> \diag 
+                      
+l.33 ...al:1949} and a diagonal area matrix $\diag
+                                                  \a$ ($\diag\v$ denotes the...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Command \$ invalid in math mode on input line 33.
+
+
+./sec-computation.tex:33: LaTeX Error: Command \$ unavailable in encoding .
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.33 ...1949} and a diagonal area matrix $\diag\a$
+                                                   ($\diag\v$ denotes the di...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./sec-computation.tex:33: Undefined control sequence.
+l.33 ...d a diagonal area matrix $\diag\a$ ($\diag
+                                                  \v$ denotes the diagonal m...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./sec-computation.tex:33: Improper \spacefactor.
+<recently read> \spacefactor 
+                             
+l.33 ... diagonal area matrix $\diag\a$ ($\diag\v$
+                                                   denotes the diagonal matr...
+You can refer to \spacefactor only in horizontal mode;
+you can refer to \prevdepth only in vertical mode; and
+neither of these is meaningful inside \write. So
+I'm forgetting what you said and using zero instead.
+
+./sec-computation.tex:33: Extra }, or forgotten $.
+\add@accent ... \accent@spacefactor \spacefactor }
+                                                  \accent #1 #2\egroup \spac...
+l.33 ... diagonal area matrix $\diag\a$ ($\diag\v$
+                                                   denotes the diagonal matr...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./sec-computation.tex:33: Please use \mathaccent for accents in math mode.
+\add@accent ...@spacefactor \spacefactor }\accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.33 ... diagonal area matrix $\diag\a$ ($\diag\v$
+                                                   denotes the diagonal matr...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+./sec-computation.tex:33: Missing { inserted.
+<to be read again> 
+                   \edef 
+l.33 ... diagonal area matrix $\diag\a$ ($\diag\v$
+                                                   denotes the diagonal matr...
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+./sec-computation.tex:33: Missing } inserted.
+<inserted text> 
+                }
+l.33 ... diagonal area matrix $\diag\a$ ($\diag\v$
+                                                   denotes the diagonal matr...
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./sec-computation.tex:33: Bad space factor (0).
+<recently read> \accent@spacefactor 
+                                    
+l.33 ... diagonal area matrix $\diag\a$ ($\diag\v$
+                                                   denotes the diagonal matr...
+I allow only values in the range 1..32767 here.
+
+
+LaTeX Warning: Command \v invalid in math mode on input line 33.
+
+./sec-computation.tex:33: Improper \spacefactor.
+<recently read> \spacefactor 
+                             
+l.33 ...agonal matrix with elements in vector $\v$
+                                                  ), we discretize the heat ...
+You can refer to \spacefactor only in horizontal mode;
+you can refer to \prevdepth only in vertical mode; and
+neither of these is meaningful inside \write. So
+I'm forgetting what you said and using zero instead.
+
+./sec-computation.tex:33: Extra }, or forgotten $.
+\add@accent ... \accent@spacefactor \spacefactor }
+                                                  \accent #1 #2\egroup \spac...
+l.33 ...agonal matrix with elements in vector $\v$
+                                                  ), we discretize the heat ...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./sec-computation.tex:33: Please use \mathaccent for accents in math mode.
+\add@accent ...@spacefactor \spacefactor }\accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.33 ...agonal matrix with elements in vector $\v$
+                                                  ), we discretize the heat ...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+./sec-computation.tex:33: Missing { inserted.
+<to be read again> 
+                   $
+l.33 ...agonal matrix with elements in vector $\v$
+                                                  ), we discretize the heat ...
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+./sec-computation.tex:33: Missing } inserted.
+<inserted text> 
+                }
+l.33 ...agonal matrix with elements in vector $\v$
+                                                  ), we discretize the heat ...
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./sec-computation.tex:33: You can't use `\spacefactor' in math mode.
+\add@accent ...}\accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.33 ...agonal matrix with elements in vector $\v$
+                                                  ), we discretize the heat ...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+\citation{Desbrun:1999}
+./sec-computation.tex:33: Undefined control sequence.
+<write> ...: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.33 ...icit Euler integration~\cite{Desbrun:1999}
+                                                   with time step $t=\nicefr...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `Desbrun:1999' on page  undefined on input line 33.
+
+./sec-computation.tex:33: Missing } inserted.
+<inserted text> 
+                }
+l.33 ...ation~\cite{Desbrun:1999} with time step $
+                                                  t=\nicefrac{\gamma}{2}$, i...
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./sec-computation.tex:33: Undefined control sequence.
+l.33 ...{Desbrun:1999} with time step $t=\nicefrac
+                                                  {\gamma}{2}$, i.e.,
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./sec-computation.tex:33: Missing $ inserted.
+<inserted text> 
+                $
+l.33 ...n:1999} with time step $t=\nicefrac{\gamma
+                                                  }{2}$, i.e.,
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./sec-computation.tex:33: Extra }, or forgotten $.
+l.33 ...:1999} with time step $t=\nicefrac{\gamma}
+                                                  {2}$, i.e.,
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 33--34
+[]
+ []
+
+
+Overfull \hbox (6.00235pt too wide) in paragraph at lines 33--34
+\OML/cmm/m/it/10 n$
+ []
+
+
+Overfull \hbox (505.3909pt too wide) in paragraph at lines 33--34
+\OML/cmm/m/it/10 aslumpedareasproportionaltothesumoftriangleareasadjacenttoagiv
+envertex:GiventhecotangentLaplacian$[]$\OMS/cmsy/m/n/10 2[]$ []
+ []
+
+
+Overfull \hbox (3.8889pt too wide) in paragraph at lines 33--34
+\/cmr/m/n/10 ($
+ []
+
+
+Overfull \hbox (13.33334pt too wide) in paragraph at lines 33--34
+\/cmr/m/n/10 de-
+ []
+
+
+Overfull \hbox (22.83337pt too wide) in paragraph at lines 33--34
+\/cmr/m/n/10 notes
+ []
+
+
+Overfull \hbox (13.88892pt too wide) in paragraph at lines 33--34
+\/cmr/m/n/10 the
+ []
+
+
+Overfull \hbox (11.66669pt too wide) in paragraph at lines 33--34
+\/cmr/m/n/10 di-
+ []
+
+
+Overfull \hbox (13.33336pt too wide) in paragraph at lines 33--34
+\/cmr/m/n/10 ag-
+ []
+
+
+Overfull \hbox (8.33334pt too wide) in paragraph at lines 33--34
+\/cmr/m/n/10 o-
+ []
+
+
+Overfull \hbox (13.33337pt too wide) in paragraph at lines 33--34
+\/cmr/m/n/10 nal
+ []
+
+
+Overfull \hbox (16.6667pt too wide) in paragraph at lines 33--34
+\/cmr/m/n/10 ma-
+ []
+
+
+Overfull \hbox (15.86116pt too wide) in paragraph at lines 33--34
+\/cmr/m/n/10 trix
+ []
+
+
+Overfull \hbox (19.44449pt too wide) in paragraph at lines 33--34
+\/cmr/m/n/10 with
+ []
+
+
+Overfull \hbox (10.55556pt too wide) in paragraph at lines 33--34
+\/cmr/m/n/10 el-
+ []
+
+
+Overfull \hbox (7.77777pt too wide) in paragraph at lines 33--34
+\/cmr/m/n/10 e-
+ []
+
+
+Overfull \hbox (25.88893pt too wide) in paragraph at lines 33--34
+\/cmr/m/n/10 ments
+ []
+
+
+Overfull \hbox (8.33336pt too wide) in paragraph at lines 33--34
+\/cmr/m/n/10 in
+ []
+
+
+Overfull \hbox (17.22223pt too wide) in paragraph at lines 33--34
+\/cmr/m/n/10 vec-
+ []
+
+
+Overfull \hbox (12.80559pt too wide) in paragraph at lines 33--34
+\/cmr/m/n/10 tor
+ []
+
+
+Overfull \hbox (508.35347pt too wide) in paragraph at lines 33--34
+[]$\/cmr/m/n/10 t=$\OML/cmm/m/it/10 ^^M\/cmr/m/n/10 2$,
+ []
+
+
+Overfull \hbox (15.55559pt too wide) in paragraph at lines 33--34
+\/cmr/m/n/10 i.e., 
+ []
+
+./sec-computation.tex:35: Undefined control sequence.
+l.35 	\w
+         = \kernel(\a\otimes\v) \iff \left(\diag{\a} + \nicefrac{\gamma}{2} ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./sec-computation.tex:35: Undefined control sequence.
+l.35 	\w = \kernel
+                  (\a\otimes\v) \iff \left(\diag{\a} + \nicefrac{\gamma}{2} ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Command \\otimes invalid in math mode on input line 35.
+
+
+./sec-computation.tex:35: LaTeX Error: Command \\otimes unavailable in encoding
+ OT1.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.35 	\w = \kernel(\a\otimes
+                            \v) \iff \left(\diag{\a} + \nicefrac{\gamma}{2} ...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+LaTeX Warning: Command \v invalid in math mode on input line 35.
+
+./sec-computation.tex:35: Please use \mathaccent for accents in math mode.
+\add@accent ...@spacefactor \spacefactor }\accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.35 	\w = \kernel(\a\otimes\v)
+                                \iff \left(\diag{\a} + \nicefrac{\gamma}{2} ...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+./sec-computation.tex:35: You can't use `\spacefactor' in display math mode.
+\add@accent ...}\accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.35 	\w = \kernel(\a\otimes\v)
+                                \iff \left(\diag{\a} + \nicefrac{\gamma}{2} ...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+./sec-computation.tex:35: Undefined control sequence.
+l.35 	\w = \kernel(\a\otimes\v) \iff \left(\diag
+                                                {\a} + \nicefrac{\gamma}{2} ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./sec-computation.tex:35: Argument of \a has an extra }.
+<inserted text> 
+                \par 
+l.35 ... \kernel(\a\otimes\v) \iff \left(\diag{\a}
+                                                   + \nicefrac{\gamma}{2} \b...
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+./sec-computation.tex:35: Paragraph ended before \a was complete.
+<to be read again> 
+                   \par 
+l.35 ... \kernel(\a\otimes\v) \iff \left(\diag{\a}
+                                                   + \nicefrac{\gamma}{2} \b...
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+./sec-computation.tex:35: Missing $ inserted.
+<inserted text> 
+                $
+l.35 ... \kernel(\a\otimes\v) \iff \left(\diag{\a}
+                                                   + \nicefrac{\gamma}{2} \b...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./sec-computation.tex:35: Missing } inserted.
+<inserted text> 
+                }
+l.35 ... \kernel(\a\otimes\v) \iff \left(\diag{\a}
+                                                   + \nicefrac{\gamma}{2} \b...
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./sec-computation.tex:35: Missing \right. inserted.
+<inserted text> 
+                \right .
+l.35 ... \kernel(\a\otimes\v) \iff \left(\diag{\a}
+                                                   + \nicefrac{\gamma}{2} \b...
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./sec-computation.tex:35: Display math should end with $$.
+<to be read again> 
+                   \par 
+l.35 ... \kernel(\a\otimes\v) \iff \left(\diag{\a}
+                                                   + \nicefrac{\gamma}{2} \b...
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+Missing character: There is no è in font cmex10!
+
+Overfull \hbox (52.86646pt too wide) detected at line 35
+\/cmr/m/n/10 = ([]  \OMS/cmsy/m/n/10 ([])  []
+ []
+
+./sec-computation.tex:35: Undefined control sequence.
+l.35 ...otimes\v) \iff \left(\diag{\a} + \nicefrac
+                                                  {\gamma}{2} \b{L}\right)\w...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./sec-computation.tex:35: Missing $ inserted.
+<inserted text> 
+                $
+l.35 ...v) \iff \left(\diag{\a} + \nicefrac{\gamma
+                                                  }{2} \b{L}\right)\w = \a\o...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./sec-computation.tex:35: Extra }, or forgotten $.
+l.35 ...) \iff \left(\diag{\a} + \nicefrac{\gamma}
+                                                  {2} \b{L}\right)\w = \a\ot...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+LaTeX Warning: Command \b invalid in math mode on input line 35.
+
+./sec-computation.tex:35: Extra \right.
+l.35 ...ag{\a} + \nicefrac{\gamma}{2} \b{L}\right)
+                                                  \w = \a\otimes\v.
+I'm ignoring a \right that had no matching \left.
+
+./sec-computation.tex:35: Undefined control sequence.
+l.35 ...{\a} + \nicefrac{\gamma}{2} \b{L}\right)\w
+                                                   = \a\otimes\v.
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Command \\otimes invalid in math mode on input line 35.
+
+
+./sec-computation.tex:35: LaTeX Error: Command \\otimes unavailable in encoding
+ OT1.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.35 ...frac{\gamma}{2} \b{L}\right)\w = \a\otimes
+                                                  \v.
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+LaTeX Warning: Command \v invalid in math mode on input line 35.
+
+./sec-computation.tex:35: Please use \mathaccent for accents in math mode.
+\add@accent ...@spacefactor \spacefactor }\accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.35 ...c{\gamma}{2} \b{L}\right)\w = \a\otimes\v.
+                                                  
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+./sec-computation.tex:35: You can't use `\spacefactor' in math mode.
+\add@accent ...}\accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.35 ...c{\gamma}{2} \b{L}\right)\w = \a\otimes\v.
+                                                  
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+
+./sec-computation.tex:36: LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.36 \]
+       
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./sec-computation.tex:37: \textfont 11 is undefined (character ¸).
+l.37 $
+      \diag\a + \nicefrac{\gamma}{2} \b{L}$ can be pre-factored before dista...
+Somewhere in the math formula just ended, you used the
+stated character from an undefined font family. For example,
+plain TeX doesn't allow \it or \sl in subscripts. Proceed,
+and I'll try to forget that I needed that character.
+
+./sec-computation.tex:37: Undefined control sequence.
+l.37 $\diag
+           \a + \nicefrac{\gamma}{2} \b{L}$ can be pre-factored before dista...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+./sec-computation.tex:37: LaTeX Error: Command \+ unavailable in encoding OT1.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.37 $\diag\a +
+                \nicefrac{\gamma}{2} \b{L}$ can be pre-factored before dista...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./sec-computation.tex:37: Undefined control sequence.
+l.37 $\diag\a + \nicefrac
+                         {\gamma}{2} \b{L}$ can be pre-factored before dista...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./sec-computation.tex:37: Missing $ inserted.
+<inserted text> 
+                $
+l.37 $\diag\a + \nicefrac{\gamma
+                                }{2} \b{L}$ can be pre-factored before dista...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./sec-computation.tex:37: Extra }, or forgotten $.
+l.37 $\diag\a + \nicefrac{\gamma}
+                                 {2} \b{L}$ can be pre-factored before dista...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+LaTeX Warning: Command \b invalid in math mode on input line 37.
+
+\citation{Davis:2006}
+./sec-computation.tex:37: Undefined control sequence.
+<write> ...: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.37 ...e Cholesky factorization~\cite{Davis:2006}
+                                                   with $\gamma$ proportiona...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `Davis:2006' on page  undefined on input line 37.
+
+\citation{crane-2013}
+./sec-computation.tex:37: Undefined control sequence.
+<write> ...: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.37 ... the maximum edge length~\cite{crane-2013}
+                                                  ; higher accuracy can be o...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `crane-2013' on page  undefined on input line 37.
+
+
+Overfull \hbox (27.7778pt too wide) in paragraph at lines 35--38
+[]\/cmr/m/n/10 +
+ []
+
+
+Overfull \hbox (27.53839pt too wide) in paragraph at lines 35--38
+\OML/cmm/m/it/10 ^^M\/cmr/m/n/10 2[] =
+ []
+
+
+Overfull \hbox (2.77779pt too wide) in paragraph at lines 35--38
+[]$
+ []
+
+
+Overfull \hbox (16.98288pt too wide) in paragraph at lines 35--38
+\OML/cmm/m/it/10 ^^M\/cmr/m/n/10 2[]$
+ []
+
+
+Overfull \hbox (15.00003pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 can
+ []
+
+
+Overfull \hbox (10.2778pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 be
+ []
+
+
+Overfull \hbox (17.25002pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 pre-
+ []
+
+
+Overfull \hbox (35.30563pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 factored
+ []
+
+
+Overfull \hbox (13.61113pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 be-
+ []
+
+
+Overfull \hbox (16.4167pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 fore
+ []
+
+
+Overfull \hbox (15.61113pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 dis-
+ []
+
+
+Overfull \hbox (23.33337pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 tance
+ []
+
+
+Overfull \hbox (21.11115pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 com-
+ []
+
+
+Overfull \hbox (14.44447pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 pu-
+ []
+
+
+Overfull \hbox (12.22224pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 ta-
+ []
+
+
+Overfull \hbox (20.00006pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 tion,
+ []
+
+
+Overfull \hbox (17.25002pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 ren-
+ []
+
+
+Overfull \hbox (17.25002pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 der-
+ []
+
+
+Overfull \hbox (13.33337pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 ing
+ []
+
+
+Overfull \hbox (18.88893pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 heat
+ []
+
+
+Overfull \hbox (16.69446pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 ker-
+ []
+
+
+Overfull \hbox (12.7778pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 nel
+ []
+
+
+Overfull \hbox (18.33336pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 con-
+ []
+
+
+Overfull \hbox (13.33336pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 vo-
+ []
+
+
+Overfull \hbox (11.66669pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 lu-
+ []
+
+
+Overfull \hbox (17.22227pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 tion
+ []
+
+
+Overfull \hbox (26.66672pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 equiv-
+ []
+
+
+Overfull \hbox (8.33334pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 a-
+ []
+
+
+Overfull \hbox (16.38892pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 lent
+ []
+
+
+Overfull \hbox (8.88892pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 to
+ []
+
+
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 a
+ []
+
+
+Overfull \hbox (22.25003pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 near-
+ []
+
+
+Overfull \hbox (24.47227pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 linear
+ []
+
+
+Overfull \hbox (19.44449pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 time
+ []
+
+
+Overfull \hbox (23.33337pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 back-
+ []
+
+
+Overfull \hbox (55.11125pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 substitution.
+ []
+
+
+Overfull \hbox (19.50003pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 This
+ []
+
+
+Overfull \hbox (15.83336pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 fea-
+ []
+
+
+Overfull \hbox (17.80559pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 ture
+ []
+
+
+Overfull \hbox (6.72223pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 is
+ []
+
+
+Overfull \hbox (17.80559pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 par-
+ []
+
+
+Overfull \hbox (14.44446pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 tic-
+ []
+
+
+Overfull \hbox (8.8889pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 u-
+ []
+
+
+Overfull \hbox (19.75006pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 larly
+ []
+
+
+Overfull \hbox (21.38895pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 valu-
+ []
+
+
+Overfull \hbox (17.77782pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 able
+ []
+
+
+Overfull \hbox (21.16669pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 since
+ []
+
+
+Overfull \hbox (11.38889pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 we
+ []
+
+
+Overfull \hbox (13.88892pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 ap-
+ []
+
+
+Overfull \hbox (13.61116pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 ply
+ []
+
+
+Overfull \hbox (13.88892pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 the
+ []
+
+
+Overfull \hbox (18.88893pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 heat
+ []
+
+
+Overfull \hbox (16.69446pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 ker-
+ []
+
+
+Overfull \hbox (12.7778pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 nel
+ []
+
+
+Overfull \hbox (11.69444pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 re-
+ []
+
+
+Overfull \hbox (22.50005pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 peat-
+ []
+
+
+Overfull \hbox (20.00005pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 edly.
+ []
+
+
+Overfull \hbox (17.25005pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 Our
+ []
+
+
+Overfull \hbox (14.44447pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 im-
+ []
+
+
+Overfull \hbox (16.11113pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 ple-
+ []
+
+
+Overfull \hbox (21.6667pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 men-
+ []
+
+
+Overfull \hbox (12.22224pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 ta-
+ []
+
+
+Overfull \hbox (17.22227pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 tion
+ []
+
+
+Overfull \hbox (17.8889pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 uses
+ []
+
+
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 a
+ []
+
+
+Overfull \hbox (26.80559pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 sparse
+ []
+
+
+Overfull \hbox (39.50009pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 Cholesky
+ []
+
+
+Overfull \hbox (15.83336pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 fac-
+ []
+
+
+Overfull \hbox (16.13892pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 tor-
+ []
+
+
+Overfull \hbox (15.55557pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 iza-
+ []
+
+
+Overfull \hbox (30.43059pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 tion [[]]
+ []
+
+
+Overfull \hbox (19.44449pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 with
+ []
+
+
+Overfull \hbox (5.73285pt too wide) in paragraph at lines 35--38
+\OML/cmm/m/it/10 ^^M$
+ []
+
+
+Overfull \hbox (17.80559pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 pro-
+ []
+
+
+Overfull \hbox (18.08337pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 por-
+ []
+
+
+Overfull \hbox (25.00008pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 tional
+ []
+
+
+Overfull \hbox (8.88892pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 to
+ []
+
+
+Overfull \hbox (13.88892pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 the
+ []
+
+
+Overfull \hbox (21.9445pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 max-
+ []
+
+
+Overfull \hbox (6.11111pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 i-
+ []
+
+
+Overfull \hbox (21.9445pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 mum
+ []
+
+
+Overfull \hbox (19.44447pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 edge
+ []
+
+
+Overfull \hbox (43.20839pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 length [[]];
+ []
+
+
+Overfull \hbox (27.25006pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 higher
+ []
+
+
+Overfull \hbox (12.77779pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 ac-
+ []
+
+
+Overfull \hbox (13.33334pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 cu-
+ []
+
+
+Overfull \hbox (18.63893pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 racy
+ []
+
+
+Overfull \hbox (15.00003pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 can
+ []
+
+
+Overfull \hbox (10.2778pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 be
+ []
+
+
+Overfull \hbox (13.88892pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 ob-
+ []
+
+
+Overfull \hbox (27.22229pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 tained
+ []
+
+
+Overfull \hbox (13.0556pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 via
+ []
+
+
+Overfull \hbox (18.38892pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 sub-
+ []
+
+
+Overfull \hbox (24.55559pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 steps.
+ []
+
+
+Overfull \hbox (17.25005pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 Our
+ []
+
+
+Overfull \hbox (15.61113pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 dis-
+ []
+
+
+Overfull \hbox (32.25003pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 cretiza-
+ []
+
+
+Overfull \hbox (17.22227pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 tion
+ []
+
+
+Overfull \hbox (18.33336pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 gen-
+ []
+
+
+Overfull \hbox (11.69444pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 er-
+ []
+
+
+Overfull \hbox (11.11113pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 al-
+ []
+
+
+Overfull \hbox (15.61111pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 izes
+ []
+
+
+Overfull \hbox (8.88892pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 to
+ []
+
+
+Overfull \hbox (12.77779pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 ge-
+ []
+
+
+Overfull \hbox (8.33334pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 o-
+ []
+
+
+Overfull \hbox (20.00003pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 met-
+ []
+
+
+Overfull \hbox (11.1389pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 ric
+ []
+
+
+Overfull \hbox (13.88892pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 do-
+ []
+
+
+Overfull \hbox (25.61118pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 mains
+ []
+
+
+Overfull \hbox (15.00003pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 like
+ []
+
+
+Overfull \hbox (22.77785pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 point
+ []
+
+
+Overfull \hbox (30.05562pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 clouds,
+ []
+
+
+Overfull \hbox (24.47226pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 tetra-
+ []
+
+
+Overfull \hbox (13.33334pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 he-
+ []
+
+
+Overfull \hbox (17.25005pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 dral
+ []
+
+
+Overfull \hbox (33.44449pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 meshes,
+ []
+
+
+Overfull \hbox (31.75008pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 graphs,
+ []
+
+
+Overfull \hbox (16.11116pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 and
+ []
+
+
+Overfull \hbox (27.2223pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 polyg-
+ []
+
+
+Overfull \hbox (8.33334pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 o-
+ []
+
+
+Overfull \hbox (13.33337pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 nal
+ []
+
+
+Overfull \hbox (16.75002pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 sur-
+ []
+
+
+Overfull \hbox (20.88892pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 faces
+ []
+
+
+Overfull \hbox (19.44449pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 with
+ []
+
+
+Overfull \hbox (20.27779pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 well-
+ []
+
+
+Overfull \hbox (47.88898pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 established
+ []
+
+
+Overfull \hbox (15.61113pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 dis-
+ []
+
+
+Overfull \hbox (21.1389pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 crete
+ []
+
+
+Overfull \hbox (27.91673pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 Lapla-
+ []
+
+
+Overfull \hbox (21.72226pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 cians
+ []
+
+
+Overfull \hbox (20.00006pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 (and
+ []
+
+
+Overfull \hbox (25.58336pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 there-
+ []
+
+
+Overfull \hbox (16.4167pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 fore
+ []
+
+
+Overfull \hbox (18.88893pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 heat
+ []
+
+
+Overfull \hbox (16.69446pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 ker-
+ []
+
+
+Overfull \hbox (23.38893pt too wide) in paragraph at lines 35--38
+\/cmr/m/n/10 nels). 
+ []
+
+
+./sec-computation.tex:38: LaTeX Error: The font size command \normalsize is not
+ defined:
+               there is probably something wrong with the class file.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.38 
+     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[1{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+./sec-computation.tex:44: Undefined control sequence.
+l.44 ... probability distribution $\mu\!\in\!\Prob
+                                                  (M)$ as a vector $\p\!\in\...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./sec-computation.tex:44: Undefined control sequence.
+<recently read> \p 
+                   
+l.44 ...ution $\mu\!\in\!\Prob(M)$ as a vector $\p
+                                                  \!\in\!\R_+^n$ with $\a^\t...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./sec-computation.tex:44: Undefined control sequence.
+l.44 ...u\!\in\!\Prob(M)$ as a vector $\p\!\in\!\R
+                                                  _+^n$ with $\a^\top\!\p=1$...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Command \^ invalid in math mode on input line 44.
+
+./sec-computation.tex:44: Missing $ inserted.
+<inserted text> 
+                $
+l.44 ...s a vector $\p\!\in\!\R_+^n$ with $\a^\top
+                                                  \!\p=1$, and a probability...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./sec-computation.tex:44: Improper \spacefactor.
+<recently read> \spacefactor 
+                             
+l.44 ...s a vector $\p\!\in\!\R_+^n$ with $\a^\top
+                                                  \!\p=1$, and a probability...
+You can refer to \spacefactor only in horizontal mode;
+you can refer to \prevdepth only in vertical mode; and
+neither of these is meaningful inside \write. So
+I'm forgetting what you said and using zero instead.
+
+./sec-computation.tex:44: Extra }, or forgotten $.
+\add@accent ... \accent@spacefactor \spacefactor }
+                                                  \accent #1 #2\egroup \spac...
+l.44 ...s a vector $\p\!\in\!\R_+^n$ with $\a^\top
+                                                  \!\p=1$, and a probability...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./sec-computation.tex:44: Please use \mathaccent for accents in math mode.
+\add@accent ...@spacefactor \spacefactor }\accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.44 ...s a vector $\p\!\in\!\R_+^n$ with $\a^\top
+                                                  \!\p=1$, and a probability...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+./sec-computation.tex:44: Extra }, or forgotten $.
+\add@accent ...\spacefactor }\accent #1 #2\egroup 
+                                                  \spacefactor \accent@space...
+l.44 ...s a vector $\p\!\in\!\R_+^n$ with $\a^\top
+                                                  \!\p=1$, and a probability...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./sec-computation.tex:44: You can't use `\spacefactor' in math mode.
+\add@accent ...}\accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.44 ...s a vector $\p\!\in\!\R_+^n$ with $\a^\top
+                                                  \!\p=1$, and a probability...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+./sec-computation.tex:44: Undefined control sequence.
+l.44 ...vector $\p\!\in\!\R_+^n$ with $\a^\top\!\p
+                                                  =1$, and a probability dis...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./sec-computation.tex:44: Undefined control sequence.
+l.44 ... probability distribution $\pi\!\in\!\Prob
+                                                  (M\!\times\!M)$ as $\bpi\!...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./sec-computation.tex:44: Undefined control sequence.
+<recently read> \bpi 
+                     
+l.44 ...n $\pi\!\in\!\Prob(M\!\times\!M)$ as $\bpi
+                                                  \!\in\!\R_+^{n\!\times\!n}...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./sec-computation.tex:44: Undefined control sequence.
+l.44 ...in\!\Prob(M\!\times\!M)$ as $\bpi\!\in\!\R
+                                                  _+^{n\!\times\!n}$ with $\...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Command \^ invalid in math mode on input line 44.
+
+./sec-computation.tex:44: Missing $ inserted.
+<inserted text> 
+                $
+l.44 ...i\!\in\!\R_+^{n\!\times\!n}$ with $\a^\top
+                                                  \!\bpi\a=1$.
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./sec-computation.tex:44: Improper \spacefactor.
+<recently read> \spacefactor 
+                             
+l.44 ...i\!\in\!\R_+^{n\!\times\!n}$ with $\a^\top
+                                                  \!\bpi\a=1$.
+You can refer to \spacefactor only in horizontal mode;
+you can refer to \prevdepth only in vertical mode; and
+neither of these is meaningful inside \write. So
+I'm forgetting what you said and using zero instead.
+
+./sec-computation.tex:44: Extra }, or forgotten $.
+\add@accent ... \accent@spacefactor \spacefactor }
+                                                  \accent #1 #2\egroup \spac...
+l.44 ...i\!\in\!\R_+^{n\!\times\!n}$ with $\a^\top
+                                                  \!\bpi\a=1$.
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./sec-computation.tex:44: Please use \mathaccent for accents in math mode.
+\add@accent ...@spacefactor \spacefactor }\accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.44 ...i\!\in\!\R_+^{n\!\times\!n}$ with $\a^\top
+                                                  \!\bpi\a=1$.
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+./sec-computation.tex:44: Extra }, or forgotten $.
+\add@accent ...\spacefactor }\accent #1 #2\egroup 
+                                                  \spacefactor \accent@space...
+l.44 ...i\!\in\!\R_+^{n\!\times\!n}$ with $\a^\top
+                                                  \!\bpi\a=1$.
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./sec-computation.tex:44: You can't use `\spacefactor' in math mode.
+\add@accent ...}\accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.44 ...i\!\in\!\R_+^{n\!\times\!n}$ with $\a^\top
+                                                  \!\bpi\a=1$.
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+./sec-computation.tex:44: Undefined control sequence.
+l.44 ...\!\R_+^{n\!\times\!n}$ with $\a^\top\!\bpi
+                                                  \a=1$.
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Command \= invalid in math mode on input line 44.
+
+./sec-computation.tex:44: Please use \mathaccent for accents in math mode.
+\add@accent ...@spacefactor \spacefactor }\accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.44 ..._+^{n\!\times\!n}$ with $\a^\top\!\bpi\a=1
+                                                  $.
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+./sec-computation.tex:44: You can't use `\spacefactor' in math mode.
+\add@accent ...}\accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.44 ..._+^{n\!\times\!n}$ with $\a^\top\!\bpi\a=1
+                                                  $.
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+Missing character: There is no è in font cmex10!
+./sec-computation.tex:45: Undefined control sequence.
+<recently read> \bpi 
+                     
+l.45 ...between such a discrete distribution $\bpi
+                                                  $ and an arbitrary $\kerne...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./sec-computation.tex:45: Undefined control sequence.
+<recently read> \kernelH 
+                         
+l.45 ...ribution $\bpi$ and an arbitrary $\kernelH
+                                                   \in \R_{+,*}^{n\!\times\!...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./sec-computation.tex:45: Undefined control sequence.
+l.45 ...n $\bpi$ and an arbitrary $\kernelH \in \R
+                                                  _{+,*}^{n\!\times\!n}$ is ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./sec-computation.tex:47: Undefined control sequence.
+l.47 	\KL
+         (\bpi|\kernelH) \eqdef \sum_{ij}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./sec-computation.tex:47: Undefined control sequence.
+l.47 	\KL(\bpi
+              |\kernelH) \eqdef \sum_{ij}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./sec-computation.tex:47: Undefined control sequence.
+l.47 	\KL(\bpi|\kernelH
+                       ) \eqdef \sum_{ij}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./sec-computation.tex:47: Undefined control sequence.
+l.47 	\KL(\bpi|\kernelH) \eqdef
+                                \sum_{ij}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./sec-computation.tex:47: Missing $ inserted.
+<inserted text> 
+                $
+l.47 	\KL(\bpi|\kernelH) \eqdef \sum
+                                    _{ij}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./sec-computation.tex:48: Undefined control sequence.
+l.48 		\bpi
+           _{ij}\a_i \a_j\left[\ln\frac{\bpi_{ij}}{\kernelH_{ij}}-1\right] .
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./sec-computation.tex:48: Double subscript.
+l.48 		\bpi_
+            {ij}\a_i \a_j\left[\ln\frac{\bpi_{ij}}{\kernelH_{ij}}-1\right] .
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+
+LaTeX Warning: Command \_ invalid in math mode on input line 48.
+
+
+./sec-computation.tex:48: LaTeX Error: Command \_ unavailable in encoding OT1.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.48 		\bpi_{ij}\a_
+                   i \a_j\left[\ln\frac{\bpi_{ij}}{\kernelH_{ij}}-1\right] .
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+LaTeX Warning: Command \_ invalid in math mode on input line 48.
+
+
+./sec-computation.tex:48: LaTeX Error: Command \_ unavailable in encoding OT1.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.48 		\bpi_{ij}\a_i \a_
+                        j\left[\ln\frac{\bpi_{ij}}{\kernelH_{ij}}-1\right] .
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./sec-computation.tex:48: Undefined control sequence.
+<argument> \bpi 
+                _{ij}
+l.48 ..._j\left[\ln\frac{\bpi_{ij}}{\kernelH_{ij}}
+                                                  -1\right] .
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./sec-computation.tex:48: Undefined control sequence.
+<argument> \kernelH 
+                    _{ij}
+l.48 ..._j\left[\ln\frac{\bpi_{ij}}{\kernelH_{ij}}
+                                                  -1\right] .
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./sec-computation.tex:49: You can't use `\eqno' in math mode.
+\endequation ->\eqno 
+                     \hbox {\@eqnnum }$$\@ignoretrue 
+l.49 \end{equation}
+                   
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+./sec-computation.tex:49: Missing $ inserted.
+<inserted text> 
+                $
+l.49 \end{equation}
+                   
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./sec-computation.tex:51: Undefined control sequence.
+<recently read> \p 
+                   
+l.51 Given discrete distributions $\p
+                                     _0$ and $\p_1$,
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./sec-computation.tex:51: Undefined control sequence.
+<recently read> \p 
+                   
+l.51 Given discrete distributions $\p_0$ and $\p
+                                                _1$,
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./sec-computation.tex:53: Undefined control sequence.
+<recently read> \bpi 
+                     
+l.53 we model plans $\bpi
+                         \!\in\!\Pi(\p_0,\p_1)$ as matrices $\bpi\!\in\!\R_+...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./sec-computation.tex:53: Undefined control sequence.
+l.53 we model plans $\bpi\!\in\!\Pi(\p
+                                      _0,\p_1)$ as matrices $\bpi\!\in\!\R_+...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./sec-computation.tex:53: Undefined control sequence.
+l.53 we model plans $\bpi\!\in\!\Pi(\p_0,\p
+                                           _1)$ as matrices $\bpi\!\in\!\R_+...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./sec-computation.tex:53: Undefined control sequence.
+<recently read> \bpi 
+                     
+l.53 ...pi\!\in\!\Pi(\p_0,\p_1)$ as matrices $\bpi
+                                                  \!\in\!\R_+^{n\!\times\!n}...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./sec-computation.tex:53: Undefined control sequence.
+l.53 ...\Pi(\p_0,\p_1)$ as matrices $\bpi\!\in\!\R
+                                                  _+^{n\!\times\!n}$ with $\...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./sec-computation.tex:53: Undefined control sequence.
+<recently read> \bpi 
+                     
+l.53 ...\bpi\!\in\!\R_+^{n\!\times\!n}$ with $\bpi
+                                                  \!\a\!=\!\p_0$ and $\bpi^\...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Command \\! invalid in math mode on input line 53.
+
+
+./sec-computation.tex:53: LaTeX Error: Command \\! unavailable in encoding OT1.
+
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.53 ...\in\!\R_+^{n\!\times\!n}$ with $\bpi\!\a\!
+                                                  =\!\p_0$ and $\bpi^\top\a\...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./sec-computation.tex:53: Undefined control sequence.
+l.53 ...\R_+^{n\!\times\!n}$ with $\bpi\!\a\!=\!\p
+                                                  _0$ and $\bpi^\top\a\!=\!\...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./sec-computation.tex:53: Undefined control sequence.
+<recently read> \bpi 
+                     
+l.53 ...es\!n}$ with $\bpi\!\a\!=\!\p_0$ and $\bpi
+                                                  ^\top\a\!=\!\p_1.$
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Command \\! invalid in math mode on input line 53.
+
+
+./sec-computation.tex:53: LaTeX Error: Command \\! unavailable in encoding OT1.
+
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.53 ...ith $\bpi\!\a\!=\!\p_0$ and $\bpi^\top\a\!
+                                                  =\!\p_1.$
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./sec-computation.tex:53: Undefined control sequence.
+l.53 ...\bpi\!\a\!=\!\p_0$ and $\bpi^\top\a\!=\!\p
+                                                  _1.$
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./sec-computation.tex:58: Undefined control sequence.
+l.58 	\boxed
+            {\W^2_{2,\kernel}(\p_0,\p_1) \eqdef \gamma\left[1+\min_{\bpi\in\...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./sec-computation.tex:58: Undefined control sequence.
+l.58 	\boxed{\W
+               ^2_{2,\kernel}(\p_0,\p_1) \eqdef \gamma\left[1+\min_{\bpi\in\...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./sec-computation.tex:58: Missing $ inserted.
+<inserted text> 
+                $
+l.58 	\boxed{\W^
+                2_{2,\kernel}(\p_0,\p_1) \eqdef \gamma\left[1+\min_{\bpi\in\...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./sec-computation.tex:58: Undefined control sequence.
+l.58 	\boxed{\W^2_{2,\kernel
+                            }(\p_0,\p_1) \eqdef \gamma\left[1+\min_{\bpi\in\...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./sec-computation.tex:58: Undefined control sequence.
+l.58 	\boxed{\W^2_{2,\kernel}(\p
+                                _0,\p_1) \eqdef \gamma\left[1+\min_{\bpi\in\...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./sec-computation.tex:58: Undefined control sequence.
+l.58 	\boxed{\W^2_{2,\kernel}(\p_0,\p
+                                     _1) \eqdef \gamma\left[1+\min_{\bpi\in\...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./sec-computation.tex:58: Undefined control sequence.
+l.58 	\boxed{\W^2_{2,\kernel}(\p_0,\p_1) \eqdef
+                                                \gamma\left[1+\min_{\bpi\in\...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./sec-computation.tex:58: Undefined control sequence.
+l.58 ...\p_0,\p_1) \eqdef \gamma\left[1+\min_{\bpi
+                                                  \in\Pi}\KL(\bpi|\kernel)\r...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./sec-computation.tex:58: Undefined control sequence.
+l.58 ... \eqdef \gamma\left[1+\min_{\bpi\in\Pi}\KL
+                                                  (\bpi|\kernel)\right].}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./sec-computation.tex:58: Undefined control sequence.
+l.58 ...ef \gamma\left[1+\min_{\bpi\in\Pi}\KL(\bpi
+                                                  |\kernel)\right].}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./sec-computation.tex:58: Undefined control sequence.
+l.58 ...a\left[1+\min_{\bpi\in\Pi}\KL(\bpi|\kernel
+                                                  )\right].}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./sec-computation.tex:58: Extra }, or forgotten $.
+l.58 ...min_{\bpi\in\Pi}\KL(\bpi|\kernel)\right].}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./sec-computation.tex:59: You can't use `\eqno' in math mode.
+\endequation ->\eqno 
+                     \hbox {\@eqnnum }$$\@ignoretrue 
+l.59 \end{equation}
+                   
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+./sec-computation.tex:59: Missing $ inserted.
+<inserted text> 
+                $
+l.59 \end{equation}
+                   
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./sec-computation.tex:59: Missing } inserted.
+<inserted text> 
+                }
+l.59 \end{equation}
+                   
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./sec-computation.tex:64: Undefined control sequence.
+l.64 ...ontinuous case, the minimization in~\eqref
+                                                  {eq:discrete_dist} is conv...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./sec-computation.tex:64: Missing $ inserted.
+<inserted text> 
+                $
+l.64 ...e, the minimization in~\eqref{eq:discrete_
+                                                  dist} is convex with linea...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./sec-computation.tex:64: Extra }, or forgotten $.
+l.64 ...e minimization in~\eqref{eq:discrete_dist}
+                                                   is convex with linear con...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./sec-computation.tex:64: Undefined control sequence.
+l.64 ...is convex with linear constraints on $\bpi
+                                                  $.  Its complexity is tied...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./sec-computation.tex:64: Undefined control sequence.
+l.64 ...s complexity is tied to the variable $\bpi
+                                                  $, which scales quadratica...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+./sec-computation.tex:65: LaTeX Error: Environment proposition undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.65 \begin{proposition}
+                        
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./sec-computation.tex:67: Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.67 The transportation plan $
+                              \bpi\!\in\!\Pi(\p_0,\p_1)$ minimizing~\eqref{e...
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./sec-computation.tex:67: Undefined control sequence.
+l.67 The transportation plan $\bpi
+                                  \!\in\!\Pi(\p_0,\p_1)$ minimizing~\eqref{e...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./sec-computation.tex:67: Missing $ inserted.
+<inserted text> 
+                $
+l.67 The transportation plan $\bpi\!
+                                    \in\!\Pi(\p_0,\p_1)$ minimizing~\eqref{e...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./sec-computation.tex:67: Undefined control sequence.
+l.67 The transportation plan $\bpi\!\in\!\Pi(\p
+                                               _0,\p_1)$ minimizing~\eqref{e...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./sec-computation.tex:67: Undefined control sequence.
+l.67 ...ransportation plan $\bpi\!\in\!\Pi(\p_0,\p
+                                                  _1)$ minimizing~\eqref{eq:...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./sec-computation.tex:67: Undefined control sequence.
+l.67 ...pi\!\in\!\Pi(\p_0,\p_1)$ minimizing~\eqref
+                                                  {eq:discrete_dist} is of t...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./sec-computation.tex:67: Missing $ inserted.
+<inserted text> 
+                $
+l.67 ...\p_0,\p_1)$ minimizing~\eqref{eq:discrete_
+                                                  dist} is of the form $\bpi...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./sec-computation.tex:67: Extra }, or forgotten $.
+l.67 ...\p_1)$ minimizing~\eqref{eq:discrete_dist}
+                                                   is of the form $\bpi\!=\!...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./sec-computation.tex:67: Undefined control sequence.
+l.67 ...ref{eq:discrete_dist} is of the form $\bpi
+                                                  \!=\!\diag\v\kernel\diag\w...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./sec-computation.tex:67: Missing $ inserted.
+<inserted text> 
+                $
+l.67 ...f{eq:discrete_dist} is of the form $\bpi\!
+                                                  =\!\diag\v\kernel\diag\w$,...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./sec-computation.tex:67: Undefined control sequence.
+l.67 ...crete_dist} is of the form $\bpi\!=\!\diag
+                                                  \v\kernel\diag\w$, with un...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Command \v invalid in math mode on input line 67.
+
+./sec-computation.tex:67: Undefined control sequence.
+<argument> \kernel 
+                   
+l.67 ...t} is of the form $\bpi\!=\!\diag\v\kernel
+                                                  \diag\w$, with unique vect...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./sec-computation.tex:67: Please use \mathaccent for accents in math mode.
+\add@accent ...@spacefactor \spacefactor }\accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.67 ...t} is of the form $\bpi\!=\!\diag\v\kernel
+                                                  \diag\w$, with unique vect...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+./sec-computation.tex:67: Undefined control sequence.
+<argument> \kernel 
+                   
+l.67 ...t} is of the form $\bpi\!=\!\diag\v\kernel
+                                                  \diag\w$, with unique vect...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./sec-computation.tex:67: Missing { inserted.
+<to be read again> 
+                   \egroup 
+l.67 ...t} is of the form $\bpi\!=\!\diag\v\kernel
+                                                  \diag\w$, with unique vect...
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+./sec-computation.tex:67: You can't use `\spacefactor' in math mode.
+\add@accent ...}\accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.67 ...t} is of the form $\bpi\!=\!\diag\v\kernel
+                                                  \diag\w$, with unique vect...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+./sec-computation.tex:67: Undefined control sequence.
+l.67 ... of the form $\bpi\!=\!\diag\v\kernel\diag
+                                                  \w$, with unique vectors $...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./sec-computation.tex:67: Undefined control sequence.
+l.67 ...f the form $\bpi\!=\!\diag\v\kernel\diag\w
+                                                  $, with unique vectors $\v...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./sec-computation.tex:67: Missing } inserted.
+<inserted text> 
+                }
+l.67 ... the form $\bpi\!=\!\diag\v\kernel\diag\w$
+                                                  , with unique vectors $\v,...
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+Missing character: There is no è in font cmex10!
+
+LaTeX Warning: Command \v invalid in math mode on input line 67.
+
+./sec-computation.tex:67: Please use \mathaccent for accents in math mode.
+\add@accent ...@spacefactor \spacefactor }\accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.67 ...v\kernel\diag\w$, with unique vectors $\v,
+                                                  \w\!\in\!\R^n$ satisfying
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+./sec-computation.tex:67: You can't use `\spacefactor' in math mode.
+\add@accent ...}\accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.67 ...v\kernel\diag\w$, with unique vectors $\v,
+                                                  \w\!\in\!\R^n$ satisfying
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+./sec-computation.tex:67: Undefined control sequence.
+l.67 ...kernel\diag\w$, with unique vectors $\v,\w
+                                                  \!\in\!\R^n$ satisfying
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./sec-computation.tex:67: Undefined control sequence.
+l.67 ...ag\w$, with unique vectors $\v,\w\!\in\!\R
+                                                  ^n$ satisfying
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./sec-computation.tex:67: \textfont 4 is undefined (character â).
+l.67 ...w$, with unique vectors $\v,\w\!\in\!\R^n$
+                                                   satisfying
+Somewhere in the math formula just ended, you used the
+stated character from an undefined font family. For example,
+plain TeX doesn't allow \it or \sl in subscripts. Proceed,
+and I'll try to forget that I needed that character.
+
+./sec-computation.tex:69: Missing $ inserted.
+<inserted text> 
+                $
+l.69 \left
+          \{
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./sec-computation.tex:71: Undefined control sequence.
+l.71 \diag
+          \v \kernel \diag\w\a = \p_0,
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./sec-computation.tex:71: Undefined control sequence.
+<argument> \kernel 
+                   
+l.71 \diag\v \kernel
+                     \diag\w\a = \p_0,
+(That makes 100 errors; please try again.) 
+Here is how much of TeX's memory you used:
+ 54 strings out of 493117
+ 519 string characters out of 6135433
+ 58909 words of memory out of 5000000
+ 3612 multiletter control sequences out of 15000+600000
+ 4294 words of font info for 16 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 18i,20n,21p,681b,269s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+./sec-computation.tex:71:  ==> Fatal error occurred, no output PDF file produce
+d!
